@@ -15,19 +15,19 @@ public final class Suit implements Comparable {
    /**
     * The suit clubs.
     */
-   public final static Suit CLUBS = new Suit( "Clubs", "c" );
+   public final static Suit CLUBS = new Suit( "Clubs","♣️" );
    /**
     * The suit diamonds.
     */
-   public final static Suit DIAMONDS = new Suit( "Diamonds", "d" );
+   public final static Suit DIAMONDS = new Suit( "Diamonds", "♦️" );
    /**
     * The suit hearts.
     */
-   public final static Suit HEARTS = new Suit( "Hearts", "h" );
+   public final static Suit HEARTS = new Suit( "Hearts", "❤️" );
    /**
     * The suit spades.
     */
-   public final static Suit SPADES = new Suit( "Spades", "s" );
+   public final static Suit SPADES = new Suit( "Spades", "♠️" );
    
   /**
    * List of all suit values.  Primarily for use with iteration.
@@ -70,7 +70,7 @@ public final class Suit implements Comparable {
    * @return the name of this suit.
    */
    public String toString() {
-      return name;
+      return symbol;
    }
    
    

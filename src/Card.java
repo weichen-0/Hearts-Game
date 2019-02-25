@@ -97,7 +97,7 @@ public class Card implements Comparable {
    * @return the name of the card.
    */
    public String toString() {
-      return rankValue.toString() + " of " + suitValue.toString();
+      return rankValue.toString() + " " + suitValue.toString();
    }
   
   
@@ -152,7 +152,7 @@ public class Card implements Comparable {
       int suitDiff = suitValue.compareTo( otherCard.suitValue );
       int rankDiff = rankValue.compareTo( otherCard.rankValue );
       
-      if (sortRankMajorOrder ) {
+      if (!sortRankMajorOrder ) {
          if (rankDiff != 0 )
             return rankDiff;
          else

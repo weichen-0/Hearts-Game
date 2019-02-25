@@ -34,9 +34,9 @@ public class Round {
             listOfPlayers.get(n).getHand().addCard(currentCard);
         }
 
-        for (Player player : listOfPlayers) {
-            System.out.println(player.getHand());
-        }
+        listOfPlayers.get(0).getHand().sort();
+        System.out.println(listOfPlayers.get(0).getHand());
+
     }
 
     public void HumanExchangeCards() {

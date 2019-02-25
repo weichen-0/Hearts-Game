@@ -21,6 +21,7 @@ public class Card implements Comparable {
    private Rank rankValue;
    private ImageIcon cardImage;
    private static boolean sortRankMajorOrder = true;
+   private int point;
 
 
   /**
@@ -33,6 +34,12 @@ public class Card implements Comparable {
       this.cardImage = cardImage;
       this.suitValue = suitValue;
       this.rankValue = rankValue;
+
+      if (suitValue.getSymbol().equals("s") && rankValue.getSymbol().equals("q")) {
+          this.point = 13;
+      } else if (suitValue.getSymbol().equals('h')) {
+          this.point = 1;
+      } else this.point = 0;
    }
     
     
@@ -174,5 +181,7 @@ public class Card implements Comparable {
       else
          return true;
    }
+
+   public int getPoint() {return point;}
 
 }

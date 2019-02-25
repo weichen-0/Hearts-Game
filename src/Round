@@ -1,0 +1,10 @@
+public class Round{
+
+    private ArrayList<Set> listOfSets = new ArrayList<>();
+    private int lastWinner;
+    
+
+
+
+
+}

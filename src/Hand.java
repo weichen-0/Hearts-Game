@@ -145,7 +145,7 @@ public class Hand {
 //  public int compareTo(Object otherHandObject) {
 //    Hand otherHand = (Hand) otherHandObject;
 //    return evaluateHand() - otherHand.evaluateHand();
-//  }
+// }
 
 
   /**
@@ -155,7 +155,7 @@ public class Hand {
    * @return an integer corresponding to the rating of the hand.
    */
 
-  //  public abstract int evaluateHand();
+    //public abstract int evaluateHand();
 
 
   /**

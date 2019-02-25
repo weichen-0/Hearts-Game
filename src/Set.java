@@ -10,7 +10,7 @@ public class Set {
     }
 
     public boolean addCard(Player player, Card card) {
-        if (!player.getHand().contains(card)) {
+        if (!player.getHand().containsCard(card)) {
             return false;
         }
 
@@ -23,7 +23,7 @@ public class Set {
         }
 
         Card firstCard = cardList.get(0);
-        if (!card.getSuit().isEquals(firstCard.getSuit()) && player.getHand().findSuit(firstCard)) {
+        if (!card.getSuit().isEquals(firstCard.getSuit()) && player.getHand().getSuit(firstCard)) {
             return false;
         } else {
             cardList.add(card);

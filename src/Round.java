@@ -18,15 +18,23 @@ public class Round {
 
   public void startRound() {
 
-    
-
   }
 
   public void HumanExchangeCards() {
     Scanner sc = new Scanner(System.in);
     System.out.print("");
 
+  }
 
+  public void ComputerExchangeCards(){
+      for (int i = 0; ) {
+        if (player.isComputer()){
+            Hand hands = player.getHand();
+            hands.sort();
+            for (int t = 0; i < 3; i++){
+                hands.removeCard(i);
+        }
+      }
   }
 
   public void tallyPoints(int points, Player player) {

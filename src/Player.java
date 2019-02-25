@@ -7,6 +7,10 @@ public class Player {
   private int totalPoints = 0;
   private Hand hand = new Hand();
 
+  public boolean isComputer(){
+      return this.isComputer;
+  }
+
   public Player(boolean isComputer) {
     this.isComputer = isComputer;
   }

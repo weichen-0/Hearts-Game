@@ -186,7 +186,7 @@ public class Hand {
 
   public boolean getSuit(Card card) {
       for (int i = 0; i < hand.size(); i++) {
-          if (hand.get(i).equals(card)){
+          if (hand.get(i).getSuit().isEquals(card.getSuit())){
               return true;
           }
       }

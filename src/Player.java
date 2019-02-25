@@ -11,9 +11,7 @@ public class Player {
       return this.isComputer;
   }
 
-  public Player(boolean isComputer) {
-    this.isComputer = isComputer;
-  }
+  public Player(boolean isComputer) { this.isComputer = isComputer;  }
 
   public int getPointsFromCurrentRound() {
     return pointsFromCurrentRound;

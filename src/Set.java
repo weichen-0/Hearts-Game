@@ -3,9 +3,16 @@ import java.util.ArrayList;
 
 public class Set {
     private ArrayList<Card> cardList = new ArrayList<>();
+    private boolean isHeartBroken;
 
-    public void addCard(Card card) {
-        cardList.add(card);
+    public Set(boolean isHeartBroken) {
+        this.isHeartBroken = isHeartBroken;
+    }
+
+    public boolean addCard(Player player, Card card) {
+        if () {
+            cardList.add(card);
+        }
     }
 
     public int getHighestCard() {
@@ -30,6 +37,8 @@ public class Set {
 
         return index;
     }
+
+
 
     public int getPoints() {
         int totalPoint = 0;

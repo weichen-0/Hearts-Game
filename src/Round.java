@@ -22,19 +22,24 @@ public class Round {
 
   public void HumanExchangeCards() {
     Scanner sc = new Scanner(System.in);
-    System.out.print("");
+    System.out.print("Select 1 card to be Pass");
+
 
   }
 
-  public void ComputerExchangeCards(){
-      for (int i = 0; ) {
-        if (player.isComputer()){
-            Hand hands = player.getHand();
-            hands.sort();
-            for (int t = 0; i < 3; i++){
-                hands.removeCard(i);
-        }
-      }
+  public void ComputerExchangeCards(ArrayList<Player> listOfPlayers, int roundNo){
+      for (int i = 1; i < listOfPlayers.size(); i++) {
+          Player player = listOfPlayers.get(i);
+          Hand hands = player.getHand();
+          hands.sort();
+          Player player2 = listOfPlayers.get((i+1)%4);
+          Hand hands2 = player2.getHand();
+              for (int t = hands.getNumberOfCards()-1; t >= 10; t--){
+                  Card currentCard = hands.getCard(t);
+                  hands.removeCard(currentCard);
+                  hands.addCard(currentCard);
+              }
+          }
   }
 
   public void tallyPoints(int points, Player player) {

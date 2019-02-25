@@ -80,9 +80,7 @@ public abstract class Hand implements Comparable {
    * The number of cards held in the hand.
    * @return number of cards currently held in the hand.
    */
-   public int getNumberOfCards() {
-      return hand.size();
-   }
+   public int getNumberOfCards() { return hand.size(); }
 
 
   /**

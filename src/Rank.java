@@ -130,5 +130,12 @@ public class Rank implements Comparable {
       Rank otherRank = (Rank) otherRankObject;
       return VALUES_ACE_HIGH.indexOf( this ) - VALUES_ACE_HIGH.indexOf( otherRank );
    }
+
+   public boolean isEquals(Rank rank) {
+       if (this.symbol.equals(rank.getSymbol())) {
+           return true;
+       }
+       return false;
+   }
     
 }                                                               

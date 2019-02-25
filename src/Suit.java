@@ -83,8 +83,14 @@ public final class Suit implements Comparable {
    public int compareTo( Object otherSuitObject ) {
       Suit otherSuit = (Suit) otherSuitObject;
       return VALUES.indexOf( this ) - VALUES.indexOf( otherSuit );
-   } 
-    
+   }
+
+    public boolean isEquals(Suit suit) {
+        if (this.symbol.equals(suit.getSymbol())) {
+            return true;
+        }
+        return false;
+    }
 }
 
     

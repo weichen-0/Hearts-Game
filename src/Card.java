@@ -37,7 +37,7 @@ public class Card implements Comparable {
 
       if (suitValue.getSymbol().equals("s") && rankValue.getSymbol().equals("q")) {
           this.point = 13;
-      } else if (suitValue.getSymbol().equals('h')) {
+      } else if (suitValue.getSymbol().equals("h")) {
           this.point = 1;
       } else this.point = 0;
    }

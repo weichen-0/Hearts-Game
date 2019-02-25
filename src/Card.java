@@ -5,7 +5,6 @@
 
 import javax.swing.*;
 
-
 /**
  * Representation of a single playing card. A card consists of a suit value
  * (e.g. hearts, spades), a rank value (e.g. ace, 7, king), and an image of
@@ -30,10 +29,10 @@ public class Card implements Comparable {
    * @param rank the rank value of this card.
    * @param cardFace the face image of this card.
    */
-   public Card( Suit suit, Rank rank, ImageIcon cardFace ) {
-      cardImage = cardFace;
-      suitValue = suit;
-      rankValue = rank;
+   public Card( Suit suitValue, Rank rankValue, ImageIcon cardImage) {
+      this.cardImage = cardImage;
+      this.suitValue = suitValue;
+      this.rankValue = rankValue;
    }
     
     
@@ -54,8 +53,8 @@ public class Card implements Comparable {
    * @param rank the rank value of the card.
    * @return a string containing the filename of the card.
    */
-   public static String getFilename( Suit suit, Rank rank ) {
-      return rank.getSymbol() + suit.getSymbol() + ".gif";
+   public static String getFilename(Suit suitValue, Rank rankValue) {
+      return rankValue.getSymbol() + suitValue.getSymbol() + ".gif";
    }
 
 

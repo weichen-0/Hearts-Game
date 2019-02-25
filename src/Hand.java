@@ -143,7 +143,7 @@ public abstract class Hand implements Comparable {
    public abstract int evaluateHand();
    
    
-   /**
+   /**o
     * Returns a description of the hand.
     * @return a list of cards held in the hand.
     */

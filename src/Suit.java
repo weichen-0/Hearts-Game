@@ -29,7 +29,6 @@ public final class Suit implements Comparable {
     */
    public final static Suit SPADES = new Suit( "Spades", "s" );
    
-   
   /**
    * List of all suit values.  Primarily for use with iteration.
    */

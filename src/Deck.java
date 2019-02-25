@@ -93,7 +93,7 @@ public class Deck {
    
    
   /**
-   * Restores the deck to "full deck" status.
+   * Restores the deck to "full deck" status.i
    */
    public void restoreDeck() {
       index = 0;

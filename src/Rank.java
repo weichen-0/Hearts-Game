@@ -19,7 +19,6 @@ import java.util.*;
 public class Rank implements Comparable {
    private String name;
    private String symbol;
-   private static boolean aceHigh = false;
     
    /** 
     * The rank ace. 
@@ -75,48 +74,17 @@ public class Rank implements Comparable {
    public final static Rank KING = new Rank( "King", "k" );
     
    
-   private final static java.util.List VALUES_KING_HIGH =
-      Collections.unmodifiableList( 
-         Arrays.asList( new Rank[] { ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN,
-                                     EIGHT, NINE, TEN, JACK, QUEEN, KING      } ) );
-   
    private final static java.util.List VALUES_ACE_HIGH =
       Collections.unmodifiableList( 
          Arrays.asList( new Rank[] { TWO, THREE, FOUR, FIVE, SIX, SEVEN,
                                      EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE } ) );
-                                     
-  /**
-   * List of all rank values.  Used primarily for the purpose of iteration.
-   */
-   public final static java.util.List VALUES =
-      Collections.unmodifiableList( VALUES_KING_HIGH );
-   
    
    // Constructor - declared private as only the predefined values should
    // be used by the client.
    private Rank( String nameValue, String symbolValue ) {
       name = nameValue;
       symbol = symbolValue;
-   }
-    
-    
-  /**
-   *  Sets the king to be the card having highest rank.  The ace is
-   *  reduced to the lowest rank.
-   */
-   public static void setKingHigh() {
-      aceHigh = false;
-   }
-    
-    
-  /**
-   *  Sets the ace to be the card having highest rank.  The two becomes
-   *  the lowest rank.
-   */
-   public static void setAceHigh() {
-      aceHigh = true;
-   }
-    
+   }    
     
   /**
    *  Returns a description of this rank.
@@ -141,7 +109,7 @@ public class Rank implements Comparable {
    *  usually constitutes a single character, in the form of a string.
    *  Symbol is used for the construction of the filenames of the card images.
    *  @return string containing the symbol for the rank.
-   */
+   */+ 
    public String getSymbol() {
       return symbol;
    }
@@ -160,10 +128,7 @@ public class Rank implements Comparable {
    */
    public int compareTo( Object otherRankObject ) {
       Rank otherRank = (Rank) otherRankObject;
-      if ( aceHigh )
-         return VALUES_ACE_HIGH.indexOf( this ) - VALUES_ACE_HIGH.indexOf( otherRank );
-      else
-         return VALUES_KING_HIGH.indexOf( this ) - VALUES_KING_HIGH.indexOf( otherRank );
+      return VALUES_ACE_HIGH.indexOf( this ) - VALUES_ACE_HIGH.indexOf( otherRank );
    }
     
 }                                                               

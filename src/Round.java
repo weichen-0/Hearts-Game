@@ -66,9 +66,22 @@ public class Round {
         }
     }
 
-    public void tallyPoints(int points, Player player) {
 
+    public void tallyPoints(Set set, Player player1) {
+        for (Player player: listOfPlayers){
+            if (player == player1){
+                player1.setPointsFromCurrentRound(set.getPoints());
+            }
+        }
     }
 
+    public boolean hasGameEnded(){
+        for (Player player: listOfPlayers){
+            if (player.getTotalPoints() >= 100){
+                return true;
+            }
+        }
+        return false;
+    }
 
 }

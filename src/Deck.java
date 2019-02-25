@@ -33,17 +33,23 @@ public class Deck {
     index = 0;
 
     for (int i = 0; i < Suit.VALUES.size(); i++) {
-      System.out.println((Suit) Suit.VALUES.get(i));
+//      System.out.println((Suit) Suit.VALUES.get(i));
+      for (int j = 0; j < Rank.VALUES_ACE_HIGH.size(); j++) {
+        Card tempCard = new Card((Suit) Suit.VALUES.get(i), (Rank) Rank.VALUES_ACE_HIGH.get(j), null);
+        deck.add(tempCard);
+//        System.out.println(tempCard);
+      }
     }
 
-//    for (int i = 0; i < 13; i++) {
-//
-//    }
+//    Check the size of deck
+//    System.out.println(deck.size());
+
   }
 
   public static void main(String[] args) {
     Deck d = new Deck();
   }
+
   /**
    * Adds a card to the deck.
    *

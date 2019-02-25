@@ -109,7 +109,7 @@ public class Rank implements Comparable {
    *  usually constitutes a single character, in the form of a string.
    *  Symbol is used for the construction of the filenames of the card images.
    *  @return string containing the symbol for the rank.
-   */+ 
+   */
    public String getSymbol() {
       return symbol;
    }

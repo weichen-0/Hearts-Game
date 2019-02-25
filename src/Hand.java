@@ -22,7 +22,7 @@ import java.util.Collections;
 
 public class Hand {
 
-  private java.util.List hand = new ArrayList();
+  private ArrayList<Card> hand = new ArrayList<>();
 
 
   /**
@@ -182,6 +182,15 @@ public class Hand {
       return false;
     hand.set(location, replacementCard);
     return true;
+  }
+
+  public boolean getSuit(Card card) {
+      for (int i = 0; i < hand.size(); i++) {
+          if (hand.get(i).equals(card)){
+              return true;
+          }
+      }
+      return false;
   }
 
 }

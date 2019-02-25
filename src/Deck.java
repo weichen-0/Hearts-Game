@@ -4,6 +4,7 @@
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 
 /**
@@ -21,15 +22,20 @@ import java.util.Collections;
  * @version 1.0
  */
 public class Deck {
-  private java.util.List deck;
-  private int index;
+  private java.util.List<Card> deck;
+
+    public List getDeck() {
+        return deck;
+    }
+
+    private int index;
 
 
   /**
    * Creates an empty deck of cards.
    */
   public Deck() {
-    deck = new ArrayList<>();
+    deck = new ArrayList<Card>();
     index = 0;
 
     for (int i = 0; i < Suit.VALUES.size(); i++) {
@@ -46,10 +52,6 @@ public class Deck {
 
   }
 
-  public static void main(String[] args) {
-    Deck d = new Deck();
-  }
-
   /**
    * Adds a card to the deck.
    *
@@ -58,7 +60,6 @@ public class Deck {
   public void addCard(Card card) {
     deck.add(card);
   }
-
 
   /**
    * The size of a deck of cards.
@@ -69,7 +70,6 @@ public class Deck {
     return deck.size();
   }
 
-
   /**
    * The number of cards left in the deck.
    *
@@ -78,7 +78,6 @@ public class Deck {
   public int getNumberOfCardsRemaining() {
     return deck.size() - index;
   }
-
 
   /**
    * Deal one card from the deck.

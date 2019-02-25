@@ -2,7 +2,8 @@
 // last modified: 23 Febraury 2004
 // Implementation of a deck of playing cards.  Uses the Card class.
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
 
 
 /**
@@ -14,89 +15,105 @@ import java.util.*;
  * implementation of card games such as pinochle (a 48-card deck containing
  * only aces, nines, tens, jacks, queens, and kings in all four suits, with
  * each card present twice in the deck) or casino-style blackjack (where six
- * standard decks are used for a game).  
+ * standard decks are used for a game).
+ *
  * @author John K. Estell
  * @version 1.0
  */
 public class Deck {
-   private java.util.List deck;
-   private int index;
- 
-  
+  private java.util.List deck;
+  private int index;
+
+
   /**
    * Creates an empty deck of cards.
    */
-   public Deck() {
-      deck = new ArrayList();
-      index = 0;
-   }
-  
-  
+  public Deck() {
+    deck = new ArrayList<>();
+    index = 0;
+
+    for (int i = 0; i < Suit.VALUES.size(); i++) {
+      System.out.println((Suit) Suit.VALUES.get(i));
+    }
+
+//    for (int i = 0; i < 13; i++) {
+//
+//    }
+  }
+
+  public static void main(String[] args) {
+    Deck d = new Deck();
+  }
   /**
    * Adds a card to the deck.
+   *
    * @param card card to be added to the deck.
    */
-   public void addCard( Card card ) {
-      deck.add( card );
-   }
-  
-  
+  public void addCard(Card card) {
+    deck.add(card);
+  }
+
+
   /**
    * The size of a deck of cards.
+   *
    * @return the number of cards present in the full deck.
    */
-   public int getSizeOfDeck() {
-      return deck.size();
-   }
-   
-   
+  public int getSizeOfDeck() {
+    return deck.size();
+  }
+
+
   /**
    * The number of cards left in the deck.
+   *
    * @return the number of cards left to be dealt from the deck.
    */
-   public int getNumberOfCardsRemaining() {
-      return deck.size() - index;
-   }
-   
-   
+  public int getNumberOfCardsRemaining() {
+    return deck.size() - index;
+  }
+
+
   /**
    * Deal one card from the deck.
+   *
    * @return a card from the deck, or the null reference if there
    * are no cards left in the deck.
    */
-   public Card dealCard() {
-      if ( index >= deck.size() )
-         return null;
-      else
-         return (Card) deck.get( index++ );
-   }
-   
-   
+  public Card dealCard() {
+    if (index >= deck.size())
+      return null;
+    else
+      return (Card) deck.get(index++);
+  }
+
+
   /**
    * Shuffles the cards present in the deck.
    */
-   public void shuffle() {
-      Collections.shuffle( deck );
-   }
-   
-   
+  public void shuffle() {
+    Collections.shuffle(deck);
+  }
+
+
   /**
    * Looks for an empty deck.
+   *
    * @return <code>true</code> if there are no cards left to be dealt from the deck.
    */
-   public boolean isEmpty() {
-      if ( index >= deck.size() )
-         return true;
-      else
-         return false;
-   }
-   
-   
+  public boolean isEmpty() {
+    if (index >= deck.size())
+      return true;
+    else
+      return false;
+  }
+
+
   /**
    * Restores the deck to "full deck" status.i
    */
-   public void restoreDeck() {
-      index = 0;
-   }   
+  public void restoreDeck() {
+    index = 0;
+  }
 
 }

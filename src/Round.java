@@ -33,6 +33,10 @@ public class Round {
             }
             listOfPlayers.get(n).getHand().addCard(currentCard);
         }
+
+        for (Player player : listOfPlayers) {
+            System.out.println(player.getHand());
+        }
     }
 
     public void HumanExchangeCards() {

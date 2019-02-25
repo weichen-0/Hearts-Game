@@ -165,7 +165,11 @@ public class Hand {
    * @return a list of cards held in the hand.
    */
   public String toString() {
-    return hand.toString();
+    String output = "";
+    for (Card card : hand) {
+      output += card.toString() + ", ";
+    }
+    return output.substring(0, output.length() - 2);
   }
 
 
@@ -185,12 +189,12 @@ public class Hand {
   }
 
   public boolean getSuit(Card card) {
-      for (int i = 0; i < hand.size(); i++) {
-          if (hand.get(i).getSuit().isEquals(card.getSuit())){
-              return true;
-          }
+    for (int i = 0; i < hand.size(); i++) {
+      if (hand.get(i).getSuit().isEquals(card.getSuit())) {
+        return true;
       }
-      return false;
+    }
+    return false;
   }
 
 }

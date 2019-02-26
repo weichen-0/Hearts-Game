@@ -32,13 +32,15 @@ public class Hand {
    * @param card card to be added to the current hand.
    */
   public void addCard(Card card) {
-    hand.add(card);
+      hand.add(card);
+      sort();
   }
 
-  public void addCard(ArrayList<Card> cardList) {
+  public void addCards(ArrayList<Card> cardList) {
     for (Card card : cardList) {
-      addCard(card);
+        hand.add(card);
     }
+    sort();
   }
 
   public ArrayList<Card> getCardList() {
@@ -74,7 +76,7 @@ public class Hand {
       return hand.remove(index);
   }
 
-  public void removeCard(ArrayList<Card> cardList) {
+  public void removeCards(ArrayList<Card> cardList) {
       for (Card card : cardList) {
           removeCard(card);
       }
@@ -181,7 +183,6 @@ public class Hand {
    * @return a list of cards held in the hand.
    */
   public String toString() {
-    sort();
     String output = "";
 
     for (Card card : hand) {
@@ -214,10 +215,6 @@ public class Hand {
       }
     }
     return false;
-  }
-
-  public ArrayList<Card> get3HighestRankCards() {
-
   }
 
 }

@@ -13,7 +13,7 @@ public class Round {
 
     public Round() {
         listOfPlayers = new ArrayList<>();
-        listOfPlayers.add(new Player("YOUR", true));
+        listOfPlayers.add(new Player("PLAYER", true));
         listOfPlayers.add(new Player("COM1", false));
         listOfPlayers.add(new Player("COM2", false));
         listOfPlayers.add(new Player("COM3", false));
@@ -22,13 +22,11 @@ public class Round {
     public void printScoreBoard() {
         System.out.printf("[CURRENT SCOREBOARD]%n");
         for (Player p : listOfPlayers) {
-            System.out.printf("%s SCORE > %d%n", p.getName(), p.getTotalPoints());
+            if (p.getIsPlayer()) {
+                System.out.printf("YOUR SCORE > %d%n", p.getTotalPoints());
+            } else System.out.printf("%s SCORE > %d%n", p.getName(), p.getTotalPoints());
         }
         System.out.println();
-    }
-
-    public int getPassOrder() {
-        return roundNum % 4;
     }
 
     public void nextRound() {
@@ -50,12 +48,13 @@ public class Round {
     public void startRound() {
         printScoreBoard();
 
-        System.out.printf("~~~ ROUND %d ~~~%n", roundNum);
+        System.out.printf("--- ROUND %d ---%n", roundNum);
         System.out.printf("Dealing cards...%n%n");
 
         distributeCard();
         printAllHands();
-
+        passCards();
+        printAllHands();
     }
 
     public void distributeCard() {
@@ -77,22 +76,21 @@ public class Round {
 
     public void printAllHands() {
         printAlignedOptions();
-
-        System.out.printf("YOUR HAND > %s%n", listOfPlayers.get(0).getHand());
-
-        for (int i = 1; i < listOfPlayers.size(); i++) {
-            System.out.printf("COM%d HAND > %s%n", i, listOfPlayers.get(i).getHand());
+        for (Player p : listOfPlayers) {
+            if (p.getIsPlayer()) {
+                System.out.printf("YOUR HAND > %s%n", p.getHand());
+            } else System.out.printf("%s HAND > %s%n", p.getName(), p.getHand());
         }
     }
 
     public void printAlignedOptions() {
-        String output = "               ";
+        String output = "              ";
 
         for (int i = 1; i <= 14 - roundNum; i++) {
             output += "[" + i + "]";
 
-            if (i == 3 | i == 6) {
-                output += "     ";
+            if (i >= 10) {
+                output += "   ";
 
             } else output += "    ";
         }
@@ -100,17 +98,45 @@ public class Round {
     }
 
     public void passCards() {
-        switch (getPassOrder()) {
-            case 1:
-                for(int i = 0; i < listOfPlayers.size(); i++){
-                    Player passingPlayer = listOfPlayers.get(i);
-                    Player receivingPlayer = listOfPlayers.get((i+3) % 4);
-                    ArrayList<Card> cardsToPass = choose3CardsToPass(passingPlayer);
-                    transferCards(passingPlayer, receivingPlayer, cardsToPass);
-                }
+        int passOrder = roundNum % 4;
 
+        if (passOrder == 0) return;
+
+        // Ensure every player chooses cards to be removed first (so no card is passed twice)
+        ArrayList<ArrayList<Card>> chosenCardsForEachPlayer = new ArrayList<>();
+        for(Player player : listOfPlayers){
+            chosenCardsForEachPlayer.add(choose3CardsToPass(player));
         }
 
+        for(int i = 0; i < listOfPlayers.size(); i++){
+            Player passingPlayer = listOfPlayers.get(i);
+            ArrayList<Card> cardsToPass = chosenCardsForEachPlayer.get(i);
+            Player receivingPlayer = null;
+            switch (passOrder) {
+                case 1:
+                    receivingPlayer = listOfPlayers.get((i + 1) % 4);
+                    break;
+                case 2:
+                    receivingPlayer = listOfPlayers.get((i + 3) % 4);
+                    break;
+                case 3:
+                    receivingPlayer = listOfPlayers.get((i + 2) % 4);
+            }
+            transferCards(passingPlayer, receivingPlayer, cardsToPass);
+
+            if (passingPlayer.getIsPlayer() || receivingPlayer.getIsPlayer()) {
+                System.out.printf("%s passed 3 cards to %s - %s%n", passingPlayer.getName(), receivingPlayer.getName(),
+                        cardsToPass.toString());
+            }
+        }
+    }
+
+    public void transferCards(Player passingPlayer, Player receivingPlayer, ArrayList<Card> cardsToPass) {
+        passingPlayer.getHand().removeCards(cardsToPass);
+        receivingPlayer.getHand().addCards(cardsToPass);
+//        System.out.printf(passingPlayer.getName() + " passed 3 cards to " + receivingPlayer.getName() + ".");
+//        System.out.println("The three cards are " + cardsToPass.toString());
+//        printAllHands();
     }
 
     public ArrayList<Card> choose3CardsToPass(Player passingPlayer) {
@@ -119,11 +145,11 @@ public class Round {
             Collections.sort(cardList, new Comparator<Card>() {
                 @Override
                 public int compare(Card card1, Card card2) {
-                    return card1.getRank().compareTo(card2.getRank());
+                    return -1 * card1.getRank().compareTo(card2.getRank());
                 }
             });
 
-            return (ArrayList<Card>) cardList.subList(0, 3);
+            return new ArrayList<>(cardList.subList(0, 3));
         }
 
         Hand playerHand = passingPlayer.getHand();

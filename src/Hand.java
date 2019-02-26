@@ -5,6 +5,7 @@
 // the specifics of what constitutes the evaluation of a hand 
 // for the game being implemented.
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -32,6 +33,13 @@ public class Hand {
    */
   public void addCard(Card card) {
     hand.add(card);
+  }
+
+  @Overload
+  public void addCard(ArrayList<Card> cardList) {
+    for (Card card : cardList) {
+      addCard(card);
+    }
   }
 
 

@@ -51,7 +51,7 @@ public class Round {
     public void startRound() {
         printScoreBoard();
 
-        System.out.printf("ROUND %d%n", roundNum);
+        System.out.printf("~~~ ROUND %d ~~~%n", roundNum);
         System.out.printf("Dealing cards...%n%n");
 
         distributeCard();
@@ -92,7 +92,7 @@ public class Round {
         for (int i = 1; i <= 14 - roundNum; i++) {
             output += "[" + i + "]";
 
-            if (i % 3 == 0 && i < 7) {
+            if (i == 3 | i == 6) {
                 output += "     ";
 
             } else output += "    ";
@@ -102,21 +102,42 @@ public class Round {
 
     // INCOMPLETE
     public void exchangeCards() {
-
+        switch (getPassOrder()) {
+            case 1:
+                
+        }
 
     }
 
-    public void getPlayerExchangeCards() {
-        Scanner sc = new Scanner(System.in);
+    public ArrayList<Card> getPlayerExchangeCards() {
+
         String[] order = new String[]{"first", "second", "third"};
+        ArrayList<Card> passList = new ArrayList<>();
 
         for (int i = 0; i < 3; i++) {
-            System.out.printf("Please select %s card to pass", order[i]);
-            System.out.print("Select the Suite: ");
-            String suit = sc.nextLine();
-            System.out.print("Select the Rank: ");
-            String rank = sc.nextLine();
+            System.out.printf("Please select %s card to pass%n", order[i]);
+            System.out.print("Input card index: ");
+            passList.add(chooseCard());
+        }
 
+        return passList;
+    }
+
+    public Card chooseCard() {
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+            if (sc.hasNextInt()) {
+                int index = sc.nextInt();
+
+                if (index > 0 && index < 14) {
+                    Hand playerHand = listOfPlayers.get(0).getHand();
+                    return playerHand.getCard(index - 1);
+                } else {
+                    System.out.println("Index must be between 1 and 13 (inclusive)");
+                }
+
+            } else System.out.println("Index must be an integer");
         }
     }
 

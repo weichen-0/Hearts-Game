@@ -51,7 +51,7 @@ public class Hand {
    * bounds.
    */
   public Card getCard(int index) {
-    return (Card) hand.get(index);
+    return hand.get(index);
   }
 
 
@@ -67,7 +67,7 @@ public class Hand {
     if (index < 0)
       return null;
     else
-      return (Card) hand.remove(index);
+      return hand.remove(index);
   }
 
 
@@ -79,7 +79,7 @@ public class Hand {
    * the index is out of bounds.
    */
   public Card removeCard(int index) {
-    return (Card) hand.remove(index);
+    return hand.remove(index);
   }
 
 

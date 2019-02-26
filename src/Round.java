@@ -7,8 +7,7 @@ public class Round {
     // index 0 is always Human Player
     private static ArrayList<Player> listOfPlayers;
     private boolean heartsBroken;
-    private int setNo;
-    private int roundNo;
+    private int roundNum = 1;
     private int leadingPlayer;
 
     public Round() {
@@ -19,23 +18,50 @@ public class Round {
         listOfPlayers.add(new Player(true));
     }
 
+    public int getRoundNum() {
+        return roundNum;
+    }
+
+    public void nextRound() {
+        roundNum++;
+    }
+
+    public int getHighestPoint() {
+        int highestPoint = 0;
+
+        for (Player p : listOfPlayers) {
+            if (p.getTotalPoints() > highestPoint) {
+                highestPoint = p.getTotalPoints();
+            }
+        }
+
+        return highestPoint;
+    }
+
     public void startRound() {
         Deck d = new Deck();
         d.shuffle();
-        Random random = new Random();
-        int currentPlayer = 0;
+        Player player = null;
 
         for (int i = 0; i < d.getDeck().size(); i++) {
-            Card currentCard = (Card) d.getDeck().get(i);
-            int n = random.nextInt(4);
-            while (listOfPlayers.get(n).getHand().getNumberOfCards() == 13) {
-                n = random.nextInt(4);
-            }
-            listOfPlayers.get(n).getHand().addCard(currentCard);
+            Card currentCard = d.getDeck().get(i);
+
+            do {
+                int n = new Random().nextInt(4);
+                player = listOfPlayers.get(n);
+            } while (player.getHand().getNumberOfCards() == 13);
+
+            player.getHand().addCard(currentCard);
         }
 
-        listOfPlayers.get(0).getHand().sort();
-        System.out.println(listOfPlayers.get(0).getHand());
+        for (Player p : listOfPlayers) {
+            p.sortHand();
+            System.out.println(p.getHand());
+        }
+    }
+
+    public void exchangeCards() {
+        HumanExchangeCards();
 
     }
 

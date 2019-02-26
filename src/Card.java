@@ -20,15 +20,15 @@ public class Card implements Comparable {
    private Suit suitValue;
    private Rank rankValue;
    private ImageIcon cardImage;
-   private static boolean sortRankMajorOrder = true;
+   private static boolean sortRankMajorOrder = false;
    private int point;
 
 
   /**
    * Creates a new playing card.
-   * @param suit the suit value of this card.
-   * @param rank the rank value of this card.
-   * @param cardFace the face image of this card.
+   * @param suitValue the suit value of this card.
+   * @param rankValue the rank value of this card.
+   * @param cardImage the face image of this card.
    */
    public Card( Suit suitValue, Rank rankValue, ImageIcon cardImage) {
       this.cardImage = cardImage;
@@ -56,8 +56,8 @@ public class Card implements Comparable {
    * 'c' (clubs), 'd' (diamonds), 'h' (hearts), and 's' (spades).
    * <p>Two other cards are also available: "b.gif" (back of card) and "j.gif" (joker).
    *
-   * @param suit the suit value of the card.
-   * @param rank the rank value of the card.
+   * @param suitValue the suit value of the card.
+   * @param rankValue the rank value of the card.
    * @return a string containing the filename of the card.
    */
    public static String getFilename(Suit suitValue, Rank rankValue) {
@@ -152,7 +152,7 @@ public class Card implements Comparable {
       int suitDiff = suitValue.compareTo( otherCard.suitValue );
       int rankDiff = rankValue.compareTo( otherCard.rankValue );
       
-      if (!sortRankMajorOrder ) {
+      if (sortRankMajorOrder ) {
          if (rankDiff != 0 )
             return rankDiff;
          else

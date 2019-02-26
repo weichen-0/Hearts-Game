@@ -2,6 +2,7 @@
 // last modified: 23 Febraury 2004
 // Implementation of a deck of playing cards.  Uses the Card class.
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -22,103 +23,96 @@ import java.util.List;
  * @version 1.0
  */
 public class Deck {
-  private java.util.List<Card> deck;
-
-    public List getDeck() {
-        return deck;
-    }
-
+    private ArrayList<Card> deck;
     private int index;
 
 
-  /**
-   * Creates an empty deck of cards.
-   */
-  public Deck() {
-    deck = new ArrayList<Card>();
-    index = 0;
-
-    for (int i = 0; i < Suit.VALUES.size(); i++) {
-//      System.out.println((Suit) Suit.VALUES.get(i));
-      for (int j = 0; j < Rank.VALUES_ACE_HIGH.size(); j++) {
-        Card tempCard = new Card((Suit) Suit.VALUES.get(i), (Rank) Rank.VALUES_ACE_HIGH.get(j), null);
-        deck.add(tempCard);
-//        System.out.println(tempCard);
-      }
+    /**
+     * Creates an empty deck of cards.
+     */
+    public Deck() {
+        deck = new ArrayList<Card>();
+        restoreDeck();
     }
 
-//    Check the size of deck
-//    System.out.println(deck.size());
+    public ArrayList<Card> getDeck() {
+        return deck;
+    }
 
-  }
+    /**
+     * Adds a card to the deck.
+     *
+     * @param card card to be added to the deck.
+     */
+    public void addCard(Card card) {
+        deck.add(card);
+    }
 
-  /**
-   * Adds a card to the deck.
-   *
-   * @param card card to be added to the deck.
-   */
-  public void addCard(Card card) {
-    deck.add(card);
-  }
+    /**
+     * The size of a deck of cards.
+     *
+     * @return the number of cards present in the full deck.
+     */
+    public int getSizeOfDeck() {
+        return deck.size();
+    }
 
-  /**
-   * The size of a deck of cards.
-   *
-   * @return the number of cards present in the full deck.
-   */
-  public int getSizeOfDeck() {
-    return deck.size();
-  }
+    /**
+     * The number of cards left in the deck.
+     *
+     * @return the number of cards left to be dealt from the deck.
+     */
+    public int getNumberOfCardsRemaining() {
+        return deck.size() - index;
+    }
 
-  /**
-   * The number of cards left in the deck.
-   *
-   * @return the number of cards left to be dealt from the deck.
-   */
-  public int getNumberOfCardsRemaining() {
-    return deck.size() - index;
-  }
-
-  /**
-   * Deal one card from the deck.
-   *
-   * @return a card from the deck, or the null reference if there
-   * are no cards left in the deck.
-   */
-  public Card dealCard() {
-    if (index >= deck.size())
-      return null;
-    else
-      return (Card) deck.get(index++);
-  }
-
-
-  /**
-   * Shuffles the cards present in the deck.
-   */
-  public void shuffle() {
-    Collections.shuffle(deck);
-  }
+    /**
+     * Deal one card from the deck.
+     *
+     * @return a card from the deck, or the null reference if there
+     * are no cards left in the deck.
+     */
+    public Card dealCard() {
+        if (index >= deck.size())
+            return null;
+        else
+            return deck.get(index++);
+    }
 
 
-  /**
-   * Looks for an empty deck.
-   *
-   * @return <code>true</code> if there are no cards left to be dealt from the deck.
-   */
-  public boolean isEmpty() {
-    if (index >= deck.size())
-      return true;
-    else
-      return false;
-  }
+    /**
+     * Shuffles the cards present in the deck.
+     */
+    public void shuffle() {
+        Collections.shuffle(deck);
+    }
 
 
-  /**
-   * Restores the deck to "full deck" status.i
-   */
-  public void restoreDeck() {
-    index = 0;
-  }
+    /**
+     * Looks for an empty deck.
+     *
+     * @return <code>true</code> if there are no cards left to be dealt from the deck.
+     */
+    public boolean isEmpty() {
+        if (index >= deck.size())
+            return true;
+        else
+            return false;
+    }
+
+
+    /**
+     * Restores the deck to "full deck" status.i
+     */
+    public void restoreDeck() {
+        index = 0;
+
+        for (int i = 0; i < Suit.VALUES.size(); i++) {
+            for (int j = 0; j < Rank.VALUES_ACE_HIGH.size(); j++) {
+                Card tempCard = new Card((Suit) Suit.VALUES.get(i), (Rank) Rank.VALUES_ACE_HIGH.get(j), null);
+                deck.add(tempCard);
+            }
+        }
+    }
 
 }

@@ -35,7 +35,6 @@ public class Hand {
     hand.add(card);
   }
 
-  @Overload
   public void addCard(ArrayList<Card> cardList) {
     for (Card card : cardList) {
       addCard(card);

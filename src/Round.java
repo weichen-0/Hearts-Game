@@ -13,28 +13,29 @@ public class Round {
 
     public Round() {
         listOfPlayers = new ArrayList<>();
-        listOfPlayers.add(new Player("YOUR", false));
-        listOfPlayers.add(new Player("COM1", true));
-        listOfPlayers.add(new Player("COM2", true));
-        listOfPlayers.add(new Player("COM3", true));
+        listOfPlayers.add(new Player("YOUR", true));
+        listOfPlayers.add(new Player("COM1", false));
+        listOfPlayers.add(new Player("COM2", false));
+        listOfPlayers.add(new Player("COM3", false));
     }
 
-    public void printPoints() {
-        System.out.printf("[ CURRENT SCOREBOARD ]%n");
+    public void printScoreBoard() {
+        System.out.printf("[CURRENT SCOREBOARD]%n");
         for (Player p : listOfPlayers) {
             System.out.printf("%s SCORE > %d%n", p.getName(), p.getTotalPoints());
         }
+        System.out.println();
     }
 
-    public int getRoundNum() {
-        return roundNum;
+    public int getPassOrder() {
+        return roundNum % 4;
     }
 
     public void nextRound() {
         roundNum++;
     }
 
-    public int getHighestPoint() {
+    public int getHighestScore() {
         int highestPoint = 0;
 
         for (Player p : listOfPlayers) {
@@ -47,17 +48,14 @@ public class Round {
     }
 
     public void startRound() {
-        printPoints();
+        printScoreBoard();
 
-        System.out.printf("%nROUND %d%nDealing cards...%n%n", roundNum);
+        System.out.printf("ROUND %d%n", roundNum);
+        System.out.printf("Dealing cards...%n%n");
 
         distributeCard();
+        printAllHands();
 
-        System.out.printf("YOUR HAND > %s%n", listOfPlayers.get(0).getHand());
-
-        for (int i = 1; i < listOfPlayers.size(); i++) {
-            System.out.printf("COM%d HAND > %s%n", i, listOfPlayers.get(i).getHand());
-        }
     }
 
     public void distributeCard() {
@@ -77,14 +75,23 @@ public class Round {
         }
     }
 
+    public void printAllHands() {
+        System.out.printf("YOUR HAND > %s%n", listOfPlayers.get(0).getHand());
+
+        for (int i = 1; i < listOfPlayers.size(); i++) {
+            System.out.printf("COM%d HAND > %s%n", i, listOfPlayers.get(i).getHand());
+        }
+    }
+
     // INCOMPLETE
     public void exchangeCards() {
-        HumanExchangeCards();
+
 
     }
 
-    public void HumanExchangeCards() {
+    public void PlayerExchangeCards() {
         Scanner sc = new Scanner(System.in);
+
         for (int i = 1; i <= 3; i++) {
             System.out.println("Select" + i + " card to be Pass");
             System.out.print("Select the Suite: ");
@@ -117,15 +124,6 @@ public class Round {
                 player1.setPointsFromCurrentRound(set.getPoints());
             }
         }
-    }
-
-    public boolean hasGameEnded(){
-        for (Player player: listOfPlayers){
-            if (player.getTotalPoints() >= 100){
-                return true;
-            }
-        }
-        return false;
     }
 
 }

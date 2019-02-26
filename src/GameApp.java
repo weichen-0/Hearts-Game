@@ -7,8 +7,7 @@ public class GameApp {
         Round round = new Round();
 
         //while (round.getHighestPoint() < 100) {
-            System.out.println("ROUND " + round.getRoundNum());
-            System.out.println("");
+            System.out.printf("ROUND %d%n%n", round.getRoundNum());
             round.startRound();
 
         //}

@@ -32,4 +32,6 @@ public class Player {
   public Hand getHand() { return hand; }
 
   public void sortHand() { hand.sort(); }
+
+  public int getHandSize() { return hand.getNumberOfCards(); }
 }

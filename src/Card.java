@@ -152,7 +152,7 @@ public class Card implements Comparable {
       int suitDiff = suitValue.compareTo( otherCard.suitValue );
       int rankDiff = rankValue.compareTo( otherCard.rankValue );
       
-      if (sortRankMajorOrder ) {
+      if (sortRankMajorOrder) {
          if (rankDiff != 0 )
             return rankDiff;
          else

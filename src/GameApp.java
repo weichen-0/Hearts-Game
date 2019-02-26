@@ -8,7 +8,7 @@ public class GameApp {
 
         //while (round.getHighestScore() < 100) {
         round.startRound();
-        System.out.println(round.getCardsPassedByPlayer());
+
         //}
 
 

@@ -41,7 +41,7 @@ public class Hand {
     }
   }
 
-  public ArrayList<Card> getHandList() {
+  public ArrayList<Card> getCardList() {
       return hand;
   }
 
@@ -214,6 +214,10 @@ public class Hand {
       }
     }
     return false;
+  }
+
+  public ArrayList<Card> get3HighestRankCards() {
+
   }
 
 }

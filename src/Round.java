@@ -1,8 +1,5 @@
 import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 import static java.lang.Integer.parseInt;
 
@@ -106,9 +103,10 @@ public class Round {
         switch (getPassOrder()) {
             case 1:
                 for(int i = 0; i < listOfPlayers.size(); i++){
-                  ArrayList<Card> cardsToPass = choose3CardsToPass(listOfPlayers[i]);
-                  giveCardsToPlayer((i+3) % 4, receiving player);
-                  remove
+                    Player passingPlayer = listOfPlayers.get(i);
+                    Player receivingPlayer = listOfPlayers.get((i+3) % 4);
+                    ArrayList<Card> cardsToPass = choose3CardsToPass(passingPlayer);
+                    transferCards(passingPlayer, receivingPlayer, cardsToPass);
                 }
 
         }
@@ -117,8 +115,17 @@ public class Round {
 
     public ArrayList<Card> choose3CardsToPass(Player passingPlayer) {
         if (!passingPlayer.getIsPlayer()) {
-            return choose3CardsToPassFromCom(passingPlayer);
+            ArrayList<Card> cardList = new ArrayList<>(passingPlayer.getHand().getCardList());
+            Collections.sort(cardList, new Comparator<Card>() {
+                @Override
+                public int compare(Card card1, Card card2) {
+                    return card1.getRank().compareTo(card2.getRank());
+                }
+            });
+
+            return (ArrayList<Card>) cardList.subList(0, 3);
         }
+
         Hand playerHand = passingPlayer.getHand();
         String[] order = new String[]{"first", "second", "third"};
         ArrayList<Card> passList = new ArrayList<>(); // Ints
@@ -157,23 +164,6 @@ public class Round {
         }
         return passList;
     }
-
-    public ArrayList<Card> choose3CardsToPassFromCom(ArrayList<Player> listOfPlayers) {
-        for (int i = 1; i < listOfPlayers.size(); i++) {
-            Player player = listOfPlayers.get(i);
-            Hand hands = player.getHand();
-            hands.sort();
-            Player player2 = listOfPlayers.get((i + 1) % 4);
-            Hand hands2 = player2.getHand();
-            for (int t = hands.getNumberOfCards() - 1; t >= 10; t--) {
-                Card currentCard = hands.getCard(t);
-                hands.removeCard(currentCard);
-                hands.addCard(currentCard);
-            }
-        }
-        return null;
-    }
-
 
     public void tallyPoints(Set set, Player player1) {
         for (Player player: listOfPlayers){

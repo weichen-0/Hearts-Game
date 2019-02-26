@@ -20,7 +20,7 @@ public class Round {
     }
 
     public void printPoints() {
-        System.out.printf("##### CURRENT SCOREBOARD #####%n");
+        System.out.printf("[ CURRENT SCOREBOARD ]%n");
         for (Player p : listOfPlayers) {
             System.out.printf("%s SCORE > %d%n", p.getName(), p.getTotalPoints());
         }
@@ -49,7 +49,7 @@ public class Round {
     public void startRound() {
         printPoints();
 
-        System.out.printf("ROUND %d%n%n", roundNum);
+        System.out.printf("%nROUND %d%nDealing cards...%n%n", roundNum);
 
         distributeCard();
 
@@ -76,7 +76,6 @@ public class Round {
             player.getHand().addCard(currentCard);
         }
     }
-
 
     // INCOMPLETE
     public void exchangeCards() {

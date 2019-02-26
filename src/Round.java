@@ -55,7 +55,6 @@ public class Round {
         }
 
         for (Player p : listOfPlayers) {
-            p.sortHand();
             System.out.println(p.getHand());
         }
     }

@@ -165,7 +165,9 @@ public class Hand {
    * @return a list of cards held in the hand.
    */
   public String toString() {
+    sort();
     String output = "";
+
     for (Card card : hand) {
       output += card.toString() + ", ";
     }

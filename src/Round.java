@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
+import static java.lang.Integer.parseInt;
+
 public class Round {
 
     // index 0 is always Human Player
@@ -87,7 +89,7 @@ public class Round {
     }
 
     public void printAlignedOptions() {
-        String output = "              ";
+        String output = "               ";
 
         for (int i = 1; i <= 14 - roundNum; i++) {
             output += "[" + i + "]";
@@ -100,48 +102,63 @@ public class Round {
         System.out.println(output);
     }
 
-    // INCOMPLETE
-    public void exchangeCards() {
+    public void passCards() {
         switch (getPassOrder()) {
             case 1:
-                
+                for(int i = 0; i < listOfPlayers.size(); i++){
+                  ArrayList<Card> cardsToPass = choose3CardsToPass(listOfPlayers[i]);
+                  giveCardsToPlayer((i+3) % 4, receiving player);
+                  remove
+                }
+
         }
 
     }
 
-    public ArrayList<Card> getPlayerExchangeCards() {
-
+    public ArrayList<Card> choose3CardsToPass(Player passingPlayer) {
+        if (!passingPlayer.getIsPlayer()) {
+            return choose3CardsToPassFromCom(passingPlayer);
+        }
+        Hand playerHand = passingPlayer.getHand();
         String[] order = new String[]{"first", "second", "third"};
-        ArrayList<Card> passList = new ArrayList<>();
+        ArrayList<Card> passList = new ArrayList<>(); // Ints
+        Scanner sc = new Scanner(System.in);
 
         for (int i = 0; i < 3; i++) {
-            System.out.printf("Please select %s card to pass%n", order[i]);
-            System.out.print("Input card index: ");
-            passList.add(chooseCard());
-        }
+            System.out.printf("%nPlease select %s card to pass%n", order[i]);
+            Card passCard = null;
 
+            while (passCard == null) {
+                System.out.print("Enter card index: ");
+                int index = 0;
+
+                try {
+                    index = parseInt(sc.nextLine());
+                } catch (NumberFormatException e) {
+                    System.out.println("Index must be an integer");
+                    continue;
+                }
+
+                if (index < 1 || index > 13) {
+                    System.out.println("Index must be between 1 and 13 (inclusive)");
+                    continue;
+                }
+
+                passCard = playerHand.getCard(index - 1);
+
+                if (passList.contains(passCard)) {
+                    System.out.println("Index has already been selected");
+                    passCard = null;
+
+                } else {
+                    passList.add(passCard);
+                }
+            }
+        }
         return passList;
     }
 
-    public Card chooseCard() {
-        Scanner sc = new Scanner(System.in);
-
-        while (true) {
-            if (sc.hasNextInt()) {
-                int index = sc.nextInt();
-
-                if (index > 0 && index < 14) {
-                    Hand playerHand = listOfPlayers.get(0).getHand();
-                    return playerHand.getCard(index - 1);
-                } else {
-                    System.out.println("Index must be between 1 and 13 (inclusive)");
-                }
-
-            } else System.out.println("Index must be an integer");
-        }
-    }
-
-    public void ComputerExchangeCards(ArrayList<Player> listOfPlayers, int roundNo) {
+    public ArrayList<Card> choose3CardsToPassFromCom(ArrayList<Player> listOfPlayers) {
         for (int i = 1; i < listOfPlayers.size(); i++) {
             Player player = listOfPlayers.get(i);
             Hand hands = player.getHand();
@@ -154,6 +171,7 @@ public class Round {
                 hands.addCard(currentCard);
             }
         }
+        return null;
     }
 
 

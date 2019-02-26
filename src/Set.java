@@ -9,24 +9,26 @@ public class Set {
         this.isHeartBroken = isHeartBroken;
     }
 
-    public boolean addCard(Player player, Card card) {
-        if (!player.getHand().containsCard(card)) {
+    public boolean addCard(Player player, Card anotherCard) {
+        Hand playerHand = player.getHand();
+        if (!playerHand.containsCard(anotherCard)) {
             return false;
         }
 
+        Suit anotherSuit = anotherCard.getSuit();
         if (cardList.size() == 0 && !isHeartBroken) {
-            if (card.getSuit().isEquals(Suit.HEARTS)) {
+            if (anotherSuit.isEquals(Suit.HEARTS)) {
                 return false;
             }
-            cardList.add(card);
+            cardList.add(anotherCard);
             return true;
         }
 
-        Card firstCard = cardList.get(0);
-        if (!card.getSuit().isEquals(firstCard.getSuit()) && player.getHand().getSuit(firstCard)) {
+        Suit firstSuit = cardList.get(0).getSuit();
+        if (!anotherSuit.isEquals(firstSuit) && playerHand.hasSuit(firstSuit)) {
             return false;
         } else {
-            cardList.add(card);
+            cardList.add(anotherCard);
             return true;
         }
     }

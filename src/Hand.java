@@ -41,6 +41,10 @@ public class Hand {
     }
   }
 
+  public ArrayList<Card> getHandList() {
+      return hand;
+  }
+
 
   /**
    * Obtains the card stored at the specified location in the hand.  Does not
@@ -70,6 +74,11 @@ public class Hand {
       return hand.remove(index);
   }
 
+  public void removeCard(ArrayList<Card> cardList) {
+      for (Card card : cardList) {
+          removeCard(card);
+      }
+  }
 
   /**
    * Removes the card at the specified index from the hand.
@@ -179,7 +188,7 @@ public class Hand {
       output += card.toString() + ", ";
     }
 
-    return output.substring(0, output.length() - 2);
+    return "[" + output.substring(0, output.length() - 2) + "]";
   }
 
 
@@ -198,9 +207,9 @@ public class Hand {
     return true;
   }
 
-  public boolean getSuit(Card card) {
+  public boolean hasSuit(Suit suit) {
     for (int i = 0; i < hand.size(); i++) {
-      if (hand.get(i).getSuit().isEquals(card.getSuit())) {
+      if (hand.get(i).getSuit().isEquals(suit)) {
         return true;
       }
     }

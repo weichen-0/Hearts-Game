@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -49,16 +50,20 @@ public class Round {
             do {
                 int n = new Random().nextInt(4);
                 player = listOfPlayers.get(n);
-            } while (player.getHand().getNumberOfCards() == 13);
+            } while (player.getHandSize() == 13);
 
             player.getHand().addCard(currentCard);
         }
 
-        for (Player p : listOfPlayers) {
-            System.out.println(p.getHand());
+        System.out.printf("YOUR HAND> %s%n", listOfPlayers.get(0).getHand());
+
+        for (int i = 1; i < listOfPlayers.size(); i++) {
+            System.out.printf("COM%d HAND> %s%n", i, listOfPlayers.get(i).getHand());
         }
     }
 
+
+    // INCOMPLETE
     public void exchangeCards() {
         HumanExchangeCards();
 

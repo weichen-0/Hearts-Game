@@ -171,6 +171,7 @@ public class Hand {
     for (Card card : hand) {
       output += card.toString() + ", ";
     }
+
     return output.substring(0, output.length() - 2);
   }
 

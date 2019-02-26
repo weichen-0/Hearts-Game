@@ -2,16 +2,24 @@ import java.util.ArrayList;
 
 public class Player {
 
+  private String name;
   private boolean isComputer;
   private int pointsFromCurrentRound = 0;
   private int totalPoints = 0;
   private Hand hand = new Hand();
 
-  public boolean isComputer(){
-      return this.isComputer;
+  public Player(String name, boolean isComputer) {
+    this.isComputer = isComputer;
+    this.name = name;
   }
 
-  public Player(boolean isComputer) { this.isComputer = isComputer;  }
+  public String getName() {
+      return name;
+  }
+
+  public boolean isComputer(){
+    return this.isComputer;
+  }
 
   public int getPointsFromCurrentRound() {
     return pointsFromCurrentRound;
@@ -34,4 +42,5 @@ public class Player {
   public void sortHand() { hand.sort(); }
 
   public int getHandSize() { return hand.getNumberOfCards(); }
+
 }

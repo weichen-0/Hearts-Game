@@ -13,10 +13,17 @@ public class Round {
 
     public Round() {
         listOfPlayers = new ArrayList<>();
-        listOfPlayers.add(new Player(false));
-        listOfPlayers.add(new Player(true));
-        listOfPlayers.add(new Player(true));
-        listOfPlayers.add(new Player(true));
+        listOfPlayers.add(new Player("YOUR", false));
+        listOfPlayers.add(new Player("COM1", true));
+        listOfPlayers.add(new Player("COM2", true));
+        listOfPlayers.add(new Player("COM3", true));
+    }
+
+    public void printPoints() {
+        System.out.printf("##### CURRENT SCOREBOARD #####%n");
+        for (Player p : listOfPlayers) {
+            System.out.printf("%s SCORE > %d%n", p.getName(), p.getTotalPoints());
+        }
     }
 
     public int getRoundNum() {
@@ -40,6 +47,20 @@ public class Round {
     }
 
     public void startRound() {
+        printPoints();
+
+        System.out.printf("ROUND %d%n%n", roundNum);
+
+        distributeCard();
+
+        System.out.printf("YOUR HAND > %s%n", listOfPlayers.get(0).getHand());
+
+        for (int i = 1; i < listOfPlayers.size(); i++) {
+            System.out.printf("COM%d HAND > %s%n", i, listOfPlayers.get(i).getHand());
+        }
+    }
+
+    public void distributeCard() {
         Deck d = new Deck();
         d.shuffle();
         Player player = null;
@@ -53,12 +74,6 @@ public class Round {
             } while (player.getHandSize() == 13);
 
             player.getHand().addCard(currentCard);
-        }
-
-        System.out.printf("YOUR HAND> %s%n", listOfPlayers.get(0).getHand());
-
-        for (int i = 1; i < listOfPlayers.size(); i++) {
-            System.out.printf("COM%d HAND> %s%n", i, listOfPlayers.get(i).getHand());
         }
     }
 

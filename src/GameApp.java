@@ -7,7 +7,7 @@ public class GameApp {
         Round round = new Round();
 
         //while (round.getHighestScore() < 100) {
-            round.startRound();
+        round.startRound();
 
         //}
 

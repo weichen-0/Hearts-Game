@@ -1,5 +1,6 @@
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -76,11 +77,27 @@ public class Round {
     }
 
     public void printAllHands() {
+        printAlignedOptions();
+
         System.out.printf("YOUR HAND > %s%n", listOfPlayers.get(0).getHand());
 
         for (int i = 1; i < listOfPlayers.size(); i++) {
             System.out.printf("COM%d HAND > %s%n", i, listOfPlayers.get(i).getHand());
         }
+    }
+
+    public void printAlignedOptions() {
+        String output = "              ";
+
+        for (int i = 1; i <= 14 - roundNum; i++) {
+            output += "[" + i + "]";
+
+            if (i % 3 == 0 && i < 7) {
+                output += "     ";
+
+            } else output += "    ";
+        }
+        System.out.println(output);
     }
 
     // INCOMPLETE
@@ -89,11 +106,12 @@ public class Round {
 
     }
 
-    public void PlayerExchangeCards() {
+    public void getPlayerExchangeCards() {
         Scanner sc = new Scanner(System.in);
+        String[] order = new String[]{"first", "second", "third"};
 
-        for (int i = 1; i <= 3; i++) {
-            System.out.println("Select" + i + " card to be Pass");
+        for (int i = 0; i < 3; i++) {
+            System.out.printf("Please select %s card to pass", order[i]);
             System.out.print("Select the Suite: ");
             String suit = sc.nextLine();
             System.out.print("Select the Rank: ");

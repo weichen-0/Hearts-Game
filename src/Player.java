@@ -25,8 +25,8 @@ public class Player {
     return pointsFromCurrentRound;
   }
 
-  public void setPointsFromCurrentRound(int pointsFromCurrentRound) {
-    this.pointsFromCurrentRound = pointsFromCurrentRound;
+  public void addToPointsFromCurrentRound(int points) { // points from set
+    this.pointsFromCurrentRound += points;
   }
 
   public int getTotalPoints() {

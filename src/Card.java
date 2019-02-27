@@ -15,173 +15,186 @@ import javax.swing.*;
  * @version 1.0
  */
 public class Card implements Comparable {
-    
-   // instance variables for the card 
-   private Suit suitValue;
-   private Rank rankValue;
-   private ImageIcon cardImage;
-   private static boolean sortRankMajorOrder = false;
-   private int point;
+
+    // instance variables for the card
+    private Suit suitValue;
+    private Rank rankValue;
+    private ImageIcon cardImage;
+    private static boolean sortRankMajorOrder = false;
+    private int point;
 
 
-  /**
-   * Creates a new playing card.
-   * @param suitValue the suit value of this card.
-   * @param rankValue the rank value of this card.
-   * @param cardImage the face image of this card.
-   */
-   public Card( Suit suitValue, Rank rankValue, ImageIcon cardImage) {
-      this.cardImage = cardImage;
-      this.suitValue = suitValue;
-      this.rankValue = rankValue;
+    /**
+     * Creates a new playing card.
+     *
+     * @param suitValue the suit value of this card.
+     * @param rankValue the rank value of this card.
+     * @param cardImage the face image of this card.
+     */
+    public Card(Suit suitValue, Rank rankValue, ImageIcon cardImage) {
+        this.cardImage = cardImage;
+        this.suitValue = suitValue;
+        this.rankValue = rankValue;
 
-      if (suitValue.getSymbol().equals("s") && rankValue.getSymbol().equals("q")) {
-          this.point = 13;
-      } else if (suitValue.getSymbol().equals("h")) {
-          this.point = 1;
-      } else this.point = 0;
-   }
-    
-    
-  /**
-   * Generates the filename associated with the card.  <code>getFilename</code> assumes that all of the standard card images
-   * are stored in individual files using filenames in the form of:
-   * <b>RS.gif</b> where <b>R</b> is a single character used to represent
-   * the rank value of the card and <b>S</b> is a single character used to represent
-   * the suit value of the card.
-   * <p>The characters used for <b>R</b> are:
-   * 'a' (ace), '2', '3', '4', '5', '6', '7', '8', '9',
-   * 't' (10), 'j' (jack), 'q' (queen), and 'k' (king).
-   * <p>The characters used for <b>S</b> are:
-   * 'c' (clubs), 'd' (diamonds), 'h' (hearts), and 's' (spades).
-   * <p>Two other cards are also available: "b.gif" (back of card) and "j.gif" (joker).
-   *
-   * @param suitValue the suit value of the card.
-   * @param rankValue the rank value of the card.
-   * @return a string containing the filename of the card.
-   */
-   public static String getFilename(Suit suitValue, Rank rankValue) {
-      return rankValue.getSymbol() + suitValue.getSymbol() + ".gif";
-   }
+        if (suitValue.isEquals(Suit.SPADES) && rankValue.isEquals(Rank.QUEEN)) {
+            this.point = 13;
+        } else if (suitValue.isEquals(Suit.HEARTS)) {
+            this.point = 1;
+        } else this.point = 0;
+    }
 
 
-  /**
-   * Returns the suit of the card.
-   * @return a Suit constant representing the suit value of the card.
-   */
-   public Suit getSuit() {
-      return suitValue;
-   }
+    /**
+     * Generates the filename associated with the card.  <code>getFilename</code> assumes that all of the standard card images
+     * are stored in individual files using filenames in the form of:
+     * <b>RS.gif</b> where <b>R</b> is a single character used to represent
+     * the rank value of the card and <b>S</b> is a single character used to represent
+     * the suit value of the card.
+     * <p>The characters used for <b>R</b> are:
+     * 'a' (ace), '2', '3', '4', '5', '6', '7', '8', '9',
+     * 't' (10), 'j' (jack), 'q' (queen), and 'k' (king).
+     * <p>The characters used for <b>S</b> are:
+     * 'c' (clubs), 'd' (diamonds), 'h' (hearts), and 's' (spades).
+     * <p>Two other cards are also available: "b.gif" (back of card) and "j.gif" (joker).
+     *
+     * @param suitValue the suit value of the card.
+     * @param rankValue the rank value of the card.
+     * @return a string containing the filename of the card.
+     */
+    public static String getFilename(Suit suitValue, Rank rankValue) {
+        return rankValue.getSymbol() + suitValue.getSymbol() + ".gif";
+    }
 
 
-  /**
-   * Returns the rank of the card.
-   * @return a Rank constant representing the rank value of the card.
-   */
-   public Rank getRank() {
-      return rankValue;
-   }
+    /**
+     * Returns the suit of the card.
+     *
+     * @return a Suit constant representing the suit value of the card.
+     */
+    public Suit getSuit() {
+        return suitValue;
+    }
 
 
-  /**
-   * Returns the graphic image of the card.
-   * @return an icon containing the graphic image of the card.
-   */
-   public ImageIcon getCardImage() {
-      return cardImage;
-   }
+    /**
+     * Returns the rank of the card.
+     *
+     * @return a Rank constant representing the rank value of the card.
+     */
+    public Rank getRank() {
+        return rankValue;
+    }
 
 
-  /**
-   * Returns a description of this card.
-   * @return the name of the card.
-   */
-   public String toString() {
-      return rankValue.toString() + " " + suitValue.toString();
-   }
-  
-  
-  /**
-   * Returns a description of the rank of this card.
-   * @return the rank value of the card as a string.
-   */
-   public String rankToString() {
-      return rankValue.toString();
-   }
+    /**
+     * Returns the graphic image of the card.
+     *
+     * @return an icon containing the graphic image of the card.
+     */
+    public ImageIcon getCardImage() {
+        return cardImage;
+    }
 
 
-  /**
-   * Returns a description of the suit of this card.
-   * @return the suit value of the card as a string.
-   */
-   public String suitToString() {
-      return suitValue.toString();
-   }
+    /**
+     * Returns a description of this card.
+     *
+     * @return the name of the card.
+     */
+    public String toString() {
+        return rankValue.toString() + " " + suitValue.toString();
+    }
 
 
-  /**
-   * Specifies that cards are to be sorted in rank-major order.  Cards are ordered
-   * first by their rank value; cards of the same rank are then ordered by their
-   * suit value.
-   */
-   public static void setRankMajorSort() {
-      sortRankMajorOrder = true;
-   }
-   
-   
-  /**
-   * Specifies that cards are to be sorted in suit-major order.  Cards are ordered
-   * first by their suit value; cards of the same suit are then ordered by their
-   * rank value.
-   */
-   public static void setSuitMajorSort() {
-      sortRankMajorOrder = false;
-   }
-   
-   
-  /**
-   * Compares two cards for the purposes of sorting.  
-   * Cards are ordered first by their suit value, then by their
-   * rank value.
-   * @param otherCardObject the other card
-   * @return a negative integer, zero, or a positive integer is this card is
-   * less than, equal to, or greater than the referenced card.
-   */
-   public int compareTo( Object otherCardObject ) {
-      Card otherCard = (Card) otherCardObject;
-      int suitDiff = suitValue.compareTo( otherCard.suitValue );
-      int rankDiff = rankValue.compareTo( otherCard.rankValue );
-      
-      if (sortRankMajorOrder) {
-         if (rankDiff != 0 )
-            return rankDiff;
-         else
-            return suitDiff;
-      }
-      else {
-         if (suitDiff != 0 )
-            return suitDiff;
-         else
-            return rankDiff;
-      }
-   }
+    /**
+     * Returns a description of the rank of this card.
+     *
+     * @return the rank value of the card as a string.
+     */
+    public String rankToString() {
+        return rankValue.toString();
+    }
 
 
-  /**
-   * Compares two cards to determine if they have the same value.
-   * This is not the same as the use of <code>equals</code> which compares
-   * two objects for equality.
-   * @param card the other card
-   * @return <code>true</code> if the two cards have the same rank and suit
-   * values, <code>false</code> if they do not.
-   */
-   public boolean isSameAs( Card card ) {
-      if ( ( rankValue != card.rankValue ) || ( suitValue != card.suitValue ) )
-         return false;
-      else
-         return true;
-   }
+    /**
+     * Returns a description of the suit of this card.
+     *
+     * @return the suit value of the card as a string.
+     */
+    public String suitToString() {
+        return suitValue.toString();
+    }
 
-   public int getPoint() {return point;}
+
+    /**
+     * Specifies that cards are to be sorted in rank-major order.  Cards are ordered
+     * first by their rank value; cards of the same rank are then ordered by their
+     * suit value.
+     */
+    public static void setRankMajorSort() {
+        sortRankMajorOrder = true;
+    }
+
+
+    /**
+     * Specifies that cards are to be sorted in suit-major order.  Cards are ordered
+     * first by their suit value; cards of the same suit are then ordered by their
+     * rank value.
+     */
+    public static void setSuitMajorSort() {
+        sortRankMajorOrder = false;
+    }
+
+
+    /**
+     * Compares two cards for the purposes of sorting.
+     * Cards are ordered first by their suit value, then by their
+     * rank value.
+     *
+     * @param otherCardObject the other card
+     * @return a negative integer, zero, or a positive integer is this card is
+     * less than, equal to, or greater than the referenced card.
+     */
+    public int compareTo(Object otherCardObject) {
+        Card otherCard = (Card) otherCardObject;
+        int suitDiff = suitValue.compareTo(otherCard.suitValue);
+        int rankDiff = rankValue.compareTo(otherCard.rankValue);
+
+        if (sortRankMajorOrder) {
+            if (rankDiff != 0)
+                return rankDiff;
+            else
+                return suitDiff;
+        } else {
+            if (suitDiff != 0)
+                return suitDiff;
+            else
+                return rankDiff;
+        }
+    }
+
+
+    //TODO: update documentation
+
+//    /**
+//     * Compares two cards to determine if they have the same value.
+//     * This is not the same as the use of <code>equals</code> which compares
+//     * two objects for equality.
+//     *
+//     * @param Card the other card
+//     * @return <code>true</code> if the two cards have the same rank and suit
+//     * values, <code>false</code> if they do not.
+//     */
+    public boolean equals(Object cardObject) {
+        if (!(cardObject instanceof Card)) {
+            return false;
+        }
+        Card card = (Card) cardObject;
+        return rankValue == card.rankValue && suitValue == card.suitValue;
+    }
+
+    public int getPoint() {
+        return point;
+    }
 
 }

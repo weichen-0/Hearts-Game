@@ -237,18 +237,20 @@ public class Round {
 
         if (!player.getIsPlayer()) {
             ArrayList<Card> cardsSortedByRank = playerHand.getCardsSortedByRank();
-            Card queenSpades = new Card(Suit.SPADES, Rank.QUEEN, null);
-            if (roundNum == 1) {
-                for (Card card : cardsSortedByRank) {
-                    if (!card.getSuit().isEquals(Suit.HEARTS) || !card.equals(queenSpades)) {
-                        cardPlayed = card;
-                        return cardPlayed;
-                    }
-            }
-                cardPlayed = cardsSortedByRank.get(0);
-            } else {
-                if (set.getLeadingSuit())
-            }
+
+            int totalCardsInSet = set.getCardsCount();
+
+            switch (set.getCardsCount()) {
+                case 0:
+                    Card twoClubs = new Card(Suit.CLUBS, Rank.TWO, null);
+                    if (playerHand.containsCard(twoClubs)) cardPlayed = twoClubs; return cardPlayed;
+                    return playerHand.getPlayingCardForCom(heartsBroken, true);
+                case 3:
+                    Suit leadingSuit = set.getLeadingSuit();
+                    if (playerHand.hasSuit(leadingSuit)) return playerHand.getHighestCardOfSuit(leadingSuit);
+                    return playerHand.getPlayingCardForCom(heartsBroken, false);
+                default:
+
         }
 
         printAlignedOptions(14 - roundNum);

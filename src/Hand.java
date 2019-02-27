@@ -233,4 +233,44 @@ public class Hand {
         return false;
     }
 
+    //returns the smallest/largest card in hand based on the boolean heartsBroken
+    public Card getPlayingCardForCom(boolean heartsBroken, boolean wantSmallest) {
+        if (wantSmallest) {
+            if (heartsBroken) {
+                return hand.get(0);
+            }
+            for (Card card : getCardsSortedByRank()) {
+                if (!card.getSuit().isEquals(Suit.HEARTS)) {
+                    return card;
+                }
+            }
+        }
+
+        if (heartsBroken) {
+            return hand.get(hand.size() - 1);
+        }
+
+        for (int i = hand.size() - 1; i > -1; i--) {
+            Card card = hand.get(i);
+            if (!card.getSuit().isEquals(Suit.HEARTS)) {
+                return card;
+            }
+        }
+        return null;
+    }
+
+
+
+        public Card getHighestCardOfSuit(Suit suit) {
+            Card highestCardOFSuit = null;
+            for (int i = hand.size() - 1; i > -1; i--) {
+                Card card = hand.get(i);
+                if (card.getSuit().isEquals(suit)) {
+                    return card;
+                }
+            }
+            return null;
+        }
+
+
 }

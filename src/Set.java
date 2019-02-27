@@ -63,7 +63,7 @@ public class Set {
         // Extra validation for non-first cards in the set
         if(cards.size() > 0){
             // Check if player chooses card that follows leading suit, if available.
-            Suit firstSuit = cards.get(0).getSuit();
+            Suit firstSuit = getLeadingSuit();
             if (!suitPlayed.isEquals(firstSuit)) {
                 if (playerHand.hasSuit(firstSuit)) {
                     System.out.println("You must play a card of the leading suit if available");

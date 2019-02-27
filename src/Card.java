@@ -197,4 +197,12 @@ public class Card implements Comparable {
         return point;
     }
 
+    public boolean isPointCard() {
+        Card queenSpades = new Card(Suit.SPADES, Rank.QUEEN, null);
+        if (getSuit().isEquals(Suit.HEARTS) || equals(queenSpades)) {
+            return true;
+        }
+        return false;
+    }
+
 }

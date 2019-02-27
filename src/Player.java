@@ -33,13 +33,11 @@ public class Player {
     return totalPoints;
   }
 
-  public void setTotalPoints(int totalPoints) {
+  public void tallyTotalPoints(int totalPoints) {
     this.totalPoints = totalPoints;
   }
 
   public Hand getHand() { return hand; }
-
-  public void sortHand() { hand.sort(); }
 
   public int getHandSize() { return hand.getNumberOfCards(); }
 

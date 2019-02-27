@@ -85,12 +85,20 @@ public class Set {
 
 
     public int getPoints() {
-        int totalPoint = 0;
+        int setPoint = 0;
+
         for (Card card : cards) {
-            System.out.printf("%s: %d  ", card, card.getPoint());
-            totalPoint += card.getPoint();
+            setPoint += card.getPoint();
         }
         System.out.println();
-        return totalPoint;
+        return setPoint;
+    }
+
+    public void printCardsInSet() {
+        System.out.printf("%nCards played this Set > [");
+        for (Card card : cards) {
+            System.out.printf("%s:%d ", card, card.getPoint());
+        }
+        System.out.println("]");
     }
 }

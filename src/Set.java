@@ -8,6 +8,24 @@ public class Set {
         return cards;
     }
 
+    public Suit getLeadingSuit() {
+        if (cards.size() == 0) {
+            return null;
+        }
+        return cards.get(0).getSuit();
+    }
+
+    public Card getLargetCard() {
+        Card largestCard = null;
+        Card firstCard = cards.get(0);
+        for (Card card : cards) {
+            if (card.getSuit().isEquals(firstCard.getSuit()) && card.getRank().compareTo(firstCard.getRank()) > 0) {
+                largestCard = card;
+            }
+        }
+        return largestCard;
+    }
+
     public int getCardsCount(){
         return cards.size();
     }

@@ -184,19 +184,12 @@ public class Round {
     }
 
     public ArrayList<Card> choose3CardsToPass(Player passingPlayer) {
+        Hand playerHand = passingPlayer.getHand();
         if (!passingPlayer.getIsPlayer()) {
-            ArrayList<Card> cardList = new ArrayList<>(passingPlayer.getHand().getCardList());
-            Collections.sort(cardList, new Comparator<Card>() {
-                @Override
-                public int compare(Card card1, Card card2) {
-                    return -1 * card1.getRank().compareTo(card2.getRank());
-                }
-            });
-
-            return new ArrayList<>(cardList.subList(0, 3));
+            ArrayList<Card> cardsSortedByRank = playerHand.getCardsSortedByRank();
+            return (ArrayList<Card>) cardsSortedByRank.subList(0, 3);
         }
 
-        Hand playerHand = passingPlayer.getHand();
         String[] order = new String[]{"first", "second", "third"};
         ArrayList<Card> passList = new ArrayList<>(); // Ints
         Scanner sc = new Scanner(System.in);
@@ -239,14 +232,29 @@ public class Round {
 
     public Card chooseCardToPlay(Player player, Set set) {
         Hand playerHand = player.getHand();
-        int numCardsOnHand = playerHand.getCardList().size();
+        int numCardsOnHand = playerHand.getNumberOfCards();
+        Card cardPlayed = null;
+
+        if (!player.getIsPlayer()) {
+            ArrayList<Card> cardsSortedByRank = playerHand.getCardsSortedByRank();
+            Card queenSpades = new Card(Suit.SPADES, Rank.QUEEN, null);
+            if (roundNum == 1) {
+                for (Card card : cardsSortedByRank) {
+                    if (!card.getSuit().isEquals(Suit.HEARTS) || !card.equals(queenSpades)) {
+                        cardPlayed = card;
+                        return cardPlayed;
+                    }
+            }
+                cardPlayed = cardsSortedByRank.get(0);
+            } else {
+                if (set.getLeadingSuit())
+            }
+        }
 
         printAlignedOptions(14 - roundNum);
         System.out.printf("Your Hand > %s%n", playerHand.getCardList());
         System.out.printf("Set contains > %s%n", set.getCards());
         Scanner sc = new Scanner(System.in);
-
-        Card cardPlayed = null;
 
         while (cardPlayed == null) {
             System.out.print("Enter card index > ");

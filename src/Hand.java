@@ -7,6 +7,8 @@
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 
 /**
@@ -32,14 +34,14 @@ public class Hand {
      */
     public void addCard(Card card) {
         hand.add(card);
-        sort();
+        sortBySuit();
     }
 
     public void addCards(ArrayList<Card> cardList) {
         for (Card card : cardList) {
             hand.add(card);
         }
-        sort();
+        sortBySuit();
     }
 
     public ArrayList<Card> getCardList() {
@@ -115,8 +117,19 @@ public class Hand {
      * Sorts the card in the hand.
      * Sort is performed according to the order specified in the {@link Card} class.
      */
-    public void sort() {
+    public void sortBySuit() {
         Collections.sort(hand);
+    }
+
+    public ArrayList<Card> getCardsSortedByRank() {
+        ArrayList<Card> cardList = new ArrayList<>(hand);
+        Collections.sort(cardList, new Comparator<Card>() {
+            @Override
+            public int compare(Card card1, Card card2) {
+                return -1 * card1.getRank().compareTo(card2.getRank());
+            }
+        });
+        return new ArrayList<>(cardList);
     }
 
 

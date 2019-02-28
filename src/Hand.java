@@ -126,7 +126,7 @@ public class Hand {
         Collections.sort(cardList, new Comparator<Card>() {
             @Override
             public int compare(Card card1, Card card2) {
-                return -1 * card1.getRank().compareTo(card2.getRank());
+                return card1.getRank().compareTo(card2.getRank());
             }
         });
         return new ArrayList<>(cardList);
@@ -233,19 +233,36 @@ public class Hand {
         return false;
     }
 
-    public Card chooseNextHighestComCard(Suit leadingSuit, Card card) {
+    public Card getNextHighestComCard(Suit leadingSuit, Card card, boolean isFirstSet) {
+        // assume method only gets called by chooseCardToPlayer in Round class
+        // only called in situations where player is non-first player
+
         if (hasSuit(leadingSuit)) return getNextHighestCard(leadingSuit, card);
 
+        // returned card is of different suit from leadingSuit
         List<Card> cardsSortedByRank = getCardsSortedByRank();
         int totalSize = cardsSortedByRank.size();
 
+        if(!isFirstSet) return cardsSortedByRank.get(totalSize - 1);
+
+        for (int i = totalSize - 1; i >= 0; i--) {
+            Card cardPlayed = cardsSortedByRank.get(i);
+            if (!cardPlayed.isPointCard()) {
+                return cardPlayed;
+            }
+        }
         return cardsSortedByRank.get(totalSize - 1);
     }
 
     public Card getSmallestComCard(boolean heartsBroken) {
+        // assume method only gets called by chooseCardToPlayer in Round class
+        // only called in situations where player is first player
+
         Card twoClubs = new Card(Suit.CLUBS, Rank.TWO, null);
         if (containsCard(twoClubs)) return twoClubs;
 
+        // if player's deck doesn't contain two clubs this is not the first set
+        // any point card can be played, if heartsBroken == true
         List<Card> cardsSortedByRank = getCardsSortedByRank();
         if (heartsBroken) return cardsSortedByRank.get(0);
 
@@ -260,17 +277,14 @@ public class Hand {
 
 
     public Card getNextHighestCard(Suit suit, Card highestCard) {
-        if (highestCard == null) {
-            for (int i = hand.size() - 1; i > -1; i--) {
-                Card card = hand.get(i);
-                if (card.getSuit().isEquals(suit)) return card;
-            }
-        }
-
-        for (int i = hand.size() - 1; i > -1; i--) {
+        // this method is only called if hand has at least one card with the same suit as highestCard
+        Card smallestLegalCard = null;
+        for (int i = hand.size() - 1; i >= 0; i--) {
             Card card = hand.get(i);
-            if (card.isSameSuitAndSmallerThan(highestCard)) return card;
+            if (!card.getSuit().isEquals(suit)) continue;
+            if (highestCard == null || card.getRank().compareTo(highestCard.getRank()) < 0) return card;
+            smallestLegalCard = card;
         }
-        return null;
+        return smallestLegalCard;
     }
 }

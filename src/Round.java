@@ -6,15 +6,15 @@ public class Round {
 
     // index 0 is always Human Player
     private static ArrayList<Player> listOfPlayers;
-    private boolean heartsBroken = false; //TODO: keep? not keep?
+    private boolean isHeartsBroken = false;
     private int roundNum = 1;
 
     public Round() {
         listOfPlayers = new ArrayList<>();
-        listOfPlayers.add(new Player("PLAYER", true));
         listOfPlayers.add(new Player("COM1", false));
         listOfPlayers.add(new Player("COM2", false));
         listOfPlayers.add(new Player("COM3", false));
+        listOfPlayers.add(new Player("PLAYER", true));
         System.out.println();
     }
 
@@ -25,6 +25,17 @@ public class Round {
                 System.out.printf("YOUR score > %d%n", p.getTotalPoints());
             } else
                 System.out.printf("%s score > %d%n", p.getName(), p.getTotalPoints());
+        }
+        System.out.println();
+    }
+
+    public void printRoundScoreBoard() {
+        System.out.printf("[ROUND %d SCOREBOARD]%n", roundNum);
+        for (Player p : listOfPlayers) {
+            if (p.getIsPlayer()) {
+                System.out.printf("YOUR score > %d%n", p.getPointsFromCurrentRound());
+            } else
+                System.out.printf("%s score > %d%n", p.getName(), p.getPointsFromCurrentRound());
         }
         System.out.println();
     }
@@ -80,20 +91,23 @@ public class Round {
                 while (!cardPlayedIsValid) {
                     Card cardPlayed = chooseCardToPlay(player, set);
                     System.out.printf("%s picked %s%n", player.getName(), cardPlayed);
-                    if (set.addCardToSet(player, cardPlayed)) {
+                    if (set.addCardToSet(player, cardPlayed, isHeartsBroken)) {
                         cardPlayedIsValid = true;
+                        if (cardPlayed.isPointCard()) isHeartsBroken = true;
                         player.getHand().removeCard(cardPlayed);
                     }else{
-                        System.out.println("Invalid card played. Try again %n");
+                        System.out.printf("Invalid card played. Try again %n");
                     }
                 }
             }
             startPlayerIndex = (startPlayerIndex + set.getHighestCardIndex()) % 4;
             Player winningPlayerOfSet = listOfPlayers.get(startPlayerIndex);
             set.printCardsInSet();
-            tallyPoints(set, winningPlayerOfSet);
-            printScoreBoard();
+            tallyPointsForSet(set, winningPlayerOfSet);
+            printRoundScoreBoard();
         }
+        System.out.printf("========== End of Round %d ==========%n%n", roundNum);
+        tallyPointsForRound();
         roundNum++;
     }
 
@@ -187,15 +201,18 @@ public class Round {
         Hand playerHand = passingPlayer.getHand();
         if (!passingPlayer.getIsPlayer()) {
             ArrayList<Card> cardsSortedByRank = playerHand.getCardsSortedByRank();
-            return (ArrayList<Card>) cardsSortedByRank.subList(0, 3);
+            int numCardsOnHand = cardsSortedByRank.size();
+            //choose 3 largest cards to pass
+            return new ArrayList<>(cardsSortedByRank.subList(numCardsOnHand-3, numCardsOnHand));
         }
 
         String[] order = new String[]{"first", "second", "third"};
         ArrayList<Card> passList = new ArrayList<>(); // Ints
         Scanner sc = new Scanner(System.in);
 
+        System.out.println();
         for (int i = 0; i < 3; i++) {
-            System.out.printf("%nPlease select %s card to pass%n", order[i]);
+            System.out.printf("Please select %s card to pass%n", order[i]);
             Card passCard = null;
 
             while (passCard == null) {
@@ -234,36 +251,41 @@ public class Round {
         Hand playerHand = player.getHand();
         int numCardsOnHand = playerHand.getNumberOfCards();
         Card cardPlayed = null;
-        Suit leadingSuit = set.getLeadingSuit();
 
         if (!player.getIsPlayer()) {
-            ArrayList<Card> cardsSortedByRank = playerHand.getCardsSortedByRank();
+            // start of temp printing lines
+            printAlignedOptions(numCardsOnHand);
+            System.out.printf("%s Hand > %s%n", player.getName(), playerHand.getCardList());
+            System.out.printf("Set contains > %s%n", set.getCards());
+            //end of lines
+
             int totalCardsInSet = set.getCardsCount();
+            Suit leadingSuit = set.getLeadingSuit();
+            boolean isFirstSet = numCardsOnHand == 13;
 
             switch (totalCardsInSet) {
-                case 0:
-                    cardPlayed = playerHand.getSmallestComCard(heartsBroken);
+                case 0: // COM is first player
+                    cardPlayed = playerHand.getSmallestComCard(isHeartsBroken);
                     break;
-                case 3:
-                    cardPlayed = playerHand.chooseNextHighestComCard(leadingSuit, null);
+                case 3: // COM is last player
+                    cardPlayed = playerHand.getNextHighestComCard(leadingSuit, null, isFirstSet);
                     break;
                 default:
                     Card winningCard = set.getWinningCard();
-                    cardPlayed = playerHand.chooseNextHighestComCard(leadingSuit, winningCard);
+                    cardPlayed = playerHand.getNextHighestComCard(leadingSuit, winningCard, isFirstSet);
                     break;
             }
-            if (cardPlayed.isPointCard()) heartsBroken = true;
             return cardPlayed;
         }
 
-        printAlignedOptions(14 - roundNum);
+        printAlignedOptions(numCardsOnHand);
         System.out.printf("Your Hand > %s%n", playerHand.getCardList());
         System.out.printf("Set contains > %s%n", set.getCards());
         Scanner sc = new Scanner(System.in);
 
         while (cardPlayed == null) {
             System.out.print("Enter card index > ");
-            int index = 0;
+            int index;
 
             try {
                 index = parseInt(sc.nextLine());
@@ -282,13 +304,12 @@ public class Round {
         return cardPlayed;
     }
 
-
-    public void tallyPoints(Set set, Player player) {
+    public void tallyPointsForSet(Set set, Player player) {
         int pointsInSet = set.getPoints();
         String title;
 
         if (player.getIsPlayer()) {
-            title = "YOU";
+            title = "You";
         } else {
             title = player.getName();
         }
@@ -296,6 +317,27 @@ public class Round {
         System.out.printf("%s won this set and got %d points%n%n", title, pointsInSet);
 
         player.addToPointsFromCurrentRound(pointsInSet);
+    }
+
+    public void tallyPointsForRound() {
+        Player shootTheMoonPlayer = null;
+        for(Player player : listOfPlayers){
+            if(player.getPointsFromCurrentRound() == 26){
+                shootTheMoonPlayer = player;
+                break;
+            }
+        }
+
+        for(Player player : listOfPlayers){
+            if(shootTheMoonPlayer != null){
+                if(player != shootTheMoonPlayer) {
+                    player.addToTotalPoints(26);
+                }
+            }else{
+                player.addToTotalPoints(player.getPointsFromCurrentRound());
+            }
+            player.resetPointsFromCurrentRound();
+        }
     }
 
 }

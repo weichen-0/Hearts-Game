@@ -205,11 +205,4 @@ public class Card implements Comparable {
         return false;
     }
 
-    public boolean isSameSuitAndSmallerThan(Card anotherCard) {
-        if (getSuit().isEquals(anotherCard.getSuit()) && getRank().compareTo(anotherCard.getRank()) < 0) {
-            return true;
-        }
-        return false;
-    }
-
 }

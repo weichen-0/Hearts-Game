@@ -2,35 +2,24 @@ import java.util.ArrayList;
 
 public class Set {
     private ArrayList<Card> cards = new ArrayList<>();
-    private static boolean isHeartBroken = false;
 
     public ArrayList<Card> getCards(){
         return cards;
     }
 
     public Suit getLeadingSuit() {
+        //TODO: raise exception if there isn't at least 1 card in set
         if (cards.size() == 0) {
             return null;
         }
         return cards.get(0).getSuit();
     }
 
-    public Card getWinningCard() {
-        Card largestCard = null;
-        Card firstCard = cards.get(0);
-        for (Card card : cards) {
-            if (card.getSuit().isEquals(firstCard.getSuit()) && card.getRank().compareTo(firstCard.getRank()) > 0) {
-                largestCard = card;
-            }
-        }
-        return largestCard;
-    }
-
     public int getCardsCount(){
         return cards.size();
     }
 
-    public boolean addCardToSet(Player player, Card cardPlayed) {
+    public boolean addCardToSet(Player player, Card cardPlayed, boolean isHeartBroken) {
 
         // Check if player truly has card that it wants to play
         Hand playerHand = player.getHand();
@@ -86,7 +75,7 @@ public class Set {
 
     public int getHighestCardIndex() {
         int index = 0;
-        Card highestCard = cards.get(0); //TODO: raise exception if there aren't 4 cards in set
+        Card highestCard = cards.get(0); //TODO: raise exception if there isn't at least 1 card in set
 
         for (int i = 1; i < cards.size(); i++) {
             Card current = cards.get(i);
@@ -99,6 +88,18 @@ public class Set {
             }
         }
         return index;
+    }
+
+    public Card getWinningCard() {
+//        Card largestCard = null;
+//        Card firstCard = cards.get(0);
+//        for (Card card : cards) {
+//            if (card.getSuit().isEquals(firstCard.getSuit()) && card.getRank().compareTo(firstCard.getRank()) > 0) {
+//                largestCard = card;
+//            }
+//        }
+//        return largestCard;
+        return cards.get(getHighestCardIndex());
     }
 
 

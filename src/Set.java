@@ -15,7 +15,7 @@ public class Set {
         return cards.get(0).getSuit();
     }
 
-    public Card getLargetCard() {
+    public Card getWinningCard() {
         Card largestCard = null;
         Card firstCard = cards.get(0);
         for (Card card : cards) {
@@ -61,7 +61,7 @@ public class Set {
         }
 
         // Extra validation for non-first cards in the set
-        if(cards.size() > 0){
+        if(cards.size() > 0) {
             // Check if player chooses card that follows leading suit, if available.
             Suit firstSuit = getLeadingSuit();
             if (!suitPlayed.isEquals(firstSuit)) {

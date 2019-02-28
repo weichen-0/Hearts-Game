@@ -6,7 +6,7 @@ public class Round {
 
     // index 0 is always Human Player
     private static ArrayList<Player> listOfPlayers;
-    private boolean heartsBroken; //TODO: keep? not keep?
+    private boolean heartsBroken = false; //TODO: keep? not keep?
     private int roundNum = 1;
 
     public Round() {
@@ -63,8 +63,8 @@ public class Round {
         Card twoClubs = new Card(Suit.CLUBS, Rank.TWO, null); // to update image
         int startPlayerIndex = 0;
         for (; startPlayerIndex < 4; startPlayerIndex++) {
-            Hand playerhand = listOfPlayers.get(startPlayerIndex).getHand();
-            if (playerhand.containsCard(twoClubs)) {
+            Hand playerHand = listOfPlayers.get(startPlayerIndex).getHand();
+            if (playerHand.containsCard(twoClubs)) {
                 break;
             }
         }
@@ -234,23 +234,26 @@ public class Round {
         Hand playerHand = player.getHand();
         int numCardsOnHand = playerHand.getNumberOfCards();
         Card cardPlayed = null;
+        Suit leadingSuit = set.getLeadingSuit();
 
         if (!player.getIsPlayer()) {
             ArrayList<Card> cardsSortedByRank = playerHand.getCardsSortedByRank();
-
             int totalCardsInSet = set.getCardsCount();
 
-            switch (set.getCardsCount()) {
+            switch (totalCardsInSet) {
                 case 0:
-                    Card twoClubs = new Card(Suit.CLUBS, Rank.TWO, null);
-                    if (playerHand.containsCard(twoClubs)) cardPlayed = twoClubs; return cardPlayed;
-                    return playerHand.getPlayingCardForCom(heartsBroken, true);
+                    cardPlayed = playerHand.getSmallestComCard(heartsBroken);
+                    break;
                 case 3:
-                    Suit leadingSuit = set.getLeadingSuit();
-                    if (playerHand.hasSuit(leadingSuit)) return playerHand.getHighestCardOfSuit(leadingSuit);
-                    return playerHand.getPlayingCardForCom(heartsBroken, false);
+                    cardPlayed = playerHand.chooseNextHighestComCard(leadingSuit, null);
+                    break;
                 default:
-
+                    Card winningCard = set.getWinningCard();
+                    cardPlayed = playerHand.chooseNextHighestComCard(leadingSuit, winningCard);
+                    break;
+            }
+            if (cardPlayed.isPointCard()) heartsBroken = true;
+            return cardPlayed;
         }
 
         printAlignedOptions(14 - roundNum);
@@ -278,6 +281,7 @@ public class Round {
         }
         return cardPlayed;
     }
+
 
     public void tallyPoints(Set set, Player player) {
         int pointsInSet = set.getPoints();

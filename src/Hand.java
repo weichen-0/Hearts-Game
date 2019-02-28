@@ -233,44 +233,44 @@ public class Hand {
         return false;
     }
 
-    //returns the smallest/largest card in hand based on the boolean heartsBroken
-    public Card getPlayingCardForCom(boolean heartsBroken, boolean wantSmallest) {
-        if (wantSmallest) {
-            if (heartsBroken) {
-                return hand.get(0);
-            }
-            for (Card card : getCardsSortedByRank()) {
-                if (!card.getSuit().isEquals(Suit.HEARTS)) {
-                    return card;
-                }
-            }
-        }
+    public Card chooseNextHighestComCard(Suit leadingSuit, Card card) {
+        if (hasSuit(leadingSuit)) return getNextHighestCard(leadingSuit, card);
 
-        if (heartsBroken) {
-            return hand.get(hand.size() - 1);
-        }
+        List<Card> cardsSortedByRank = getCardsSortedByRank();
+        int totalSize = cardsSortedByRank.size();
 
-        for (int i = hand.size() - 1; i > -1; i--) {
-            Card card = hand.get(i);
+        return cardsSortedByRank.get(totalSize - 1);
+    }
+
+    public Card getSmallestComCard(boolean heartsBroken) {
+        Card twoClubs = new Card(Suit.CLUBS, Rank.TWO, null);
+        if (containsCard(twoClubs)) return twoClubs;
+
+        List<Card> cardsSortedByRank = getCardsSortedByRank();
+        if (heartsBroken) return cardsSortedByRank.get(0);
+
+        for (Card card : cardsSortedByRank) {
             if (!card.getSuit().isEquals(Suit.HEARTS)) {
                 return card;
             }
         }
+        System.out.println("getSmallestComCard() returned null");
         return null;
     }
 
 
-
-        public Card getHighestCardOfSuit(Suit suit) {
-            Card highestCardOFSuit = null;
+    public Card getNextHighestCard(Suit suit, Card highestCard) {
+        if (highestCard == null) {
             for (int i = hand.size() - 1; i > -1; i--) {
                 Card card = hand.get(i);
-                if (card.getSuit().isEquals(suit)) {
-                    return card;
-                }
+                if (card.getSuit().isEquals(suit)) return card;
             }
-            return null;
         }
 
-
+        for (int i = hand.size() - 1; i > -1; i--) {
+            Card card = hand.get(i);
+            if (card.isSameSuitAndSmallerThan(highestCard)) return card;
+        }
+        return null;
+    }
 }

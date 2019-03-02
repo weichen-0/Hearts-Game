@@ -13,6 +13,7 @@ import javax.swing.*;
  *
  * @author John K. Estell
  * @version 1.0
+ *
  */
 public class Card implements Comparable {
 

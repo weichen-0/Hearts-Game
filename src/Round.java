@@ -142,7 +142,7 @@ public class Round {
         String output = "                ";
 
         for (int i = 1; i <= numOfCards; i++) {
-            output += "[" + i + "]";
+            output += "[" + i + "]  ";
 
             if (i >= 11) {
                 output += "   ";

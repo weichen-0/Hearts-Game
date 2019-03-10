@@ -1,1 +1,1 @@
-javac -d classes -sourcepath src src/*.java
+javac -d classes -sourcepath src src/GameApp.java

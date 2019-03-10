@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Player {
 
   private String name;
@@ -18,12 +16,10 @@ public class Player {
   }
 
   public boolean getIsPlayer(){
-    return this.isPlayer;
+    return isPlayer;
   }
 
-  public int getPointsFromCurrentRound() {
-    return pointsFromCurrentRound;
-  }
+  public int getPointsFromCurrentRound() { return pointsFromCurrentRound }
 
   public void resetPointsFromCurrentRound() {
     pointsFromCurrentRound = 0;

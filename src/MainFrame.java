@@ -5,13 +5,11 @@ import javax.swing.JFrame;
 import javax.swing.border.EmptyBorder;
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import java.awt.FlowLayout;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.awt.Dimension;
 import javax.swing.JButton;
 import java.awt.event.ActionEvent;
@@ -67,6 +65,7 @@ public class MainFrame extends JFrame {
         nmsg = new JLabel("North");
         nmsg.setHorizontalAlignment(SwingConstants.CENTER);
         n.add(nmsg, BorderLayout.NORTH);
+
         s = new JPanel();
         contentPane.add(s, BorderLayout.SOUTH);
         s.setLayout(new BorderLayout(0, 0));
@@ -79,27 +78,31 @@ public class MainFrame extends JFrame {
         slist.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
         w = new JPanel();
-        contentPane.add(w, BorderLayout.WEST);
         w.setLayout(new BorderLayout(0, 0));
+        w.setPreferredSize(new Dimension(350, 100));
+        contentPane.add(w, BorderLayout.WEST);
 
         wput = new JPanel();
-        wput.setPreferredSize(new Dimension(70, 10));
+        wput.setPreferredSize(new Dimension(75, 10));
         w.add(wput, BorderLayout.EAST);
         wput.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
         wmsg = new JLabel("West");
+        wmsg.setVerticalAlignment(SwingConstants.TOP);
         w.add(wmsg, BorderLayout.WEST);
 
         e = new JPanel();
-        contentPane.add(e, BorderLayout.EAST);
         e.setLayout(new BorderLayout(0, 0));
+        e.setPreferredSize(new Dimension(350, 100));
+        contentPane.add(e, BorderLayout.EAST);
 
         eput = new JPanel();
-        eput.setPreferredSize(new Dimension(70, 10));
+        eput.setPreferredSize(new Dimension(75, 10));
         e.add(eput, BorderLayout.WEST);
         eput.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
         emsg = new JLabel("East");
+        emsg.setVerticalAlignment(SwingConstants.TOP);
         e.add(emsg, BorderLayout.EAST);
 
         JPanel desktop = new JPanel();
@@ -119,11 +122,12 @@ public class MainFrame extends JFrame {
         spanel.add(command, BorderLayout.SOUTH);
         command.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
-        Game game = new Game(1); //TODO change to game
-        game.startRound();
+        Game game = new Game(1);
+        game.initRound();
 
         players = game.getListOfPlayers();
         repaint();
+
 
         Go = new JButton("OK");
         command.add(Go);
@@ -131,14 +135,11 @@ public class MainFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 List<Card> cardsInHand = players[0].getHand().getCardList();
-                List<Card> plist = new ArrayList<Card>();
+                List<Card> plist = new ArrayList<>();
                 for(Card p : cardsInHand){
-                    //TODO
-//                    if(p.isChoosed()){
-//                        plist.add(p);
-//                    }
-                    if(plist.size() == 1) break;
-                    plist.add(p);
+                    if(p.isSelected()){
+                        plist.add(p);
+                    }
                 }
 //                try {
 //                    if(master.getMax()!=null){
@@ -165,34 +166,30 @@ public class MainFrame extends JFrame {
     public void repaint() {
         super.repaint();
         slist.removeAll();
-//        Player splayer = playerMap.get(1);
-        Card c = new Card(Suit.CLUBS, Rank.TWO, null);
-        for (int i = 0; i < 13; i++) {
-            slist.add(new CardPanel(c));
+        Player splayer = players[0];
+        Card c = null;
+        for (Card card : splayer.getHand().getCardList()) {
+            slist.add(new CardPanel(card, true));
         }
-//        for (Card c : splayer.getHand()) {
-//            slist.add(new CardPanel(c));
-//        }
-
         nput.removeAll();
 //        Card nc = playerMap.get(3).getPlayedCard();
-        nput.add(new CardPanel(c));
-        nmsg.setText("Player 3: " + players[2].getName() + " | Round Points: " + players[2].getPointsFromCurrentRound() + " | Total Points: " + players[2].getTotalPoints());
+        nput.add(new CardPanel(c, false));
+        nmsg.setText("<html><b>" + players[2].getName() + " (" + players[2].getHandSize() + " Cards) </b> | Round Points: " + players[2].getPointsFromCurrentRound() + " | Total Points: " + players[2].getTotalPoints() + "</html>");
 
         sput.removeAll();
-        smsg.setText("Player: " + players[0].getName() + " | Round Points: " + players[0].getPointsFromCurrentRound() + " | Total Points: " + players[0].getTotalPoints());
+        smsg.setText("<html><b>" + players[0].getName() + " (" + players[2].getHandSize() + " Cards) </b> | Round Points: " + players[0].getPointsFromCurrentRound() + " | Total Points: " + players[0].getTotalPoints() + "</html>");
 //        Card sc = splayer.getPlayedCard();
-        sput.add(new CardPanel(c));
+        sput.add(new CardPanel(c, false));
 
         eput.removeAll();
 //        Card ec = playerMap.get(4).getPlayedCard();
-        eput.add(new CardPanel(c));
-        emsg.setText("Player 4: " + players[3].getName() + " | Round Points: " + players[3].getPointsFromCurrentRound() + " | Total Points: " + players[3].getTotalPoints());
+        eput.add(new CardPanel(c, false));
+        emsg.setText("<html><div style='text-align: center;'><b>" + players[3].getName() + " (" + players[2].getHandSize() + " Cards) </b><br/><br/>Round Points: " + players[3].getPointsFromCurrentRound() + "<br/>Total Points: " + players[3].getTotalPoints() + "</div></html>");
 
         wput.removeAll();
 //        Card wc = playerMap.get(2).getPlayedCard();
-        wput.add(new CardPanel(c));
-        wmsg.setText("Player 2: " + players[1].getName() + " | Round Points: " + players[1].getPointsFromCurrentRound() + " | Total Points: " + players[1].getTotalPoints());
+        wput.add(new CardPanel(c, false));
+        wmsg.setText("<html><div style='text-align: center;'><b>" + players[1].getName() + " (" + players[2].getHandSize() + " Cards) </b><br/><br/>Round Points: " + players[1].getPointsFromCurrentRound() + "<br/>Total Points: " + players[1].getTotalPoints() + "</div></html>");
 
         validate();
     }

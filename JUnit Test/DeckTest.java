@@ -1,48 +1,42 @@
-import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import java.util.ArrayList;
-import java.util.List;
 
+import static org.junit.Assert.*;
 
 public class DeckTest {
-    private Deck decktest;
-
-    @Before
-    public void instantiateDeck(){
-        decktest = new Deck();
-    }
 
     @Test
-    public void dealCard() {
-        assertEquals(52,decktest.getSizeOfDeck());
-
-        while (!decktest.isEmpty()) {
-            decktest.dealCard();
-        }
-        assertNull(decktest.dealCard());
+    public void getSizeOfDeck() {
+        Deck decktest = new Deck();
+        assertEquals(52, decktest.getSizeOfDeck());
     }
     @Test
     public void addCard() {
-        List<Card> list = new ArrayList<>();
-        list = decktest.getDeck();
+        Deck decktest = new Deck();
         assertEquals(52, decktest.getSizeOfDeck());
-        Card c1 = new Card(Suit.HEARTS, Rank.ACE, null);
-        Card card = list.get(0);
-        list.remove(card);
-        assertEquals(51, list.size());
+        Card c1 = new Card(Suit.HEARTS, Rank.ACE);
         decktest.addCard(c1);
-        assertEquals(52, decktest.getSizeOfDeck());
-
+        assertEquals(53, decktest.getSizeOfDeck());
     }
+    @Test
+    public void dealCard() {
+        Deck deckTest = new Deck();
+        assertEquals(52,deckTest.getSizeOfDeck());
 
+        while (!deckTest.isEmpty()) {
+            deckTest.dealCard();
+        }
+        assertNull(deckTest.dealCard());
+    }
 
     @Test
     public void getNumberOfCardsRemaining() {
-        assertEquals(52, decktest.getSizeOfDeck());
-        while (!decktest.isEmpty()) {
-            decktest.dealCard();
+        Deck deck = new Deck();
+        assertEquals(52, deck.getSizeOfDeck());
+
+        while (!deck.isEmpty()) {
+            deck.dealCard();
         }
-        assertEquals(0, decktest.getNumberOfCardsRemaining());
+
+        assertEquals(0, deck.getNumberOfCardsRemaining());
     }
 }

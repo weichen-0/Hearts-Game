@@ -98,7 +98,7 @@ public class Deck {
         if (isEmpty()) {
             for (Suit suit : Suit.VALUES) {
                 for (Rank rank : Rank.VALUES) {
-                    Card card = new Card(suit, rank, new ImageIcon(Card.getFilename(suit, rank)));
+                    Card card = new Card(suit, rank);
                     deck.add(card);
                 }
             }

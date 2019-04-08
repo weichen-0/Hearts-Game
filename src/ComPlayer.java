@@ -78,7 +78,7 @@ public class ComPlayer extends Player {
         // only called in situations where player is first player
         Hand hand = getHand();
 
-        Card twoClubs = new Card(Suit.CLUBS, Rank.TWO, null);
+        Card twoClubs = new Card(Suit.CLUBS, Rank.TWO);
         if (hand.containsCard(twoClubs)) return twoClubs;
 
         // if player's deck doesn't contain two clubs this is not the first set

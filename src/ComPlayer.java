@@ -21,7 +21,7 @@ public class ComPlayer extends Player {
         Card cardPlayed = null;
 
         System.out.printf("%s Hand > %s%n", getName(), playerHand);
-        System.out.printf("Set contains > %s%n", set.getSetCards());
+        System.out.printf("Current Set contains > %s%n", set.getSetCards());
 
         int totalCardsInSet = set.getNumOfCardsInSet();
         Suit leadingSuit = set.getLeadingSuit();
@@ -39,6 +39,7 @@ public class ComPlayer extends Player {
                 cardPlayed = getNextHighestCard(leadingSuit, winningCard, isFirstSet);
                 break;
         }
+        System.out.printf("%s picked %s%n", getName(), cardPlayed);
         this.setPlayedCard(cardPlayed);
         return cardPlayed;
     }

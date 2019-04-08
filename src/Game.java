@@ -44,8 +44,13 @@ public class Game {
     }
 
     public void makePlayerMove(Card cardPlayed) throws IllegalMoveException{ // int startPlayerIndex) {
-        System.out.printf("PLAYER1 picked %s%n", cardPlayed);
         Player player = listOfPlayers[0]; //human player
+        System.out.printf("%nSET %d, CARD #%d%n", setNum, currentSet.getNumOfCardsInSet() + 1);
+        System.out.print("\t");
+        printAlignedOptions(player.getHand().getNumberOfCards());
+        System.out.printf("%s Hand > %s%n", player.getName(), player.getHand());
+        System.out.printf("Current Set contains > %s%n", currentSet.getSetCards());
+        System.out.printf("PLAYER1 picked %s%n", cardPlayed);
         GameRegulator.validateCardPlayed(player, cardPlayed, currentSet, isHeartsBroken);
         currentSet.addCardToSet(cardPlayed, 0);
         player.setPlayedCard(cardPlayed);
@@ -54,9 +59,11 @@ public class Game {
     }
 
     public void makeComputerMoves() throws UserMessageException{
-        int numCardsInSet = currentSet.getNumOfCardsInSet();
+        if(setNum > 13){ // end of round
+            return;
+        }
         int startPlayerIndex = (currentSet.getPlayerNumLastPlayed() + 1) % 4;
-        if(numCardsInSet == 0){
+        if(currentSet.getNumOfCardsInSet() == 0){
             if(setNum == 1){
                 startPlayerIndex = GameRegulator.getStartPlayerIndex(listOfPlayers); // two of clubs
             }else {
@@ -69,14 +76,14 @@ public class Game {
 //                throw new UserMessageException("Your Turn.", "");
                 return;
             }
+            System.out.printf("%nSET %d, CARD #%d%n", setNum, currentSet.getNumOfCardsInSet() + 1);
             Player player = listOfPlayers[i % 4];
-            System.out.printf("%nSET %d, CARD #%d%n", setNum, i - startPlayerIndex + 1);
             Card cardPlayed = chooseCardToPlay(player, currentSet);
             currentSet.addCardToSet(cardPlayed, i % 4);
             if (cardPlayed.isPointCard()) isHeartsBroken = true;
             player.getHand().removeCard(cardPlayed);
         }
-        numCardsInSet = currentSet.getNumOfCardsInSet();
+        int numCardsInSet = currentSet.getNumOfCardsInSet();
         if(numCardsInSet == 4){
             int winningPlayerIndex = currentSet.getWinningPlayerIndex();
             Player winningPlayerOfSet = listOfPlayers[winningPlayerIndex];
@@ -84,26 +91,26 @@ public class Game {
             tallyPointsForSet(currentSet, winningPlayerOfSet);
             printRoundScoreBoard();
             lastWinningPlayerIndex = winningPlayerIndex;
+            int totalPointsInSet = currentSet.getTotalPointsInSet();
             currentSet = new Set();
             setNum += 1;
-            if(setNum == 14){ // end of round
-                tallyPointsForRound();
 
-                if(getHighestScore() < 100){
+            if (setNum == 14) {
+                tallyPointsForRound();
+                if(getHighestScore() < 100) {
                     roundNum += 1; //TODO check if addition at this loc is correct
-                    String message = winningPlayerOfSet.getName() + " won this set. Next round is starting... ";
-                    if((roundNum + 1) % 4 == 0){
-                        message += "You do not need to pass this round.";
+                    passedCards = (roundNum % 4 == 0);
+                    String message = winningPlayerOfSet.getName() + " won this set. ";
+                    if(roundNum % 4 == 0) {
+                        message += "No passing of cards required for the next round.";
                     }else{
-                        message += "Please choose 3 cards to pass";
+                        message += "To start the next round, select 3 cards to pass.";
                     }
                     throw new UserMessageException(message, "End of Round");
-                }else{
-                    return
                 }
-
             }
-            throw new UserMessageException(winningPlayerOfSet.getName() + " won this set.", "End of Set");
+
+            throw new UserMessageException(winningPlayerOfSet.getName() + " won this set. (" + totalPointsInSet + " Points)", "End of Set");
         }
     }
 
@@ -167,7 +174,6 @@ public class Game {
             } else
                 System.out.printf("%s score > %d%n", p.getName(), p.getPointsFromCurrentRound());
         }
-        System.out.println();
     }
 
     public int getHighestScore() {
@@ -222,7 +228,6 @@ public class Game {
             if (passingPlayer instanceof HumanPlayer || receivingPlayer instanceof HumanPlayer) {
                 System.out.printf("%s passed 3 cards %s to %s%n", passingPlayer.getName(), cardsToPass.toString(), receivingPlayer.getName());
             }
-
         }
         System.out.printf("%nAll cards have been passed for Round %d%n%n", roundNum);
         System.out.println("Displaying everyone's hands...");
@@ -248,7 +253,7 @@ public class Game {
     }
 
     public void tallyPointsForRound() {
-        System.out.printf("========== End of Round %d ==========%n%n", roundNum++);
+        System.out.printf("========== End of Round %d ==========%n%n", roundNum);
         Player shootTheMoonPlayer = null;
         for(Player player : listOfPlayers){
             if(player.getPointsFromCurrentRound() == 26){

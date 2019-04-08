@@ -120,10 +120,9 @@ public class MainFrame extends JFrame {
 
         gameCtrl = new GameController();
         players = gameCtrl.startGame();
-        repaint();
-        JOptionPane.showMessageDialog(null, "Pls select three cards to pass.", "Action Required",
+        JOptionPane.showMessageDialog(null, "Welcome to Hearts! To start the round, select 3 cards to pass.", "Action Required",
                 JOptionPane.INFORMATION_MESSAGE);
-
+        repaint();
         Go = new JButton("OK");
         command.add(Go);
         Go.addActionListener(new ActionListener(){
@@ -131,11 +130,12 @@ public class MainFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 List<Card> cardsInHand = players[0].getHand().getCardList();
                 List<Card> plist = new ArrayList<>();
-                for (Card p : cardsInHand){
-                    if(p.isSelected()){
+                for (Card p : cardsInHand) {
+                    if (p.isSelected()) {
                         plist.add(p);
                     }
                 }
+
                 try {
                     gameCtrl.executeMove(plist);
                 } catch (IllegalMoveException e1) {
@@ -143,47 +143,23 @@ public class MainFrame extends JFrame {
                 } catch (UserMessageException e1) {
                     repaint();
                     JOptionPane.showMessageDialog(null, e1.getMessage(), e1.getTitle(), JOptionPane.INFORMATION_MESSAGE);
-                } finally{
+                } finally {
                     try {
                         gameCtrl.executeComputerMoves();
                     } catch (UserMessageException e1) {
                         repaint();
                         JOptionPane.showMessageDialog(null, e1.getMessage(), e1.getTitle(), JOptionPane.INFORMATION_MESSAGE);
                     }
-                    repaint();
-                    if(players[0].getHand().getCardList().isEmpty()){
-                        try {
+                    if (players[0].getHand().getCardList().isEmpty()) {
+                        if (gameCtrl.getHighestScore() < 100) {
                             gameCtrl.startRound();
-                        } catch (UserMessageException e1) {
-                            repaint();
-                            JOptionPane.showMessageDialog(null, e1.getMessage(), e1.getTitle(), JOptionPane.INFORMATION_MESSAGE);
+//                        }
+                        } else {
+                            JOptionPane.showMessageDialog(null, gameCtrl.getWinnerName() + " won the game! Thanks for playing Hearts.", "Game Ended", JOptionPane.INFORMATION_MESSAGE);
                         }
                     }
+                    repaint();
                 }
-
-//                try {
-//                    Player temp = null;
-//                    if (temp == null) {
-//                        Player temp = GameRegulator.getStartPlayerIndex();
-//                    }
-//                }
-
-//                try {
-//                    if(master.getMax()!=null){
-//                        Player temp=master.getMax();
-//                        master.setMax(null);
-//                        master.clearRoundCase();
-//                        temp.Do(master, null);
-//                    }else playerMap.get(Player.South).Do(master, plist);
-//                } catch (IllegalMoveException e1) {
-//                    JOptionPane.showMessageDialog(null, e1.getMessage(), e1.getTitle(), e1.getType());
-//                } finally{
-//                    repaint();
-//                    if(cardsInHand.isEmpty()){
-//                        playerMap=master.newGame();
-//                        repaint();
-//                    }
-//                }
             }
         });
     }
@@ -193,7 +169,6 @@ public class MainFrame extends JFrame {
         super.repaint();
         slist.removeAll();
         Player splayer = players[0];
-        Card c = null;
         for (Card card : splayer.getHand().getCardList()) {
             slist.add(new CardPanel(card, true));
         }

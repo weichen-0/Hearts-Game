@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="728fde6e-6d31-46de-8be6-1a3fb0e3f090" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CardPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CardRankComparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CardSuitComparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ComPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameRegulator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HumanPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUnit Test/HandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JUnit Test/HandTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUnit Test/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JUnit Test/PlayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/OOP-Project/CardTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/OOP-Project/CardTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/OOP-Project/HandTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/OOP-Project/PlayerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/OOP-Project/RoundTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/OOP-Project/RoundTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Round.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Set.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Set.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Suit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Suit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,12 +36,12 @@
         <counts>
           <entry key="bat" value="13" />
           <entry key="dummy" value="185" />
-          <entry key="java" value="27424" />
+          <entry key="java" value="27429" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="27424" />
+          <entry key="JAVA" value="27429" />
           <entry key="PLAIN_TEXT" value="198" />
         </counts>
       </usages-collector>
@@ -74,13 +50,13 @@
           <entry key="bat" value="1" />
           <entry key="form" value="2" />
           <entry key="gitattributes" value="1" />
-          <entry key="java" value="74" />
+          <entry key="java" value="75" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="GUI_DESIGNER_FORM" value="2" />
-          <entry key="JAVA" value="74" />
+          <entry key="JAVA" value="75" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
@@ -124,11 +100,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Card.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="328">
               <caret line="90" column="9" lean-forward="true" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="670">
+              <caret line="70" column="13" lean-forward="true" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -196,7 +181,6 @@
         <option value="$PROJECT_DIR$/JUnit Test/PlayerTest.java" />
         <option value="$PROJECT_DIR$/src/Set.java" />
         <option value="$PROJECT_DIR$/src/Hand.java" />
-        <option value="$PROJECT_DIR$/src/Player.java" />
         <option value="$PROJECT_DIR$/src/HumanPlayer.java" />
         <option value="$PROJECT_DIR$/src/ComPlayer.java" />
         <option value="$PROJECT_DIR$/JUnit Test/HandTest.java" />
@@ -205,6 +189,7 @@
         <option value="$PROJECT_DIR$/src/GameRegulator.java" />
         <option value="$PROJECT_DIR$/src/CardPanel.java" />
         <option value="$PROJECT_DIR$/src/MainFrame.java" />
+        <option value="$PROJECT_DIR$/src/Player.java" />
       </list>
     </option>
   </component>
@@ -256,7 +241,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/weichen/Documents/GitHub/OOP-Project/src/Player.java&#10;format&#9;PSI&#9;JAVA://java.text.Format" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554703412276" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554704276641" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -331,12 +316,12 @@
       <workItem from="1554390086870" duration="50171000" />
       <workItem from="1554700597802" duration="755000" />
       <workItem from="1554702633305" duration="14000" />
-      <workItem from="1554703216330" duration="546000" />
+      <workItem from="1554703216330" duration="885000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154938000" />
+    <option name="totallyTimeSpent" value="155277000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -526,13 +511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GameRegulator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -567,6 +545,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
           <caret line="90" column="9" lean-forward="true" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="70" column="13" lean-forward="true" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
         </state>
       </provider>
     </entry>

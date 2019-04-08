@@ -1,17 +1,20 @@
 import java.util.List;
 import java.util.Objects;
 
+
 public abstract class Player {
 
     private String name;
-    //  private boolean isPlayer;
+//    private boolean isPlayer;
+
     private int pointsFromCurrentRound = 0;
     private int totalPoints = 0;
     private Hand hand = new Hand();
 
+
     public Player(String name) {
     //    this.isPlayer = isPlayer;
-    this.name = name;
+        this.name = name;
     }
 
     public String getName() {
@@ -33,7 +36,7 @@ public abstract class Player {
     }
 
     public void addToTotalPoints(int points) { // points from round
-    totalPoints += points;
+        totalPoints += points;
     }
 
     public void resetPointsFromCurrentRound() {

@@ -1,13 +1,8 @@
-package com.hearts;
-
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.border.EmptyBorder;
-
-import com.hearts.util.*;
-import com.hearts.game.*;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -25,7 +20,7 @@ import java.awt.event.ActionListener;
 @SuppressWarnings("serial")
 public class MainFrame extends JFrame {
 
-    private Map<Integer,Player> playerMap;
+    private Player[] players;
     @SuppressWarnings("unused")
     private Game game;
     private JPanel contentPane,e,w,s,n,slist;
@@ -124,8 +119,10 @@ public class MainFrame extends JFrame {
         spanel.add(command, BorderLayout.SOUTH);
         command.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
-        Game game = new Game("Blah");
-        playerMap = game.getPlayers();
+        Game game = new Game(1); //TODO change to game
+        game.startRound();
+
+        players = game.getListOfPlayers();
         repaint();
 
         Go = new JButton("OK");
@@ -133,30 +130,33 @@ public class MainFrame extends JFrame {
         Go.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                List<Card> pokers = playerMap.get(Player.South).getHandlist();
+                List<Card> cardsInHand = players[0].getHand().getCardList();
                 List<Card> plist = new ArrayList<Card>();
-                for(Card p:pokers){
-                    if(p.isChoosed()){
-                        plist.add(p);
-                    }
+                for(Card p : cardsInHand){
+                    //TODO
+//                    if(p.isChoosed()){
+//                        plist.add(p);
+//                    }
+                    if(plist.size() == 1) break;
+                    plist.add(p);
                 }
-                try {
-                    if(master.getMax()!=null){
-                        Player temp=master.getMax();
-                        master.setMax(null);
-                        master.clearRoundCase();
-                        temp.Do(master, null);
-                    }else playerMap.get(Player.South).Do(master, plist);
-                } catch (IllegalMoveException e1) {
-                    JOptionPane.showMessageDialog(null, e1.getMessage(), e1.getTitle(), e1.getType());
-                } finally{
-                    repaint();
-                    if(playerMap.get(Player.South).getHandlist().isEmpty()){
-                        //something to replace here. We took it out for weird characters
-                        playerMap=master.newGame();
-                        repaint();
-                    }
-                }
+//                try {
+//                    if(master.getMax()!=null){
+//                        Player temp=master.getMax();
+//                        master.setMax(null);
+//                        master.clearRoundCase();
+//                        temp.Do(master, null);
+//                    }else playerMap.get(Player.South).Do(master, plist);
+//                } catch (IllegalMoveException e1) {
+//                    JOptionPane.showMessageDialog(null, e1.getMessage(), e1.getTitle(), e1.getType());
+//                } finally{
+//                    repaint();
+//                    if(playerMap.get(Player.South).getHandlist().isEmpty()){
+//                        //something to replace here. We took it out for weird characters
+//                        playerMap=master.newGame();
+//                        repaint();
+//                    }
+//                }
             }
         });
     }
@@ -165,30 +165,34 @@ public class MainFrame extends JFrame {
     public void repaint() {
         super.repaint();
         slist.removeAll();
-        Player splayer = playerMap.get(1);
-        for (Card c : splayer.getHand()) {
+//        Player splayer = playerMap.get(1);
+        Card c = new Card(Suit.CLUBS, Rank.TWO, null);
+        for (int i = 0; i < 13; i++) {
             slist.add(new CardPanel(c));
         }
+//        for (Card c : splayer.getHand()) {
+//            slist.add(new CardPanel(c));
+//        }
 
         nput.removeAll();
-        Card nc = playerMap.get(3).getPlayedCard();
-        nput.add(new CardPanel(nc));
-        nmsg.setText("Player 3: " + playerMap.get(3).getName() + "Points: " + playerMap.get(3).getScore());
+//        Card nc = playerMap.get(3).getPlayedCard();
+        nput.add(new CardPanel(c));
+        nmsg.setText("Player 3: " + players[2].getName() + " | Round Points: " + players[2].getPointsFromCurrentRound() + " | Total Points: " + players[2].getTotalPoints());
 
         sput.removeAll();
-        smsg.setText("Player: " + splayer.getName() + "Points: " + splayer.getScore());
-        Card sc = splayer.getPlayedCard();
-        sput.add(new CardPanel(sc));
+        smsg.setText("Player: " + players[0].getName() + " | Round Points: " + players[0].getPointsFromCurrentRound() + " | Total Points: " + players[0].getTotalPoints());
+//        Card sc = splayer.getPlayedCard();
+        sput.add(new CardPanel(c));
 
         eput.removeAll();
-        Card ec = playerMap.get(4).getPlayedCard();
-        eput.add(new CardPanel(ec));
-        emsg.setText("Player 4: " + playerMap.get(4).getName() + "Points: " + playerMap.get(4).getScore());
+//        Card ec = playerMap.get(4).getPlayedCard();
+        eput.add(new CardPanel(c));
+        emsg.setText("Player 4: " + players[3].getName() + " | Round Points: " + players[3].getPointsFromCurrentRound() + " | Total Points: " + players[3].getTotalPoints());
 
         wput.removeAll();
-        Card wc = playerMap.get(2).getPlayedCard();
-        wput.add(new CardPanel(wc));
-        wmsg.setText("Player 2: " + playerMap.get(2).getName() + "Points: " + playerMap.get(2).getScore());
+//        Card wc = playerMap.get(2).getPlayedCard();
+        wput.add(new CardPanel(c));
+        wmsg.setText("Player 2: " + players[1].getName() + " | Round Points: " + players[1].getPointsFromCurrentRound() + " | Total Points: " + players[1].getTotalPoints());
 
         validate();
     }

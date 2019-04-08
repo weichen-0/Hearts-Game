@@ -83,13 +83,13 @@ public class Rank implements Comparable {
       symbol = symbolValue;
    }    
 
-//  /**
-//   *  Returns a description of this rank.
-//   *  @return the name of this rank.
-//   */
-//   public String getName() {
-//      return name;
-//   }
+  /**
+   *  Returns a description of this rank.
+   *  @return the name of this rank.
+   */
+   public String getName() {
+      return name;
+   }
     
     
   /**

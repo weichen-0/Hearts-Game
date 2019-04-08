@@ -1,12 +1,12 @@
 import java.util.*;
 
-public class Round {
+public class Game {
 
     private Player[] listOfPlayers = new Player[4];
     private boolean isHeartsBroken = false;
     private int roundNum = 1;
 
-    public Round(int numOfPlayers) {
+    public Game(int numOfPlayers) {
         for (int i = 0; i < 4; i++) {
             if (i < numOfPlayers) {
                 listOfPlayers[i] = new HumanPlayer("PLAYER" + (i + 1));
@@ -23,23 +23,24 @@ public class Round {
         System.out.println("Dealing cards...");
 
         distributeCard();
-        System.out.println("All players have been dealt 13 cards\n");
-        printAllHands();
-
-        if (passedCards()) {
-            System.out.println("Displaying everyone's hands...");
-            printAllHands();
-        };
-
-        //first round logic: decide first player
-        int startPlayerIndex = GameRegulator.getStartPlayerIndex(listOfPlayers);
-
-        for (int setCount = 1; setCount <= 13; setCount++) {
-            startPlayerIndex = startSet(setCount, startPlayerIndex);
-            printRoundScoreBoard();
-        }
-        System.out.printf("========== End of Round %d ==========%n%n", roundNum++);
-        tallyPointsForRound();
+        return;
+//        System.out.println("All players have been dealt 13 cards\n");
+//        printAllHands();
+//
+//        if (passedCards()) {
+//            System.out.println("Displaying everyone's hands...");
+//            printAllHands();
+//        };
+//
+//        //first round logic: decide first player
+//        int startPlayerIndex = GameRegulator.getStartPlayerIndex(listOfPlayers);
+//
+//        for (int setCount = 1; setCount <= 13; setCount++) {
+//            startPlayerIndex = startSet(setCount, startPlayerIndex);
+//            printRoundScoreBoard();
+//        }
+//        System.out.printf("========== End of Round %d ==========%n%n", roundNum++);
+//        tallyPointsForRound();
     }
 
     private int startSet(int setCount, int startPlayerIndex) {
@@ -232,6 +233,10 @@ public class Round {
             }
         }
         return winner;
+    }
+
+    public Player[] getListOfPlayers(){
+        return listOfPlayers;
     }
 
 }

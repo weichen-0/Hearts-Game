@@ -1,5 +1,3 @@
-package com.hearts.util;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -20,7 +18,7 @@ public class CardPanel extends JPanel{
     public static final double dw=67.5,dh=102.0,dx=67.5,dy=103.0;
     public CardPanel(Card card) {
         this.card = card;
-        image=Toolkit.getDefaultToolkit().getImage("images/Card.png");
+        image=Toolkit.getDefaultToolkit().getImage(Card.getFilename(card.getSuit(), card.getRank()));
         this.setPreferredSize(new Dimension((int)dw, (int)dh));
         this.addMouseListener(new MouseListener(){
             @Override
@@ -41,7 +39,7 @@ public class CardPanel extends JPanel{
 
             @Override
             public void mouseReleased(MouseEvent arg0) {
-                card.setChoseness(!card.isChosen());
+//                card.setChoseness(!card.isChosen());
                 repaint();
             }
         });
@@ -54,10 +52,11 @@ public class CardPanel extends JPanel{
     }
     @Override
     public void paint(Graphics g) {
-        g.drawImage( image,0, 0, getWidth(),getHeight(),
-                (int)(card.getSuitedValue()%13*dx),(int)(card.getSuitedValue()/13*dy),
-                (int)(card.getSuitedValue()%13*dx+dw), (int)(card.getSuitedValue()/13*dy+dh),this);
-        if(card.isChosen()){
+        int cardValue = 36;
+        g.drawImage(image,0, 0, getWidth(),getHeight(),
+                (int)(cardValue%13*dx),(int)(cardValue/13*dy),
+                (int)(cardValue%13*dx+dw), (int)(cardValue/13*dy+dh),this);
+        if(true){ //card.isChosen()
             g.setColor(new Color(255,0,0,32));
             g.fillRoundRect(0, 0, getWidth()-1, getHeight()-1, 4, 4);
         }
@@ -66,15 +65,15 @@ public class CardPanel extends JPanel{
 
     }
     public boolean isChosen() {
-        return card.isChosen();
+        return true;//return card.isChosen();
     }
     public void setChoseness(boolean choosed) {
-        card.setChoseness(choosed);
+        //card.setChoseness(choosed);
     }
     public boolean isEnabled() {
-        return card.isEnabled();
+        return true;//return card.isEnabled();
     }
     public void setEnabled(boolean enable) {
-        card.setEnabled(enable);
+        //card.setEnabled(enable);
     }
 }

@@ -2,9 +2,12 @@
 // last modified: 23 Febraury 2004
 // Implementation of a deck of playing cards.  Uses the Card class.
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.awt.Image;
+import java.awt.Toolkit;
 
 
 /**
@@ -95,7 +98,7 @@ public class Deck {
         if (isEmpty()) {
             for (Suit suit : Suit.VALUES) {
                 for (Rank rank : Rank.VALUES) {
-                    Card card = new Card(suit, rank, null);
+                    Card card = new Card(suit, rank, new ImageIcon(Card.getFilename(suit, rank)));
                     deck.add(card);
                 }
             }

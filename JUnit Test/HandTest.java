@@ -102,25 +102,5 @@ public class HandTest {
         assertTrue(handTest.hasSuit(Suit.HEARTS));
     }
 
-//    @Test
-//    public void findCardIndex() {
-//        Hand handTest = new Hand();
-//        ArrayList<Card> listofcard = new ArrayList<>();
-//        listofcard.add(new Card(Suit.SPADES, Rank.THREE, null));
-//        listofcard.add(new Card(Suit.SPADES, Rank.FOUR, null));
-//        listofcard.add(new Card(Suit.HEARTS, Rank.TWO, null));
-//        listofcard.add(new Card(Suit.CLUBS, Rank.TWO, null));
-//        listofcard.add(new Card(Suit.SPADES, Rank.TWO, null));
-//        handTest.addCards(listofcard);
-//        Card c1 = new Card(Suit.HEARTS, Rank.TWO, null);
-//        assertEquals(1, handTest.findCardIndex(c1));
-//    }
-    //Todo
-
-
-
-
-
-
 
 }

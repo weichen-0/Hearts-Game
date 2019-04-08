@@ -11,10 +11,10 @@ public class ComPlayerTest {
         ComPlayer player1 = new ComPlayer("Test");
         Hand hand1 = player1.getHand();
         List<Card> cardList = new ArrayList<>();
-        cardList.add(new Card(Suit.SPADES,Rank.THREE, null));
-        cardList.add(new Card(Suit.SPADES,Rank.FOUR, null));
-        cardList.add(new Card(Suit.SPADES,Rank.FIVE, null));
-        cardList.add(new Card(Suit.SPADES,Rank.TWO, null));
+        cardList.add(new Card(Suit.SPADES,Rank.THREE));
+        cardList.add(new Card(Suit.SPADES,Rank.FOUR));
+        cardList.add(new Card(Suit.SPADES,Rank.FIVE));
+        cardList.add(new Card(Suit.SPADES,Rank.TWO));
         hand1.addCards(cardList);
         List<Card> cardTestList = player1.choose3CardsToPass();
         assertEquals(3, cardTestList.size()); //Test whether it remove 3 cards
@@ -25,20 +25,20 @@ public class ComPlayerTest {
         ComPlayer player1 = new ComPlayer("Test");
         Hand hand1 = player1.getHand();
         List<Card> cardList = new ArrayList<>();
-        cardList.add(new Card(Suit.SPADES,Rank.THREE, null));
-        cardList.add(new Card(Suit.HEARTS,Rank.FIVE, null));
+        cardList.add(new Card(Suit.SPADES,Rank.THREE));
+        cardList.add(new Card(Suit.HEARTS,Rank.FIVE));
         hand1.addCards(cardList);
 
         Set round1 = new Set();
-        round1.addCardToSet(new Card(Suit.SPADES,Rank.TWO, null));
-        round1.addCardToSet(new Card(Suit.SPADES,Rank.FOUR, null));
+        round1.addCardToSet(new Card(Suit.SPADES,Rank.TWO));
+        round1.addCardToSet(new Card(Suit.SPADES,Rank.FOUR));
 
         Set round2 = new Set();
 
         Set round3 = new Set();
-        round1.addCardToSet(new Card(Suit.SPADES,Rank.TWO, null));
-        round1.addCardToSet(new Card(Suit.SPADES,Rank.FOUR, null));
-        round1.addCardToSet(new Card(Suit.SPADES,Rank.THREE, null));
+        round1.addCardToSet(new Card(Suit.SPADES,Rank.TWO));
+        round1.addCardToSet(new Card(Suit.SPADES,Rank.FOUR));
+        round1.addCardToSet(new Card(Suit.SPADES,Rank.THREE));
 
         assertEquals(player1.chooseCardToPlay(round3, true), cardList.get(0));
         assertEquals(player1.chooseCardToPlay(round2, false), cardList.get(0));

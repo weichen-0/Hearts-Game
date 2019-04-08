@@ -9,7 +9,7 @@ public class GameTest {
     @Before
     public void Instantiate(){
         testGame = new Game(4);
-        testGame.startRound();
+        //testGame.startRound();
     }
     @Test
     public void startRound(){

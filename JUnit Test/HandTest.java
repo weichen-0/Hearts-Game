@@ -15,7 +15,7 @@ public class HandTest {
     @Test
     public void addCard() {
         assertEquals(0, handTest.getNumberOfCards()); //Hand start off with 0 card test the Add method, (1 card at a go)
-        Card cardAHearts = new Card(Suit.HEARTS, Rank.ACE, null);
+        Card cardAHearts = new Card(Suit.HEARTS, Rank.ACE);
         handTest.addCard(cardAHearts);
         assertEquals(1, handTest.getNumberOfCards());
     }
@@ -30,8 +30,8 @@ public class HandTest {
 
     @Test
     public void getCard() {
-        Card card2Hearts = new Card(Suit.HEARTS, Rank.TWO, null); //Test method to get a card from the hand
-        Card card4Hearts = new Card(Suit.HEARTS, Rank.FOUR, null);
+        Card card2Hearts = new Card(Suit.HEARTS, Rank.TWO); //Test method to get a card from the hand
+        Card card4Hearts = new Card(Suit.HEARTS, Rank.FOUR);
         handTest.addCard(card2Hearts);
         handTest.addCard(card4Hearts);
         assertEquals(card2Hearts, handTest.getCard(0));
@@ -39,7 +39,7 @@ public class HandTest {
 
     @Test
     public void removeCard() {
-        Card card2Hearts = new Card(Suit.HEARTS, Rank.TWO, null); //Test method to remove a card that is being specify
+        Card card2Hearts = new Card(Suit.HEARTS, Rank.TWO); //Test method to remove a card that is being specify
         handTest.addCard(card2Hearts);
         assertEquals(1, handTest.getNumberOfCards());
         handTest.removeCard(card2Hearts);
@@ -54,9 +54,9 @@ public class HandTest {
         assertEquals(52, handTest.getNumberOfCards());
 
         List<Card> cardsToRemove = new ArrayList<>();
-        cardsToRemove.add(new Card(Suit.HEARTS, Rank.TWO, null));
-        cardsToRemove.add(new Card(Suit.CLUBS, Rank.TWO, null));
-        cardsToRemove.add(new Card(Suit.SPADES, Rank.TWO, null));
+        cardsToRemove.add(new Card(Suit.HEARTS, Rank.TWO));
+        cardsToRemove.add(new Card(Suit.CLUBS, Rank.TWO));
+        cardsToRemove.add(new Card(Suit.SPADES, Rank.TWO));
         handTest.removeCards(cardsToRemove); //remove 3 cards
 
         assertEquals(49, handTest.getNumberOfCards());
@@ -65,9 +65,9 @@ public class HandTest {
     @Test
     public void removeCardByIndex() {
         ArrayList<Card> cardsToRemove = new ArrayList<>();
-        cardsToRemove.add(new Card(Suit.HEARTS, Rank.TWO, null));
-        cardsToRemove.add(new Card(Suit.CLUBS, Rank.TWO, null));
-        cardsToRemove.add(new Card(Suit.SPADES, Rank.TWO, null));
+        cardsToRemove.add(new Card(Suit.HEARTS, Rank.TWO));
+        cardsToRemove.add(new Card(Suit.CLUBS, Rank.TWO));
+        cardsToRemove.add(new Card(Suit.SPADES, Rank.TWO));
         handTest.addCards(cardsToRemove);
 
 //        for (Card c: handTest.getCardList()) {
@@ -85,19 +85,19 @@ public class HandTest {
     @Test
     public void containsCard() {
         ArrayList<Card> listOfCards = new ArrayList<>(); //Add a list of card into a hand
-        listOfCards.add(new Card(Suit.SPADES, Rank.THREE, null));
-        listOfCards .add(new Card(Suit.SPADES, Rank.FOUR, null));
-        listOfCards .add(new Card(Suit.HEARTS, Rank.TWO, null));
-        listOfCards .add(new Card(Suit.CLUBS, Rank.TWO, null));
-        listOfCards .add(new Card(Suit.SPADES, Rank.TWO, null));
+        listOfCards.add(new Card(Suit.SPADES, Rank.THREE));
+        listOfCards .add(new Card(Suit.SPADES, Rank.FOUR));
+        listOfCards .add(new Card(Suit.HEARTS, Rank.TWO));
+        listOfCards .add(new Card(Suit.CLUBS, Rank.TWO));
+        listOfCards .add(new Card(Suit.SPADES, Rank.TWO));
         handTest.addCards(listOfCards );
-        Card card2Hearts = new Card(Suit.HEARTS, Rank.TWO, null); //Check if the hand contains the card
+        Card card2Hearts = new Card(Suit.HEARTS, Rank.TWO); //Check if the hand contains the card
         assertTrue(handTest.containsCard(card2Hearts));
     }
 
     @Test
     public void hasSuit(){
-        Card cardAHearts = new Card(Suit.HEARTS, Rank.ACE, null);
+        Card cardAHearts = new Card(Suit.HEARTS, Rank.ACE);
         handTest.addCard(cardAHearts);
         assertTrue(handTest.hasSuit(Suit.HEARTS));
     }

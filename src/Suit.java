@@ -10,6 +10,7 @@ import java.util.*;
  */
 public final class Suit implements Comparable {
     private String name;
+
     private String symbol;
 
     /**

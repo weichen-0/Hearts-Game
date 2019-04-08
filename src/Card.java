@@ -46,26 +46,26 @@ public class Card {
     }
 
 
-//    /**
-//     * Generates the filename associated with the card.  <code>getFilename</code> assumes that all of the standard card images
-//     * are stored in individual files using filenames in the form of:
-//     * <b>RS.gif</b> where <b>R</b> is a single character used to represent
-//     * the rank value of the card and <b>S</b> is a single character used to represent
-//     * the suit value of the card.
-//     * <p>The characters used for <b>R</b> are:
-//     * 'a' (ace), '2', '3', '4', '5', '6', '7', '8', '9',
-//     * 't' (10), 'j' (jack), 'q' (queen), and 'k' (king).
-//     * <p>The characters used for <b>S</b> are:
-//     * 'c' (clubs), 'd' (diamonds), 'h' (hearts), and 's' (spades).
-//     * <p>Two other cards are also available: "b.gif" (back of card) and "j.gif" (joker).
-//     *
-//     * @param suitValue the suit value of the card.
-//     * @param rankValue the rank value of the card.
-//     * @return a string containing the filename of the card.
-//     */
-//    public static String getFilename(Suit suitValue, Rank rankValue) {
-//        return rankValue.getSymbol() + suitValue.getSymbol() + ".gif";
-//    }
+    /**
+     * Generates the filename associated with the card.  <code>getFilename</code> assumes that all of the standard card images
+     * are stored in individual files using filenames in the form of:
+     * <b>RS.gif</b> where <b>R</b> is a single character used to represent
+     * the rank value of the card and <b>S</b> is a single character used to represent
+     * the suit value of the card.
+     * <p>The characters used for <b>R</b> are:
+     * 'a' (ace), '2', '3', '4', '5', '6', '7', '8', '9',
+     * 't' (10), 'j' (jack), 'q' (queen), and 'k' (king).
+     * <p>The characters used for <b>S</b> are:
+     * 'c' (clubs), 'd' (diamonds), 'h' (hearts), and 's' (spades).
+     * <p>Two other cards are also available: "b.gif" (back of card) and "j.gif" (joker).
+     *
+     * @param suitValue the suit value of the card.
+     * @param rankValue the rank value of the card.
+     * @return a string containing the filename of the card.
+     */
+    public static String getFilename(Suit suitValue, Rank rankValue) {
+        return rankValue.getName() + suitValue.getName() + ".gif";
+    }
 
 
     /**

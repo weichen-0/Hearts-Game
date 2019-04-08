@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import javax.swing.*;
@@ -5,45 +6,54 @@ import javax.swing.*;
 import static org.junit.Assert.*;
 
 public class CardTest {
+    private Card card2Spade;
+    private Card card2Spade1;
+    private Card card3Hearts;
+    private Card card8Diamond;
+    private Deck deckTester;
+
+    @Before
+    public void instantiateCard(){
+        card2Spade = new Card (Suit.SPADES,Rank.TWO, null);
+        card2Spade1 = new Card (Suit.SPADES,Rank.TWO, null);
+        card3Hearts = new Card (Suit.HEARTS,Rank.THREE, null);
+        card8Diamond = new Card (Suit.DIAMONDS,Rank.EIGHT, null);
+        deckTester = new Deck();
+    }
 
     @Test
     public void getSuit() {
-        Card cardTest = new Card(Suit.SPADES,Rank.TWO, null);
-        assertEquals(Suit.SPADES, cardTest.getSuit());
+        assertEquals(Suit.SPADES, card2Spade.getSuit()); //Test if the getSuit method get the correct Suit based on the card inserted
     }
 
     @Test
     public void getRank() {
-        Card twoOfSpade = new Card(Suit.SPADES,Rank.TWO, null);
-        assertEquals(Rank.TWO, twoOfSpade.getRank());
+        assertEquals(Rank.TWO, card2Spade.getRank()); //Test if the getSuit method get the correct Rank based on the card i
     }
 
     @Test
     public void compareTo() {
-        Card twoOfSpade = new Card(Suit.SPADES,Rank.TWO, null);
-        Card threeOfHearts = new Card(Suit.HEARTS, Rank.THREE, null);
-        int suitDiff = twoOfSpade.getSuit().compareTo(threeOfHearts.getSuit());
-        assertEquals(1, suitDiff);
-        int rankDiff = twoOfSpade.getRank().compareTo(threeOfHearts.getRank());
-        assertEquals(-1, rankDiff);
+        int suitDiff = card2Spade.getSuit().compareTo(card3Hearts.getSuit());
+        assertEquals(1, suitDiff); //Test the difference in the Suit
+        int rankDiff = card2Spade.getRank().compareTo(card3Hearts.getRank());
+        assertEquals(-1, rankDiff); //Test the difference in the Rank;
+        int suitDiff1 = card2Spade.getSuit().compareTo(card8Diamond.getSuit());
+        assertEquals(2, suitDiff1); //Test the difference in the Suit
+        int rankDiff1 = card2Spade.getRank().compareTo(card8Diamond.getRank());
+        assertEquals(-6, rankDiff1); //Test the difference in the Rank;
     }
 
     @Test
     public void equals() {
-        Card twoOfSpade = new Card(Suit.SPADES,Rank.TWO, null);
-        Card threeOfSpade = new Card(Suit.SPADES, Rank.TWO, null);
-        assertTrue(twoOfSpade.equals(threeOfSpade));
+        assertTrue(card2Spade.equals(card2Spade1)); //Test the equals method
     }
 
 
     @Test
     public void isPointCard() {
-        Deck deckTester = new Deck();
-
         for (Card c : deckTester.getDeck()) {
-
             if (c.isPointCard()){
-                System.out.println(c + "\t" + c.getPoint());
+                System.out.println(c + "\t" + c.getPoint()); //Test whether the point for each card is correct
             }
 
         }

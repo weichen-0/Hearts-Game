@@ -74,10 +74,7 @@ public class Rank implements Comparable {
    public final static Rank KING = new Rank( "King", "K" );
     
    
-   public final static java.util.List VALUES_ACE_HIGH =
-      Collections.unmodifiableList( 
-         Arrays.asList( new Rank[] { TWO, THREE, FOUR, FIVE, SIX, SEVEN,
-                                     EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE } ) );
+   public final static List<Rank> VALUES = Arrays.asList( new Rank[] { TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE } );
    
    // Constructor - declared private as only the predefined values should
    // be used by the client.
@@ -85,26 +82,21 @@ public class Rank implements Comparable {
       name = nameValue;
       symbol = symbolValue;
    }    
+
+//  /**
+//   *  Returns a description of this rank.
+//   *  @return the name of this rank.
+//   */
+//   public String getName() {
+//      return name;
+//   }
+    
     
   /**
    *  Returns a description of this rank.
    *  @return the name of this rank.
    */
-   public String getName() {
-      return name;
-   }
-    
-    
-  /**
-   *  Returns a description of this rank.
-   *  @return the name of this rank.
-   */
-   public String toString() {
-       if (symbol.length() == 1) {
-           return " " + symbol;
-       }
-       return symbol;
-   }
+   public String toString() { return symbol; }
     
     
   /**
@@ -131,7 +123,7 @@ public class Rank implements Comparable {
    */
    public int compareTo( Object otherRankObject ) {
       Rank otherRank = (Rank) otherRankObject;
-      return VALUES_ACE_HIGH.indexOf( this ) - VALUES_ACE_HIGH.indexOf( otherRank );
+      return VALUES.indexOf( this ) - VALUES.indexOf( otherRank );
    }
 
    public boolean isEquals(Rank rank) {

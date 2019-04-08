@@ -1,48 +1,77 @@
-public class Player {
+import java.util.List;
+import java.util.Objects;
 
-  private String name;
-  private boolean isPlayer;
-  private int pointsFromCurrentRound = 0;
-  private int totalPoints = 0;
-  private Hand hand = new Hand();
+public abstract class Player {
 
-  public Player(String name, boolean isPlayer) {
-    this.isPlayer = isPlayer;
+    private String name;
+    //  private boolean isPlayer;
+    private int pointsFromCurrentRound = 0;
+    private int totalPoints = 0;
+    private Hand hand = new Hand();
+
+    public Player(String name) {
+    //    this.isPlayer = isPlayer;
     this.name = name;
-  }
+    }
 
-  public String getName() {
+    public String getName() {
       return name;
-  }
+    }
 
-  public boolean getIsPlayer(){
-    return isPlayer;
-  }
+    //  public boolean getIsPlayer(){
+    //    return isPlayer;
+    //  }
 
-  public int getPointsFromCurrentRound() { return pointsFromCurrentRound }
+    public int getPointsFromCurrentRound() { return pointsFromCurrentRound; }
 
-  public void resetPointsFromCurrentRound() {
-    pointsFromCurrentRound = 0;
-  }
-
-  public void addToPointsFromCurrentRound(int points) { // points from set
-    this.pointsFromCurrentRound += points;
-  }
-
-  public int getTotalPoints() {
+    public int getTotalPoints() {
     return totalPoints;
-  }
+    }
 
-  public void addToTotalPoints(int points) { // points from round
-    this.totalPoints += points;
-  }
+    public void addToPointsFromCurrentRound(int points) { // points from set
+    pointsFromCurrentRound += points;
+    }
 
-  public void tallyTotalPoints(int totalPoints) {
-    this.totalPoints = totalPoints;
-  }
+    public void addToTotalPoints(int points) { // points from round
+    totalPoints += points;
+    }
 
-  public Hand getHand() { return hand; }
+    public void resetPointsFromCurrentRound() {
+        pointsFromCurrentRound = 0;
+    }
 
-  public int getHandSize() { return hand.getNumberOfCards(); }
+    //  public void tallyTotalPoints(int totalPoints) {
+    //    this.totalPoints = totalPoints;
+    //  }
 
+    public Hand getHand() { return hand; }
+
+    public int getHandSize() { return hand.getNumberOfCards(); }
+
+    /**
+     * Compares two players to determine if they have the same name.
+     * This is not the same as the use of <code>equals</code> which compares
+     * two objects for equality.
+     *
+     * @param playerObject the other card
+     * @return <code>true</code> if the two players have the same name
+     * values, <code>false</code> if they do not.
+     */
+    @Override
+    public boolean equals(Object playerObject) {
+        if (!(playerObject instanceof Player)) {
+            return false;
+        }
+        Player anotherPlayer = (Player) playerObject;
+        return name == anotherPlayer.getName();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
+
+    public abstract List<Card> choose3CardsToPass();
+
+    public abstract Card chooseCardToPlay(Set set, boolean isHeartsBroken);
 }

@@ -15,27 +15,31 @@ public final class Suit implements Comparable {
     /**
      * The suit clubs.
      */
+//    public final static Suit CLUBS = new Suit("Clubs", "♣");
     public final static Suit CLUBS = new Suit("Clubs", "♣️");
-    /**
+
+    /**♣
      * The suit diamonds.
      */
+//    public final static Suit DIAMONDS = new Suit("Diamonds", "♦");
     public final static Suit DIAMONDS = new Suit("Diamonds", "♦️");
+
     /**
      * The suit hearts.
      */
+//    public final static Suit HEARTS = new Suit("Hearts", "❤");
     public final static Suit HEARTS = new Suit("Hearts", "❤️");
+
     /**
      * The suit spades.
      */
+//    public final static Suit SPADES = new Suit("Spades", "♠");
     public final static Suit SPADES = new Suit("Spades", "♠️");
 
     /**
      * List of all suit values.  Primarily for use with iteration.
      */
-    public final static java.util.List VALUES =
-            Collections.unmodifiableList(
-                    Arrays.asList(new Suit[]{CLUBS, DIAMONDS, HEARTS, SPADES}));
-
+    public final static List<Suit> VALUES = Arrays.asList(new Suit[]{CLUBS, DIAMONDS, HEARTS, SPADES});
 
     // Constructor - declared private as only the predefined values should
     // be used by the client.
@@ -95,15 +99,6 @@ public final class Suit implements Comparable {
         }
         return false;
     }
-
-//    public static void main(String[] args) {
-//
-//        Deck deck = new Deck();
-//        for (Card c : deck.getDeck()) {
-//
-//
-//        }
-//    }
 }
 
     

@@ -2,7 +2,6 @@
 // last modified: 23 Febraury 2004
 // Implementation of a deck of playing cards.  Uses the Card class.
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -23,48 +22,44 @@ import java.util.List;
  * @version 1.0
  */
 public class Deck {
-    private ArrayList<Card> deck;
-    private int index;
-
+    private List<Card> deck = new ArrayList<Card>();
 
     /**
      * Creates an empty deck of cards.
      */
-    public Deck() {
-        deck = new ArrayList<Card>();
-        restoreDeck();
-    }
-
-    public ArrayList<Card> getDeck() {
-        return deck;
-    }
+    public Deck() { restoreDeck(); }
 
     /**
-     * Adds a card to the deck.
+     * Adds a card to the deck if deck has less than 52 cards.
      *
      * @param card card to be added to the deck.
      */
     public void addCard(Card card) {
-        deck.add(card);
+        if (getNumberOfCardsRemaining() < 52) {
+            deck.add(card);
+        }
     }
+
+    /**
+     * Gets the list of cards currently in the deck.
+     *
+     * @return list of cards.
+     */
+    public List<Card> getDeck() { return deck; }
 
     /**
      * The size of a deck of cards.
      *
      * @return the number of cards present in the full deck.
      */
-    public int getSizeOfDeck() {
-        return deck.size();
-    }
+    public int getSizeOfDeck() { return 52; }
 
     /**
      * The number of cards left in the deck.
      *
      * @return the number of cards left to be dealt from the deck.
      */
-    public int getNumberOfCardsRemaining() {
-        return deck.size() - index;
-    }
+    public int getNumberOfCardsRemaining() { return deck.size(); }
 
     /**
      * Deal one card from the deck.
@@ -73,44 +68,36 @@ public class Deck {
      * are no cards left in the deck.
      */
     public Card dealCard() {
-        if (index >= deck.size())
-            return null;
-        else
-            return deck.get(index++);
+        if (deck.size() < 1) return null;
+        else {
+            Card card = deck.get(0);
+            deck.remove(card);
+            return card;
+        }
     }
-
 
     /**
      * Shuffles the cards present in the deck.
      */
-    public void shuffle() {
-        Collections.shuffle(deck);
-    }
-
+    public void shuffle() { Collections.shuffle(deck); }
 
     /**
-     * Looks for an empty deck.
+     * Checks if deck is empty.
      *
      * @return <code>true</code> if there are no cards left to be dealt from the deck.
      */
-    public boolean isEmpty() {
-        if (index >= deck.size())
-            return true;
-        else
-            return false;
-    }
-
+    public boolean isEmpty() { return deck.size() == 0; }
 
     /**
-     * Restores the deck to "full deck" status.i
+     * Restores the deck to "full deck" status if deck is empty.
      */
     public void restoreDeck() {
-        index = 0;
-
-        for (int i = 0; i < Suit.VALUES.size(); i++) {
-            for (int j = 0; j < Rank.VALUES_ACE_HIGH.size(); j++) {
-                Card tempCard = new Card((Suit) Suit.VALUES.get(i), (Rank) Rank.VALUES_ACE_HIGH.get(j), null);
-                deck.add(tempCard);
+        if (isEmpty()) {
+            for (Suit suit : Suit.VALUES) {
+                for (Rank rank : Rank.VALUES) {
+                    Card card = new Card(suit, rank, null);
+                    deck.add(card);
+                }
             }
         }
     }

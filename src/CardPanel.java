@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class CardPanel extends JPanel{
-    public static final double dw=73,dh=96; // card dimensions
+    public static final double D_WIDTH =73, D_HEIGHT = 96; // card dimensions
     private boolean canSelect;
     private Card card;
     private Image image = Toolkit.getDefaultToolkit().getImage("images/cards/blank.gif");;
@@ -16,7 +16,7 @@ public class CardPanel extends JPanel{
         this.canSelect = canSelect;
         if(card != null)
             image = card.getImage();
-        this.setPreferredSize(new Dimension((int)dw, (int)dh));
+        this.setPreferredSize(new Dimension((int) D_WIDTH, (int) D_HEIGHT));
         this.addMouseListener(new MouseListener(){
             @Override
             public void mouseClicked(MouseEvent arg0) {

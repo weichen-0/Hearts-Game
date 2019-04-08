@@ -1,9 +1,5 @@
-// Card.java - John K. Estell - 8 May 2003
-// last modified: 23 Febraury 2004
-// Implementation of a playing card.  Uses classes Rank and Suit for
-// expressing the card value.
-
 import javax.swing.*;
+import java.awt.*;
 import java.util.Objects;
 
 /**
@@ -21,8 +17,8 @@ public class Card {
     // instance variables for the card
     private Suit suitValue;
     private Rank rankValue;
-    private ImageIcon cardImage;
-//    private static boolean sortRankMajorOrder = false;
+    private Image cardImage;
+    private boolean isSelected = false;
     private int point;
 
 
@@ -31,10 +27,9 @@ public class Card {
      *
      * @param suitValue the suit value of this card.
      * @param rankValue the rank value of this card.
-     * @param cardImage the face image of this card.
      */
-    public Card(Suit suitValue, Rank rankValue, ImageIcon cardImage) {
-        this.cardImage = cardImage;
+    public Card(Suit suitValue, Rank rankValue) {
+        this.cardImage = Toolkit.getDefaultToolkit().getImage("images/cards/" + rankValue.getName() + suitValue.getName() + ".gif");
         this.suitValue = suitValue;
         this.rankValue = rankValue;
 
@@ -46,27 +41,30 @@ public class Card {
     }
 
 
-    /**
-     * Generates the filename associated with the card.  <code>getFilename</code> assumes that all of the standard card images
-     * are stored in individual files using filenames in the form of:
-     * <b>RS.gif</b> where <b>R</b> is a single character used to represent
-     * the rank value of the card and <b>S</b> is a single character used to represent
-     * the suit value of the card.
-     * <p>The characters used for <b>R</b> are:
-     * 'a' (ace), '2', '3', '4', '5', '6', '7', '8', '9',
-     * 't' (10), 'j' (jack), 'q' (queen), and 'k' (king).
-     * <p>The characters used for <b>S</b> are:
-     * 'c' (clubs), 'd' (diamonds), 'h' (hearts), and 's' (spades).
-     * <p>Two other cards are also available: "b.gif" (back of card) and "j.gif" (joker).
-     *
-     * @param suitValue the suit value of the card.
-     * @param rankValue the rank value of the card.
-     * @return a string containing the filename of the card.
-     */
-    public static String getFilename(Suit suitValue, Rank rankValue) {
-        return rankValue.getName() + suitValue.getName() + ".gif";
-    }
+//    /**
+//     * Generates the filename associated with the card.  <code>getFilename</code> assumes that all of the standard card images
+//     * are stored in individual files using filenames in the form of:
+//     * <b>RS.gif</b> where <b>R</b> is a single character used to represent
+//     * the rank value of the card and <b>S</b> is a single character used to represent
+//     * the suit value of the card.
+//     * <p>The characters used for <b>R</b> are:
+//     * 'a' (ace), '2', '3', '4', '5', '6', '7', '8', '9',
+//     * 't' (10), 'j' (jack), 'q' (queen), and 'k' (king).
+//     * <p>The characters used for <b>S</b> are:
+//     * 'c' (clubs), 'd' (diamonds), 'h' (hearts), and 's' (spades).
+//     * <p>Two other cards are also available: "b.gif" (back of card) and "j.gif" (joker).
+//     *
+//     * @param suitValue the suit value of the card.
+//     * @param rankValue the rank value of the card.
+//     * @return a string containing the filename of the card.
+//     */
+//    public static String getFilename(Suit suitValue, Rank rankValue) {
+//        return rankValue.getName() + suitValue.getName() + ".gif";
+//    }
 
+    public Image getImage() {
+        return cardImage;
+    }
 
     /**
      * Returns the suit of the card.
@@ -194,5 +192,14 @@ public class Card {
     }
 
     public boolean isPointCard() { return point > 0; }
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void toggleSelected() {
+        isSelected = !isSelected;
+    }
+
 
 }

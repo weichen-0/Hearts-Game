@@ -1,8 +1,4 @@
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Toolkit;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -10,15 +6,16 @@ import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class CardPanel extends JPanel{
+    public static final double dw=73,dh=96; // card dimensions
+    private boolean canSelect;
     private Card card;
-    private Image image;
-    /**
-     * The dimensions of each card.
-     */
-    public static final double dw=67.5,dh=102.0,dx=67.5,dy=103.0;
-    public CardPanel(Card card) {
+    private Image image = Toolkit.getDefaultToolkit().getImage("images/cards/blank.gif");;
+
+    public CardPanel(Card card, boolean canSelect) {
         this.card = card;
-        image=Toolkit.getDefaultToolkit().getImage(Card.getFilename(card.getSuit(), card.getRank()));
+        this.canSelect = canSelect;
+        if(card != null)
+            image = card.getImage();
         this.setPreferredSize(new Dimension((int)dw, (int)dh));
         this.addMouseListener(new MouseListener(){
             @Override
@@ -39,7 +36,8 @@ public class CardPanel extends JPanel{
 
             @Override
             public void mouseReleased(MouseEvent arg0) {
-//                card.setChoseness(!card.isChosen());
+                if(card != null)
+                    card.toggleSelected();
                 repaint();
             }
         });
@@ -52,28 +50,12 @@ public class CardPanel extends JPanel{
     }
     @Override
     public void paint(Graphics g) {
-        int cardValue = 36;
-        g.drawImage(image,0, 0, getWidth(),getHeight(),
-                (int)(cardValue%13*dx),(int)(cardValue/13*dy),
-                (int)(cardValue%13*dx+dw), (int)(cardValue/13*dy+dh),this);
-        if(true){ //card.isChosen()
-            g.setColor(new Color(255,0,0,32));
+        g.drawImage(image,0, 0, getWidth(),getHeight(), this);
+        if(canSelect && card != null && card.isSelected()){
+            g.setColor(new Color(255,0,0,50));
             g.fillRoundRect(0, 0, getWidth()-1, getHeight()-1, 4, 4);
         }
         g.setColor(new Color(0,0,0,128));
         g.drawRoundRect(0, 0, getWidth()-1, getHeight()-1, 4, 4);
-
-    }
-    public boolean isChosen() {
-        return true;//return card.isChosen();
-    }
-    public void setChoseness(boolean choosed) {
-        //card.setChoseness(choosed);
-    }
-    public boolean isEnabled() {
-        return true;//return card.isEnabled();
-    }
-    public void setEnabled(boolean enable) {
-        //card.setEnabled(enable);
     }
 }

@@ -13,7 +13,7 @@ public class DeckTest {
     public void addCard() {
         Deck decktest = new Deck();
         assertEquals(52, decktest.getSizeOfDeck());
-        Card c1 = new Card(Suit.HEARTS, Rank.ACE, null);
+        Card c1 = new Card(Suit.HEARTS, Rank.ACE);
         decktest.addCard(c1);
         assertEquals(53, decktest.getSizeOfDeck());
     }

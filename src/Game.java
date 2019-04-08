@@ -16,34 +16,20 @@ public class Game {
         }
     }
 
-    public void startRound() {
+    public void initRound() {
         printOverallScoreBoard();
 
         System.out.printf("========== Start of Round %d ==========%n%n", roundNum);
         System.out.println("Dealing cards...");
 
         distributeCard();
+        System.out.println("All players have been dealt 13 cards\n");
+        printAllHands();
+
         return;
-//        System.out.println("All players have been dealt 13 cards\n");
-//        printAllHands();
-//
-//        if (passedCards()) {
-//            System.out.println("Displaying everyone's hands...");
-//            printAllHands();
-//        };
-//
-//        //first round logic: decide first player
-//        int startPlayerIndex = GameRegulator.getStartPlayerIndex(listOfPlayers);
-//
-//        for (int setCount = 1; setCount <= 13; setCount++) {
-//            startPlayerIndex = startSet(setCount, startPlayerIndex);
-//            printRoundScoreBoard();
-//        }
-//        System.out.printf("========== End of Round %d ==========%n%n", roundNum++);
-//        tallyPointsForRound();
     }
 
-    private int startSet(int setCount, int startPlayerIndex) {
+    public int startSet(int setCount, int startPlayerIndex) {
         Set set = new Set();
         for (int i = startPlayerIndex; i < startPlayerIndex + 4; i++) {
             Player player = listOfPlayers[i % 4];
@@ -66,7 +52,7 @@ public class Game {
         Player winningPlayerOfSet = listOfPlayers[winningPlayerIndex];
         System.out.printf("%nCards played this Set > %s%n", set);
         tallyPointsForSet(set, winningPlayerOfSet);
-
+        printRoundScoreBoard();
         return winningPlayerIndex;
     }
 
@@ -145,7 +131,7 @@ public class Game {
         return highestScore;
     }
 
-    private boolean passedCards() {
+    public boolean passedCards() {
         int passOrder = roundNum % 4;
 
         if (passOrder == 0) {
@@ -181,6 +167,8 @@ public class Game {
 
         }
         System.out.printf("%nAll cards have been passed for Round %d%n%n", roundNum);
+        System.out.println("Displaying everyone's hands...");
+        printAllHands();
         return true;
     }
 
@@ -201,7 +189,8 @@ public class Game {
         player.addToPointsFromCurrentRound(pointsInSet);
     }
 
-    private void tallyPointsForRound() {
+    public void tallyPointsForRound() {
+        System.out.printf("========== End of Round %d ==========%n%n", roundNum++);
         Player shootTheMoonPlayer = null;
         for(Player player : listOfPlayers){
             if(player.getPointsFromCurrentRound() == 26){

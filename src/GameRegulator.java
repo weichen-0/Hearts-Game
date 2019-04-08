@@ -56,7 +56,7 @@ public class GameRegulator {
     }
 
     public static int getStartPlayerIndex(Player[] listOfPlayers) {
-        Card twoClubs = new Card(Suit.CLUBS, Rank.TWO, null); // to update image
+        Card twoClubs = new Card(Suit.CLUBS, Rank.TWO); // to update image
         int index = 0;
         for (; index < 4; index++) {
             Hand playerHand = listOfPlayers[index].getHand();

@@ -1,86 +1,109 @@
-//import org.junit.Test;
-//import java.util.*;
-//
-//import static org.junit.Assert.*;
-//
-//public class HandTest {
+import org.junit.Before;
+import org.junit.Test;
+import java.util.*;
+import java.util.ArrayList;
+import static org.junit.Assert.*;
+
+public class HandTest {
+    private Hand handTest;
+
+    @Before
+    public void instantiateHand(){
+        handTest = new Hand();
+    }
+
+    @Test
+    public void addCard() {
+        assertEquals(0, handTest.getNumberOfCards()); //Hand start off with 0 card test the Add method, (1 card at a go)
+        Card cardAHearts = new Card(Suit.HEARTS, Rank.ACE, null);
+        handTest.addCard(cardAHearts);
+        assertEquals(1, handTest.getNumberOfCards());
+    }
+
+    @Test
+    public void addCards() {
+        assertEquals(0, handTest.getNumberOfCards()); //Hand start off with 0 card test the Add method, (>1 card at a go)
+        List<Card> list = new Deck().getDeck();
+        handTest.addCards(list);
+        assertEquals(52, handTest.getNumberOfCards());
+    }
+
+    @Test
+    public void getCard() {
+        Card card2Hearts = new Card(Suit.HEARTS, Rank.TWO, null); //Test method to get a card from the hand
+        Card card4Hearts = new Card(Suit.HEARTS, Rank.FOUR, null);
+        handTest.addCard(card2Hearts);
+        handTest.addCard(card4Hearts);
+        assertEquals(card2Hearts, handTest.getCard(0));
+    }
+
+    @Test
+    public void removeCard() {
+        Card card2Hearts = new Card(Suit.HEARTS, Rank.TWO, null); //Test method to remove a card that is being specify
+        handTest.addCard(card2Hearts);
+        assertEquals(1, handTest.getNumberOfCards());
+        handTest.removeCard(card2Hearts);
+        assertEquals(0, handTest.getNumberOfCards());
+    }
+
+    @Test
+    public void removeCards() {
+        assertEquals(0, handTest.getNumberOfCards()); //Method will remove a list of cards from the Hand
+        List<Card> list = new Deck().getDeck();
+        handTest.addCards(list);
+        assertEquals(52, handTest.getNumberOfCards());
+
+        List<Card> cardsToRemove = new ArrayList<>();
+        cardsToRemove.add(new Card(Suit.HEARTS, Rank.TWO, null));
+        cardsToRemove.add(new Card(Suit.CLUBS, Rank.TWO, null));
+        cardsToRemove.add(new Card(Suit.SPADES, Rank.TWO, null));
+        handTest.removeCards(cardsToRemove); //remove 3 cards
+
+        assertEquals(49, handTest.getNumberOfCards());
+    }
+
+    @Test
+    public void removeCardByIndex() {
+        ArrayList<Card> cardsToRemove = new ArrayList<>();
+        cardsToRemove.add(new Card(Suit.HEARTS, Rank.TWO, null));
+        cardsToRemove.add(new Card(Suit.CLUBS, Rank.TWO, null));
+        cardsToRemove.add(new Card(Suit.SPADES, Rank.TWO, null));
+        handTest.addCards(cardsToRemove);
+
+//        for (Card c: handTest.getCardList()) {
+        for (int i = 0; i < handTest.getCardList().size(); i++) {
+            System.out.println("index : " + i + " -> " + handTest.getCard(i));
+        }
+        System.out.println("=== index 2 removed ===");
+
+        handTest.removeCard(2);
+        for (int i = 0; i < handTest.getCardList().size(); i++) {
+            System.out.println("index : " + i + " -> " + handTest.getCard(i));
+        }
+    }
+
+    @Test
+    public void containsCard() {
+        ArrayList<Card> listOfCards = new ArrayList<>(); //Add a list of card into a hand
+        listOfCards.add(new Card(Suit.SPADES, Rank.THREE, null));
+        listOfCards .add(new Card(Suit.SPADES, Rank.FOUR, null));
+        listOfCards .add(new Card(Suit.HEARTS, Rank.TWO, null));
+        listOfCards .add(new Card(Suit.CLUBS, Rank.TWO, null));
+        listOfCards .add(new Card(Suit.SPADES, Rank.TWO, null));
+        handTest.addCards(listOfCards );
+        Card card2Hearts = new Card(Suit.HEARTS, Rank.TWO, null); //Check if the hand contains the card
+        assertTrue(handTest.containsCard(card2Hearts));
+    }
+
+    @Test
+    public void hasSuit(){
+        Card cardAHearts = new Card(Suit.HEARTS, Rank.ACE, null);
+        handTest.addCard(cardAHearts);
+        assertTrue(handTest.hasSuit(Suit.HEARTS));
+    }
+
 //    @Test
-//    public void addCard() {
-//        Hand handTest = new Hand();
-//        Card card1 = new Card(Suit.HEARTS, Rank.ACE, null);
-//        handTest.addCard(card1);
-//        assertEquals(1, handTest.getNumberOfCards());
-//    }
-//
-//    @Test
-//    public void addCards() {
-//        Hand handTest = new Hand();
-//        assertEquals(0, handTest.getNumberOfCards());
-//        List<Card> list = new Deck().getDeck();
-//        handTest.addCards(list);
-//        assertEquals(52, handTest.getNumberOfCards());
-//    }
-//
-//    @Test
-//    public void getCard() {
-//        Hand hand1 = new Hand();
-//        Card c1 = new Card(Suit.HEARTS, Rank.TWO, null);
-//        hand1.addCard(c1);
-//        assertEquals(c1, hand1.getCard(0));
-//    }
-//
-//    @Test
-//    public void removeCard() {
-//        Hand hand1 = new Hand();
-//        Card c1 = new Card(Suit.HEARTS, Rank.TWO, null);
-//        hand1.addCard(c1);
-//        assertEquals(1, hand1.getNumberOfCards());
-//        hand1.removeCard(c1);
-//        assertEquals(0, hand1.getNumberOfCards());
-//    }
-//
-//    @Test
-//    public void removeCards() {
-//        Hand handTest = new Hand();
-//        assertEquals(0, handTest.getNumberOfCards());
-//        List<Card> list = new Deck().getDeck();
-//        handTest.addCards(list);
-//        assertEquals(52, handTest.getNumberOfCards());
-//
-//        List<Card> cardsToRemove = new ArrayList<>();
-//        cardsToRemove.add(new Card(Suit.HEARTS, Rank.TWO, null));
-//        cardsToRemove.add(new Card(Suit.CLUBS, Rank.TWO, null));
-//        cardsToRemove.add(new Card(Suit.SPADES, Rank.TWO, null));
-//        handTest.removeCards(cardsToRemove);
-//        // removes 3 cards
-//
-//        assertEquals(49, handTest.getNumberOfCards());
-//    }
-//
-//    @Test
-//    public void removeCardByIndex() {
-//        Hand handTest = new Hand();
-//
-//        ArrayList<Card> cardsToRemove = new ArrayList<>();
-//        cardsToRemove.add(new Card(Suit.HEARTS, Rank.TWO, null));
-//        cardsToRemove.add(new Card(Suit.CLUBS, Rank.TWO, null));
-//        cardsToRemove.add(new Card(Suit.SPADES, Rank.TWO, null));
-//        handTest.addCards(cardsToRemove);
-//
-////        for (Card c: handTest.getCardList()) {
-//        for (int i = 0; i < handTest.getCardList().size(); i++) {
-//            System.out.println("index : " + i + " -> " + handTest.getCard(i));
-//        }
-//        System.out.println("=== index 2 removed ===");
-//
-//        handTest.removeCard(2);
-//        for (int i = 0; i < handTest.getCardList().size(); i++) {
-//            System.out.println("index : " + i + " -> " + handTest.getCard(i));
-//        }
-//    }
-//
-//    @Test
-//    public void containsCard() {
+//    public void findCardIndex() {
 //        Hand handTest = new Hand();
 //        ArrayList<Card> listofcard = new ArrayList<>();
 //        listofcard.add(new Card(Suit.SPADES, Rank.THREE, null));
@@ -90,84 +113,14 @@
 //        listofcard.add(new Card(Suit.SPADES, Rank.TWO, null));
 //        handTest.addCards(listofcard);
 //        Card c1 = new Card(Suit.HEARTS, Rank.TWO, null);
-//        assertTrue(handTest.containsCard(c1));
+//        assertEquals(1, handTest.findCardIndex(c1));
 //    }
-//
-////    @Test
-////    public void findCardIndex() {
-////        Hand handTest = new Hand();
-////        ArrayList<Card> listofcard = new ArrayList<>();
-////        listofcard.add(new Card(Suit.SPADES, Rank.THREE, null));
-////        listofcard.add(new Card(Suit.SPADES, Rank.FOUR, null));
-////        listofcard.add(new Card(Suit.HEARTS, Rank.TWO, null));
-////        listofcard.add(new Card(Suit.CLUBS, Rank.TWO, null));
-////        listofcard.add(new Card(Suit.SPADES, Rank.TWO, null));
-////        handTest.addCards(listofcard);
-////        Card c1 = new Card(Suit.HEARTS, Rank.TWO, null);
-////        assertEquals(1, handTest.findCardIndex(c1));
-////    }
-//
-//
-////    @Test
-////    public void replaceCard() {
-////        Hand handTest = new Hand();
-////        ArrayList<Card> listofcard = new ArrayList<>();
-////        Card c2 = new Card(Suit.HEARTS, Rank.TWO, null);
-////        Card c3 = new Card(Suit.CLUBS, Rank.TWO, null);
-////        listofcard.add(c2);
-////        listofcard.add(c3);
-////        handTest.addCards(listofcard);
-////        Card c1 = new Card(Suit.HEARTS, Rank.FOUR, null);
-////        assertTrue(handTest.replaceCard(c2, c1));
-////    }
-//
-//
-//    @Test
-//    public void getNextHighestComCard() {
-//
-//        Hand handTest = new Hand();
-//
-//        handTest.addCard(new Card(Suit.SPADES, Rank.EIGHT, null));
-//        handTest.addCard(new Card(Suit.SPADES, Rank.FOUR, null));
-//        handTest.addCard(new Card(Suit.SPADES, Rank.JACK, null));
-//
-//        Card eightOfSpades = new Card(Suit.SPADES, Rank.EIGHT, null);
-//        Card currentCard = new Card(Suit.SPADES, Rank.TEN, null);
-//        assertEquals(eightOfSpades, handTest.getNextHighestComCard(Suit.SPADES, currentCard, true));
-//
-//        System.out.println(handTest.getNextHighestComCard(Suit.SPADES, currentCard, true));
-//    }
-//
-//    @Test
-//    public void getSmallestComCard() {
-//        Hand handTest = new Hand();
-//
-//        handTest.addCard(new Card(Suit.SPADES, Rank.EIGHT, null));
-//        handTest.addCard(new Card(Suit.SPADES, Rank.JACK, null));
-//
-//        Card eightOfSpades = new Card(Suit.SPADES, Rank.EIGHT, null);
-////        assertEquals(eightOfSpades, handTest.getSmallestComCard(false));
-//        System.out.println(handTest.getSmallestComCard(false) + "\n ==== ");
-//
-//        handTest.addCard(new Card(Suit.SPADES, Rank.FOUR, null));
-////        Card currentCard = new Card(Suit.SPADES, Rank.TEN, null);
-//        System.out.println(handTest.getSmallestComCard(false));
-//
-//
-//    }
-//
-//    @Test
-//    public void getNextHighestCard() {
-//        Hand handTest = new Hand();
-//
-//        handTest.addCard(new Card(Suit.SPADES, Rank.SEVEN, null));
-//        handTest.addCard(new Card(Suit.SPADES, Rank.FOUR, null));
-//
-//        Card eightOfSpades = new Card(Suit.SPADES, Rank.EIGHT, null);
-//        System.out.println(handTest.getNextHighestCard(Suit.SPADES, eightOfSpades ) + "\n ==== ");
-//
-//        handTest.addCard(new Card(Suit.SPADES, Rank.SIX, null));
-//        Card sevenofSpades = new Card(Suit.SPADES, Rank.SEVEN, null);
-//        System.out.println(handTest.getNextHighestCard(Suit.SPADES, sevenofSpades ));
-//    }
-//}
+    //Todo
+
+
+
+
+
+
+
+}

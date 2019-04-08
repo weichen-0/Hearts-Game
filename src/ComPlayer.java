@@ -39,6 +39,7 @@ public class ComPlayer extends Player {
                 cardPlayed = getNextHighestCard(leadingSuit, winningCard, isFirstSet);
                 break;
         }
+        this.setPlayedCard(cardPlayed);
         return cardPlayed;
     }
 

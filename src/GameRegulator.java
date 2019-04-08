@@ -1,14 +1,14 @@
 
 public class GameRegulator {
 
-    public static boolean cardPlayedIsValid(Player player, Card cardPlayed, Set set, boolean isHeartBroken) {
+    public static void validateCardPlayed(Player player, Card cardPlayed, Set set, boolean isHeartBroken) throws IllegalMoveException {
 
         // Check if player truly has card that it wants to play
         Hand playerHand = player.getHand();
-        if (!playerHand.containsCard(cardPlayed)) {
-            System.out.println("Selected card does not exist in your hand. Try again.");
-            return false;
-        }
+//        if (!playerHand.containsCard(cardPlayed)) {
+//            System.out.println("Selected card does not exist in your hand. Try again.");
+//            return false;
+//        }
 
         // Check if point cards are being played for first set
         // If player has 13 cards, this is the first set.
@@ -20,16 +20,19 @@ public class GameRegulator {
         if (isFirstSet) {
             // First card must be two clubs
             if (setSize == 0 && (!suitPlayed.isEquals(Suit.CLUBS) || !rankPlayed.isEquals(Rank.TWO))){
-                System.out.println("You must start with Two of Clubs in the first set. Try again.");
-                return false;
+                String errorMsg = "You must start with Two of Clubs in the first set. Try again.";
+                System.out.println(errorMsg);
+                throw new IllegalMoveException(errorMsg, "Invalid Move");
             }
             // Cannot play point cards in the first set
             if (suitPlayed.isEquals(Suit.SPADES) && cardPlayed.getRank().equals(Rank.QUEEN)) {
-                System.out.println("You cannot play Queen of Spades in the first set. Try again.");
-                return false;
+                String errorMsg = "You cannot play Queen of Spades in the first set. Try again.";
+                System.out.println(errorMsg);
+                throw new IllegalMoveException(errorMsg, "Invalid Move");
             } else if (suitPlayed.isEquals(Suit.HEARTS)) {
-                System.out.println("You cannot play any Hearts card in the first set. Try again.");
-                return false;
+                String errorMsg = "You cannot play any Hearts card in the first set. Try again.";
+                System.out.println(errorMsg);
+                throw new IllegalMoveException(errorMsg, "Invalid Move");
             }
         }
 
@@ -39,8 +42,9 @@ public class GameRegulator {
             Suit firstSuit = set.getLeadingSuit();
             if (!suitPlayed.isEquals(firstSuit)) {
                 if (playerHand.hasSuit(firstSuit)) {
-                    System.out.println("You must play a card of the leading suit if available. Try again.");
-                    return false;
+                    String errorMsg = "You must play a card of the leading suit if available. Try again.";
+                    System.out.println(errorMsg);
+                    throw new IllegalMoveException(errorMsg, "Invalid Move");
                 } else if (suitPlayed.isEquals(Suit.HEARTS)) {
                     isHeartBroken = true;
                 }
@@ -49,10 +53,10 @@ public class GameRegulator {
 
         // Extra validation for Hearts cards
         if (suitPlayed.isEquals(Suit.HEARTS) && !isHeartBroken) {
-            System.out.println("Heart suit has not been broken yet. Try again.");
-            return false;
+            String errorMsg = "Heart suit has not been broken yet. Try again.";
+            System.out.println(errorMsg);
+            throw new IllegalMoveException(errorMsg, "Invalid Move");
         }
-        return true;
     }
 
     public static int getStartPlayerIndex(Player[] listOfPlayers) {

@@ -3,6 +3,7 @@ import java.util.List;
 
 public class Set {
     private List<Card> cards = new ArrayList<>();
+    private int playerNumLastPlayed = -1;
 
     public List<Card> getSetCards() { return cards; }
 
@@ -15,9 +16,14 @@ public class Set {
         return cards.get(0).getSuit();
     }
 
-    public int getNumOfCardsInSet() { return cards.size(); }
+    public int getNumOfCardsInSet() {
+        return cards.size();
+    }
 
-    public void addCardToSet(Card cardPlayed) { cards.add(cardPlayed); }
+    public void addCardToSet(Card cardPlayed, int playerNum) {
+        playerNumLastPlayed = playerNum;
+        cards.add(cardPlayed);
+    }
 
     public int getHighestCardIndex() {
         int index = 0;
@@ -38,6 +44,10 @@ public class Set {
 
     public Card getWinningCard() { return cards.get(getHighestCardIndex()); }
 
+    public int getWinningPlayerIndex() {
+        int winningCardIndex = getHighestCardIndex();
+        return (winningCardIndex + playerNumLastPlayed + 1) % 4;
+    }
 
     public int getTotalPointsInSet() {
         int setPoint = 0;
@@ -54,5 +64,9 @@ public class Set {
         }
         output += "]";
         return output;
+    }
+
+    public int getPlayerNumLastPlayed() {
+        return playerNumLastPlayed;
     }
 }

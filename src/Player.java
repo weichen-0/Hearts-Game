@@ -5,7 +5,7 @@ import java.util.Objects;
 public abstract class Player {
 
     private String name;
-//    private boolean isPlayer;
+    private Card playedCard;
 
     private int pointsFromCurrentRound = 0;
     private int totalPoints = 0;
@@ -77,4 +77,12 @@ public abstract class Player {
     public abstract List<Card> choose3CardsToPass();
 
     public abstract Card chooseCardToPlay(Set set, boolean isHeartsBroken);
+
+    public Card getPlayedCard(){
+        return playedCard;
+    }
+
+    public void setPlayedCard(Card playedCard){
+        this.playedCard = playedCard;
+    }
 }

@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- *
+ * Class that runs the Hearts game GUI application with java swing
  */
 public class GameGUI extends JFrame {
 
@@ -37,7 +37,7 @@ public class GameGUI extends JFrame {
     private JLabel westLabel;
 
     /**
-     * Launch the hearts.GUI application.
+     * Launches the GUI application.
      */
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -53,7 +53,7 @@ public class GameGUI extends JFrame {
     }
 
     /**
-     * Create the frame.
+     * Creates frame layouts of varying sizes within the GUI application display screen.
      */
     public GameGUI() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -128,7 +128,7 @@ public class GameGUI extends JFrame {
         buttonPanel.add(playButton);
         southCardPanel.add(buttonPanel, BorderLayout.SOUTH);
 
-        // initialise game
+        // initialises Hearts game
         gameCtrl = new GameController();
         players = gameCtrl.startGame();
         JOptionPane.showMessageDialog(null, "Welcome to Hearts! To start Round 1, select 3 cards to pass to the left.",
@@ -141,11 +141,11 @@ public class GameGUI extends JFrame {
                 List<Card> plist = new ArrayList<>();
                 for (Card p : cardsInHand) {
                     if (p.isSelected()) {
-                        plist.add(p);
+                        plist.add(p); //checks what cards in player's hand are selected for selection to be displayed on screen
                     }
                 }
                 try {
-                    gameCtrl.executeMove(plist); // execute player's play
+                    gameCtrl.executeMove(plist); // execute player's action
                 } catch (IllegalMoveException e1) {
                     JOptionPane.showMessageDialog(null, e1.getMessage(), e1.getTitle(), JOptionPane.ERROR_MESSAGE);
                 } catch (UserMessageException e1) {
@@ -171,6 +171,9 @@ public class GameGUI extends JFrame {
         });
     }
 
+    /**
+     * Reloads the GUI application display screen based on cards played by each player and the remaining cards in HumanPlayer's hand
+     */
     @Override
     public void repaint() {
         super.repaint();

@@ -5,11 +5,19 @@ import hearts.exception.*;
 
 import java.util.List;
 
+/**
+ * Class that directs the entire flow of the Hearts game
+ * Default constructor is used
+ */
 public class GameController {
 
     Game game;
     HumanPlayer humanPlayer;
 
+    /**
+     * Starts the game and
+     * @return
+     */
     public Player[] startGame() {
         System.out.println("====================================   WELCOME TO THE GAME OF HEARTS   ====================================");
         game = new Game(1);
@@ -19,7 +27,11 @@ public class GameController {
         return players;
     }
 
-    public boolean startNextRound() {
+    /**
+     *
+     * @return
+     */
+    private boolean startNextRound() {
         if (game.getHighestScore() < 100) {
             game.initRound();
             game.unsetPlayedCards();
@@ -66,6 +78,12 @@ public class GameController {
         game.makeComputerMoves();
     }
 
+    /**
+     *
+     * @param cards
+     * @throws IllegalMoveException
+     * @throws UserMessageException
+     */
     public void passCards(List<Card> cards) throws IllegalMoveException, UserMessageException {
         if(cards.size() != 3){
             humanPlayer.deselectCardsInHand();

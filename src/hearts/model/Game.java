@@ -6,7 +6,7 @@ import hearts.exception.*;
 import java.util.*;
 
 /**
- * Class that manages the entire Hearts game, overseeing other classes such as Round, Set, Player, etc.
+ * Class that manages other relevant game classes such as Round, Set, Player, etc.
  * Keeps track of the current round and set number in the game, and also the cards in the current set
  * Accounts for the 4 players, whether hearts has been broken in each round and the index of the last player who won the set
  */

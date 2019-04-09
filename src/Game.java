@@ -78,11 +78,11 @@ public class Game {
                 return;
             }
             System.out.printf("%nSET %d, CARD #%d%n", setNum, currentSet.getNumOfCardsInSet() + 1);
-            Player player = listOfPlayers[i % 4];
-            Card cardPlayed = chooseCardToPlay(player, currentSet);
+            ComPlayer comPlayer = (ComPlayer) listOfPlayers[i % 4];
+            Card cardPlayed = comPlayer.chooseCardToPlay(currentSet, isHeartsBroken);
             currentSet.addCardToSet(cardPlayed, i % 4);
             if (cardPlayed.isPointCard()) isHeartsBroken = true;
-            player.getHand().removeCard(cardPlayed);
+            comPlayer.getHand().removeCard(cardPlayed);
         }
 
         int numCardsInSet = currentSet.getNumOfCardsInSet();
@@ -189,7 +189,8 @@ public class Game {
         List<List<Card>> chosenCardsForEachPlayer = new ArrayList<>();
         for (Player player : listOfPlayers) {
             if(player instanceof ComPlayer){
-                chosenCardsForEachPlayer.add(player.choose3CardsToPass());
+                ComPlayer comPlayer = (ComPlayer) player;
+                chosenCardsForEachPlayer.add(comPlayer.choose3CardsToPass());
             }else{
                 chosenCardsForEachPlayer.add(cards); // human player inputs cards to pass
             }
@@ -224,10 +225,6 @@ public class Game {
     private void transferCards(Player passingPlayer, Player receivingPlayer, List<Card> cardsToPass) {
         passingPlayer.getHand().removeCards(cardsToPass);
         receivingPlayer.getHand().addCards(cardsToPass);
-    }
-
-    private Card chooseCardToPlay(Player player, Set set) {
-        return player.chooseCardToPlay(set, isHeartsBroken);
     }
 
     private void tallyPointsForSet(Set set, Player player) {

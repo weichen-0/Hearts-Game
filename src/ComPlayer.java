@@ -1,7 +1,16 @@
 import java.util.List;
 
+/**
+ * Sub-class of Player
+ * Inherits all accessible methods and attributes of Player
+ * Has 2 additional methods specific to ComPlayer
+ */
 public class ComPlayer extends Player {
 
+    /**
+     * 
+     * @param name
+     */
     public ComPlayer(String name) {
         super(name);
     }

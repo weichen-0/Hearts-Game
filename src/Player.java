@@ -1,11 +1,14 @@
-import java.util.List;
 import java.util.Objects;
 
 /**
  * Representation of Players in a Hearts game
- *
+ * Player name - provided in constructor parameter
+ * 4 other default instance variables:
+ * playedCard = null
+ * pointsFromCurrentRound, totalPoints = 0
+ * hand (list of cards)
  */
-public abstract class Player {
+public class Player {
 
     private String name;
     private Card playedCard;
@@ -13,44 +16,61 @@ public abstract class Player {
     private int totalPoints = 0;
     private Hand hand = new Hand();
 
-
+    /**
+     * Constructs a player of the given name
+     * @param name player name
+     */
     public Player(String name) {
-    //    this.isPlayer = isPlayer;
         this.name = name;
     }
 
+    /**
+     * Returns name of the player
+     * @return player name
+     */
     public String getName() {
       return name;
     }
 
-    //  public boolean getIsPlayer(){
-    //    return isPlayer;
-    //  }
-
+    /**
+     * Returns total points earned by player in current round
+     * @return points earned from current round
+     */
     public int getPointsFromCurrentRound() { return pointsFromCurrentRound; }
 
-    public int getTotalPoints() {
-    return totalPoints;
-    }
+    /**
+     * Returns total points earned by player in the game
+     * @return points earned from current game
+     */
+    public int getTotalPoints() { return totalPoints; }
 
-    public void addToPointsFromCurrentRound(int points) { // points from set
-    pointsFromCurrentRound += points;
-    }
+    /**
+     * Adds points earned by player in a set into the total points in current round
+     * @param points points earned in a set
+     */
+    public void addToPointsFromCurrentRound(int points) {  pointsFromCurrentRound += points; }
 
-    public void addToTotalPoints(int points) { // points from round
-        totalPoints += points;
-    }
+    /**
+     * Adds points earned by player in a round into the total points in current game
+     * @param points points earned in a round
+     */
+    public void addToTotalPoints(int points) { totalPoints += points; }
 
-    public void resetPointsFromCurrentRound() {
-        pointsFromCurrentRound = 0;
-    }
+    /**
+     * Resets points earned by player in a round to zero
+     */
+    public void resetPointsFromCurrentRound() { pointsFromCurrentRound = 0; }
 
-    //  public void tallyTotalPoints(int totalPoints) {
-    //    this.totalPoints = totalPoints;
-    //  }
-
+    /**
+     * Return the hand of the player
+     * @return list of cards in player's hand
+     */
     public Hand getHand() { return hand; }
 
+    /**
+     * Return the hand size of the player
+     * @return the number of cards in player's hand
+     */
     public int getHandSize() { return hand.getNumberOfCards(); }
 
     /**
@@ -59,8 +79,8 @@ public abstract class Player {
      * two objects for equality.
      *
      * @param playerObject the other card
-     * @return <code>true</code> if the two players have the same name
-     * values, <code>false</code> if they do not.
+     * @return <code>true</code> if the two players have the same name,
+     * <code>false</code> if they do not.
      */
     @Override
     public boolean equals(Object playerObject) {
@@ -71,19 +91,23 @@ public abstract class Player {
         return name == anotherPlayer.getName();
     }
 
+    /**
+     * Returns hash code value of player object
+     * @return hash code value of player object
+     */
     @Override
-    public int hashCode() {
-        return Objects.hash(name);
-    }
+    public int hashCode() { return Objects.hash(name); }
 
-    public abstract List<Card> choose3CardsToPass();
+    /**
+     * Returns the card that was last played by player
+     * @return last card played by player
+     */
+    public Card getPlayedCard(){ return playedCard; }
 
-    public abstract Card chooseCardToPlay(Set set, boolean isHeartsBroken);
-
-    public Card getPlayedCard(){
-        return playedCard;
-    }
-
+    /**
+     * Sets the last card played by player to the given card
+     * @param playedCard card that was just played by player
+     */
     public void setPlayedCard(Card playedCard){
         this.playedCard = playedCard;
     }

@@ -198,13 +198,7 @@ public class Hand {
      * @return a list of cards held in the hand.
      */
     public String toString() {
-        String output = "";
-
-        for (Card card : hand) {
-            output += '\t' + card.toString() + ", ";
-        }
-
-        return "[" + output.substring(0, output.length() - 2) + "\t]";
+        return hand.toString();
     }
 
 

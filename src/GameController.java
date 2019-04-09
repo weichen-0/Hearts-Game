@@ -18,14 +18,10 @@ public class GameController {
         if (game.getHighestScore() < 100) {
             game.initRound();
             game.unsetPlayedCards();
-        } else {
-            System.out.printf("Game has ended. %s wins with the lowest score! ", game.getWinner().getName());
-            System.out.println("====================================   THANK YOU FOR PLAYING HEARTS   ====================================");
+            return;
         }
-    }
-
-    public String getWinnerName() {
-        return game.getWinner().getName();
+        System.out.printf("Game has ended. %s wins with the lowest score! ", game.getWinner().getName());
+        System.out.println("====================================   THANK YOU FOR PLAYING HEARTS   ====================================");
     }
 
     public void executeMove(List<Card> cards) throws IllegalMoveException, UserMessageException{
@@ -48,6 +44,9 @@ public class GameController {
     }
 
     public void executeComputerMoves() throws UserMessageException{
+        if (!game.hasPassedCards() ) {
+            return;
+        }
         if(game.getCurrentSet().getNumOfCardsInSet() == 0){
             game.unsetPlayedCards();
         }

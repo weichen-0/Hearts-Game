@@ -47,9 +47,8 @@ public class Game {
         Player player = listOfPlayers[0]; //human player
         System.out.printf("%nSET %d, CARD #%d%n", setNum, currentSet.getNumOfCardsInSet() + 1);
         System.out.print("\t");
-//        printAlignedOptions(player.getHand().getNumberOfCards());
         System.out.printf("%s Hand > %s%n", player.getName(), player.getHand());
-        System.out.printf("Current Set contains > %s%n", currentSet.getSetCards());
+        System.out.printf("Current Set > %s%n", currentSet.getSetCards());
         System.out.printf("PLAYER1 picked %s%n", cardPlayed);
         GameRegulator.validateCardPlayed(player, cardPlayed, currentSet, isHeartsBroken);
         currentSet.addCardToSet(cardPlayed, 0);
@@ -73,7 +72,6 @@ public class Game {
 
         for (int i = startPlayerIndex; currentSet.getNumOfCardsInSet() < 4; i++) {
             if(i % 4 == 0){ //human player
-//                throw new UserMessageException("Your Turn.", "");
                 return;
             }
             System.out.printf("%nSET %d, CARD #%d%n", setNum, currentSet.getNumOfCardsInSet() + 1);
@@ -83,6 +81,7 @@ public class Game {
             if (cardPlayed.isPointCard()) isHeartsBroken = true;
             player.getHand().removeCard(cardPlayed);
         }
+
         int numCardsInSet = currentSet.getNumOfCardsInSet();
         if(numCardsInSet == 4){
             int winningPlayerIndex = currentSet.getWinningPlayerIndex();
@@ -98,19 +97,25 @@ public class Game {
             if (setNum == 14) {
                 tallyPointsForRound();
                 if(getHighestScore() < 100) {
-                    roundNum += 1; //TODO check if addition at this loc is correct
+                    roundNum += 1;
                     passedCards = (roundNum % 4 == 0);
-                    String message = winningPlayerOfSet.getName() + " won this set. ";
-                    if(roundNum % 4 == 0) {
-                        message += "No passing of cards required for the next round.";
-                    }else{
-                        message += "To start the next round, select 3 cards to pass.";
+                    String message = winningPlayerOfSet.getName() + " won this set. (" + totalPointsInSet + " Points)\n";
+                    switch (roundNum % 4) {
+                        case (0): message += "No passing of cards required for Round " + roundNum + "."; break;
+                        case (1): message += "To start Round " + roundNum + ", select 3 cards to pass to the left."; break;
+                        case (2): message += "To start Round " + roundNum + ", select 3 cards to pass to the right."; break;
+                        case (3): message += "To start Round " + roundNum + ", select 3 cards to pass to opposite player.";
                     }
                     throw new UserMessageException(message, "End of Round");
                 }
             }
-
-            throw new UserMessageException(winningPlayerOfSet.getName() + " won this set. (" + totalPointsInSet + " Points)", "End of Set");
+            String err_msg = winningPlayerOfSet.getName() + " won this set. (" + totalPointsInSet + " Points)";
+            String title = "End of Set";
+            if (getHighestScore() > 100) {
+                err_msg += "\n" + getWinner().getName() + " won the game!";
+                title = "Game Ended";
+            }
+            throw new UserMessageException(err_msg, title);
         }
     }
 
@@ -133,27 +138,10 @@ public class Game {
 
     private void printAllHands() {
         for (Player p : listOfPlayers) {
-//            printAlignedOptions(p.getHandSize());
             p.getHand().sortBySuit();
-            if (p instanceof HumanPlayer) {
-                System.out.printf("YOUR hand > %s%n", p.getHand());
-            } else
-                System.out.printf("%s hand > %s%n", p.getName(), p.getHand());
+            System.out.printf("%s hand > %s%n", p.getName(), p.getHand());
         }
     }
-
-//    private void printAlignedOptions(int numOfCards) {
-//        String output = "\t\t";
-//
-//        for (int i = 1; i <= numOfCards; i++) {
-//            if (i > 10) {
-//                output += "\t[" + i + "]";
-//                continue;
-//            }
-//            output += "\t\t[" + i + "]";
-//        }
-//        System.out.println(output);
-//    }
 
     private void printOverallScoreBoard() {
         System.out.printf("[OVERALL SCOREBOARD]%n");
@@ -235,8 +223,6 @@ public class Game {
     }
 
     private Card chooseCardToPlay(Player player, Set set) {
-        int numCardsOnHand = player.getHand().getNumberOfCards();
-//        printAlignedOptions(numCardsOnHand);
         return player.chooseCardToPlay(set, isHeartsBroken);
     }
 

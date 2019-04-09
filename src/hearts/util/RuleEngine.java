@@ -87,9 +87,10 @@ public class RuleEngine {
     public static int getStartPlayerIndex(Player[] listOfPlayers) {
         Card twoClubs = new Card(Suit.CLUBS, Rank.TWO);
         int index = -1;
-        for (; index < 4; index++) {
-            Hand playerHand = listOfPlayers[index].getHand();
+        for (int i = 0; i < 4; i++) {
+            Hand playerHand = listOfPlayers[i].getHand();
             if (playerHand.containsCard(twoClubs)) {
+                index = i;
                 break;
             }
         }

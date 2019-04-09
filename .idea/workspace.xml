@@ -5,120 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="728fde6e-6d31-46de-8be6-1a3fb0e3f090" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/model/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/Card.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/model/Suit.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/Suit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blank.gif" beforeDir="false" afterPath="$PROJECT_DIR$/images/cards/blank.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/AceClubs.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/AceDiamonds.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/AceHearts.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/AceSpades.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/COPYING" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/EightClubs.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/EightDiamonds.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/EightHearts.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/EightSpades.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/FiveClubs.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/FiveDiamonds.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/FiveHearts.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/FiveSpades.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/FourClubs.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/FourDiamonds.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/FourHearts.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/FourSpades.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/JackClubs.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/JackDiamonds.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/JackHearts.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/JackSpades.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/KingClubs.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/KingDiamonds.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/KingHearts.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/KingSpades.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/NineClubs.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/NineDiamonds.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/NineHearts.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/NineSpades.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/QueenClubs.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/QueenDiamonds.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/QueenHearts.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/QueenSpades.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/SevenClubs.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/SevenDiamonds.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/SevenHearts.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/SevenSpades.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/SixClubs.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/SixDiamonds.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/SixHearts.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/SixSpades.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/TenClubs.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/TenDiamonds.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/TenHearts.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/TenSpades.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/ThreeClubs.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/ThreeDiamonds.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/ThreeHearts.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/ThreeSpades.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/TwoClubs.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/TwoDiamonds.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/TwoHearts.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/TwoSpades.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/b.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/j.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/ace.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/back.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/black-2.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/black-3.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/black-4.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/black-5.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/black-6.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/black-7.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/black-8.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/black-9.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/black-a.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/black-j.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/black-k.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/black-q.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/black-t.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/border.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/box.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/face-jc.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/face-jd.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/face-jh.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/face-js.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/face-kc.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/face-kd.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/face-kh.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/face-ks.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/face-qc.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/face-qd.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/face-qh.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/face-qs.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/joker.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/large-c.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/large-d.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/large-h.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/large-s.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/make-cards" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/make-run" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/red-2.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/red-3.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/red-4.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/red-5.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/red-6.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/red-7.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/red-8.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/red-9.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/red-a.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/red-j.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/red-k.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/red-q.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/red-t.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/small-c.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/small-d.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/small-h.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cards/src/small-s.pnm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/Suit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Suit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hearts/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hearts/util/CardSuitComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/util/CardSuitComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hearts/util/RuleEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/util/RuleEngine.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -133,124 +22,48 @@
         <counts>
           <entry key="bat" value="64" />
           <entry key="dummy" value="31" />
-          <entry key="java" value="11182" />
+          <entry key="java" value="13271" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bat" value="64" />
-          <entry key="JAVA" value="11182" />
+          <entry key="JAVA" value="13271" />
           <entry key="PLAIN_TEXT" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="bat" value="2" />
-          <entry key="java" value="86" />
+          <entry key="gitattributes" value="1" />
+          <entry key="java" value="99" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Bat" value="2" />
-          <entry key="JAVA" value="86" />
+          <entry key="JAVA" value="99" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hearts/util/RuleEngine.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/compile.bat">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="81" selection-start-column="81" selection-end-column="81" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JUnit Test/RuleEngineTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JUnit Test/GameTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hearts/model/Suit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/run.bat">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="35" selection-start-column="35" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/hearts/model/Card.java">
+        <entry file="file://$PROJECT_DIR$/src/hearts/model/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+            <state relative-caret-position="507">
+              <caret line="45" column="35" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1258#1259#0" expanded="true" />
+                <element signature="e#1291#1292#0" expanded="true" />
+                <element signature="e#1436#1437#0" expanded="true" />
+                <element signature="e#1472#1473#0" expanded="true" />
+                <element signature="e#7662#7663#0" expanded="true" />
+                <element signature="e#7719#7720#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hearts/model/Set.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="21" selection-start-column="21" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hearts/model/Rank.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-672">
-              <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -267,7 +80,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>startRound</find>
       <find>distribute</find>
       <find>ass</find>
       <find>tally</find>
@@ -297,6 +109,7 @@
       <find>northPanel</find>
       <find>illegalMove</find>
       <find>hearts.model.Suit</find>
+      <find>deck</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -305,8 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/CardPanel.java" />
-        <option value="$PROJECT_DIR$/src/GameApp.java" />
         <option value="$PROJECT_DIR$/JUnit Test/DeckTest.java" />
         <option value="$PROJECT_DIR$/JUnit Test/HandTest.java" />
         <option value="$PROJECT_DIR$/JUnit Test/HumanPlayerTest.java" />
@@ -343,19 +154,21 @@
         <option value="$PROJECT_DIR$/src/hearts/Model/Game.java" />
         <option value="$PROJECT_DIR$/src/hearts/exception/UserMessageException.java" />
         <option value="$PROJECT_DIR$/src/hearts/controller/GameController.java" />
-        <option value="$PROJECT_DIR$/src/hearts/model/Game.java" />
         <option value="$PROJECT_DIR$/src/hearts/GUI/CardPanel.java" />
         <option value="$PROJECT_DIR$/src/hearts/GUI/GameGUI.java" />
         <option value="$PROJECT_DIR$/src/hearts/model/HumanPlayer.java" />
         <option value="$PROJECT_DIR$/src/hearts/util/CardRankComparator.java" />
-        <option value="$PROJECT_DIR$/src/hearts/util/CardSuitComparator.java" />
         <option value="$PROJECT_DIR$/JUnit Test/GameTest.java" />
         <option value="$PROJECT_DIR$/JUnit Test/RuleEngineTest.java" />
         <option value="$PROJECT_DIR$/src/hearts/model/Rank.java" />
-        <option value="$PROJECT_DIR$/compile.bat" />
         <option value="$PROJECT_DIR$/run.bat" />
         <option value="$PROJECT_DIR$/src/hearts/model/Suit.java" />
         <option value="$PROJECT_DIR$/src/hearts/model/Card.java" />
+        <option value="$PROJECT_DIR$/compile.bat" />
+        <option value="$PROJECT_DIR$/src/hearts/util/RuleEngine.java" />
+        <option value="$PROJECT_DIR$/src/hearts/util/CardSuitComparator.java" />
+        <option value="$PROJECT_DIR$/src/hearts/model/Deck.java" />
+        <option value="$PROJECT_DIR$/src/hearts/model/Game.java" />
       </list>
     </option>
   </component>
@@ -390,11 +203,6 @@
             <path>
               <item name="OOP-Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="OOP-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OOP-Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OOP-Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -412,6 +220,13 @@
             </path>
             <path>
               <item name="OOP-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OOP-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="hearts" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OOP-Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -422,10 +237,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/weichen/Documents/GitHub/OOP-Project/src/Player.java&#10;format&#9;PSI&#9;JAVA://java.text.Format" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/weichen/Documents/GitHub/OOP-Project/src/hearts/model/Deck.java&#10;format&#9;PSI&#9;JAVA://java.text.Format" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554838695686" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554842127539" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -586,7 +401,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="234575000" />
+    <option name="totallyTimeSpent" value="237931000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -599,6 +414,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1057" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -608,10 +424,10 @@
       <window_info content_ui="combo" id="Project" order="5" sideWeight="0.47239915" visible="true" weight="0.13099042" />
       <window_info id="Structure" order="6" sideWeight="0.5276008" side_tool="true" weight="0.13099042" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.26326963" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.26326963" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" weight="0.1836518" />
+      <window_info active="true" anchor="bottom" id="Find" order="4" visible="true" weight="0.1836518" />
       <window_info anchor="bottom" id="Run" order="5" weight="0.32908705" />
       <window_info anchor="bottom" id="Database Changes" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39808917" />
@@ -673,9 +489,6 @@
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/text/Format.java" />
     <entry file="file://$PROJECT_DIR$/src/Round" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/lang/Object.java" />
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.form" />
     <entry file="file://$PROJECT_DIR$/src/GUI.java" />
     <entry file="file://$PROJECT_DIR$/src/Test.java" />
@@ -797,108 +610,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/model/ComPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1385">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/model/Deck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-410">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/model/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3290">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/model/Hand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1145">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/model/HumanPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/model/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/util/CardRankComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="50" lean-forward="true" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/util/CardSuitComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/util/RuleEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compile.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="81" selection-start-column="81" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run.bat">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="35" selection-start-column="35" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JUnit Test/RuleEngineTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -912,36 +627,143 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/model/Suit.java">
+    <entry file="file://$PROJECT_DIR$/JUnit Test/RuleEngineTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/model/Rank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-672">
-          <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/model/Set.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        <state relative-caret-position="90">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/model/Card.java">
+    <entry file="file://$PROJECT_DIR$/compile.bat">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+        <state>
+          <caret column="39" selection-start-column="39" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/util/CardRankComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="50" lean-forward="true" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/util/RuleEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="85" column="7" lean-forward="true" selection-start-line="85" selection-start-column="7" selection-end-line="85" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/util/CardSuitComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Deck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="83" column="6" lean-forward="true" selection-start-line="83" selection-start-column="6" selection-end-line="83" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Hand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1138">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/HumanPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Rank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Set.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-628">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Suit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/ComPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="45" column="35" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1258#1259#0" expanded="true" />
+            <element signature="e#1291#1292#0" expanded="true" />
+            <element signature="e#1436#1437#0" expanded="true" />
+            <element signature="e#1472#1473#0" expanded="true" />
+            <element signature="e#7662#7663#0" expanded="true" />
+            <element signature="e#7719#7720#0" expanded="true" />
           </folding>
         </state>
       </provider>

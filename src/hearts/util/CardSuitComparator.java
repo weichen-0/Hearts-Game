@@ -8,6 +8,7 @@ import java.util.Comparator;
  *  Class that compares cards by their suit followed by their rank.
  */
 public class CardSuitComparator implements Comparator<Card> {
+
     /**
      * Compares 2 hearts.model.Card objects to see if first hearts.model.Card is less than, equal to,
      * or greater than the second hearts.model.Card based on suit followed by rank.

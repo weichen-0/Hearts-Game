@@ -3,11 +3,25 @@ package hearts.util;
 import hearts.model.*;
 import hearts.exception.*;
 
+/**
+ * Class that ensures game play adheres to Hearts game rules
+ */
 public class RuleEngine {
 
+    /**
+     * Checks if the card played by player is a valid action
+     * If first set, ensures player selects 2 of Club if it is in hand and prevents player from playing any point cards
+     * Else if player is the first player in the set, ensures player does not play any hearts if hearts is not broken
+     * Else if player is not the first player in the set, ensures player plays a card of the leading suit if available
+     *
+     * @param player player doing the action
+     * @param cardPlayed card selected by player
+     * @param set current set in this Round
+     * @param isHeartBroken whether hearts has been broken in this Round
+     * @throws IllegalMoveException if card played is not a valid action
+     */
     public static void validateCardPlayed(Player player, Card cardPlayed, Set set, boolean isHeartBroken) throws IllegalMoveException {
 
-        // Check if player truly has card that it wants to play
         Hand playerHand = player.getHand();
         if (!playerHand.hasSuit(Suit.SPADES) && !playerHand.hasSuit(Suit.CLUBS) && !playerHand.hasSuit(Suit.DIAMONDS)) {
             return; // player only has hearts cards; can only play hearts.
@@ -62,9 +76,17 @@ public class RuleEngine {
         }
     }
 
+
+    /**
+     * Returns the index of the starting player (with the 2 of Clubs in hand) at the start of every round
+     *
+     * @param listOfPlayers list of the 4 players
+     * @return -1 if none of the players have a 2 of Clubs in hand,
+     * otherwise return the index of the starting player
+     */
     public static int getStartPlayerIndex(Player[] listOfPlayers) {
-        Card twoClubs = new Card(Suit.CLUBS, Rank.TWO); // to update image
-        int index = 0;
+        Card twoClubs = new Card(Suit.CLUBS, Rank.TWO);
+        int index = -1;
         for (; index < 4; index++) {
             Hand playerHand = listOfPlayers[index].getHand();
             if (playerHand.containsCard(twoClubs)) {

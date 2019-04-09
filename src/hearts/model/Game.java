@@ -5,39 +5,63 @@ import hearts.exception.*;
 
 import java.util.*;
 
+/**
+ * Class that manages the entire Hearts game, overseeing other classes such as Round, Set, Player, etc.
+ * Keeps track of the current round and set number in the game, and also the cards in the current set
+ * Accounts for the 4 players, whether hearts has been broken in each round and the index of the last player who won the set
+ */
 public class Game {
 
     private Player[] listOfPlayers = new Player[4];
     private boolean isHeartsBroken = false;
     private int roundNum = 1;
     private int setNum = 1;
-    private boolean passedCards = (roundNum % 4 == 0);
+    private boolean passedCards = false;
     private int lastWinningPlayerIndex;
     private Set currentSet = null;
 
-    public Game(int numOfPlayers) {
+    /**
+     * Constructs a game and its 4 Players
+     * @param numOfHumanPlayers number of human players playing the game
+     */
+    public Game(int numOfHumanPlayers) {
         for (int i = 0; i < 4; i++) {
-            if (i < numOfPlayers) {
+            if (i < numOfHumanPlayers) {
                 listOfPlayers[i] = new HumanPlayer("PLAYER" + (i + 1));
                 continue;
             }
-            listOfPlayers[i] = new ComPlayer("COM" + (i + 1 - numOfPlayers));
+            listOfPlayers[i] = new ComPlayer("COM" + (i + 1 - numOfHumanPlayers));
         }
     }
-    public int getRoundNum() {
-        return roundNum;
-    }
 
+    /**
+     * Returns the current set being played in the Round
+     * @return the playing set
+     */
     public Set getCurrentSet(){
         return currentSet;
     }
 
+    /**
+     * Returns the list of players in the game.
+     * @return players list
+     */
+    public Player[] getListOfPlayers(){
+        return listOfPlayers;
+    }
+
+    /**
+     * Resets the last played card of each Player to null
+     */
     public void unsetPlayedCards(){
         for(Player p : listOfPlayers){
             p.setPlayedCard(null);
         }
     }
 
+    /**
+     *
+     */
     public void initRound() {
         currentSet = new Set();
         setNum = 1;
@@ -60,8 +84,8 @@ public class Game {
         }
         System.out.printf("%nSET %d, CARD #%d%n", setNum, currentSet.getNumOfCardsInSet() + 1);
         System.out.print("\t");
-        System.out.printf("%s hearts.model.Hand > %s%n", player.getName(), player.getHand());
-        System.out.printf("Current hearts.model.Set > %s%n", currentSet.getSetCards());
+        System.out.printf("%s Hand > %s%n", player.getName(), player.getHand());
+        System.out.printf("Current Set > %s%n", currentSet.getSetCards());
         System.out.printf("PLAYER1 picked %s%n", cardPlayed);
         try{
             RuleEngine.validateCardPlayed(player, cardPlayed, currentSet, isHeartsBroken);
@@ -128,10 +152,10 @@ public class Game {
                 }
             }
             String err_msg = winningPlayerOfSet.getName() + " won this set. (" + totalPointsInSet + " Points)";
-            String title = "End of hearts.model.Set";
+            String title = "End of Set";
             if (getHighestScore() > 100) {
                 err_msg += "\n" + getWinner().getName() + " won the game!";
-                title = "hearts.model.Game Ended";
+                title = "Game Ended";
             }
             throw new UserMessageException(err_msg, title);
         }
@@ -157,14 +181,14 @@ public class Game {
     private void printAllHands() {
         for (Player p : listOfPlayers) {
             p.getHand().sortBySuit();
-            System.out.printf("%s hand > %s%n", p.getName(), p.getHand());
+            System.out.printf("%s Hand > %s%n", p.getName(), p.getHand());
         }
     }
 
     private void printOverallScoreBoard() {
         System.out.printf("[OVERALL SCOREBOARD]%n");
         for (Player p : listOfPlayers) {
-            System.out.printf("%s score > %d%n", p.getName(), p.getTotalPoints());
+            System.out.printf("%s Score > %d%n", p.getName(), p.getTotalPoints());
         }
         System.out.println();
     }
@@ -172,7 +196,7 @@ public class Game {
     private void printRoundScoreBoard() {
         System.out.printf("[ROUND %d SCOREBOARD]%n", roundNum);
         for (Player p : listOfPlayers) {
-            System.out.printf("%s score > %d%n", p.getName(), p.getPointsFromCurrentRound());
+            System.out.printf("%s Score > %d%n", p.getName(), p.getPointsFromCurrentRound());
         }
     }
 
@@ -282,9 +306,4 @@ public class Game {
         }
         return winner;
     }
-
-    public Player[] getListOfPlayers(){
-        return listOfPlayers;
-    }
-
 }

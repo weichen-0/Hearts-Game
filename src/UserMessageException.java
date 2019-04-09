@@ -1,5 +1,5 @@
 @SuppressWarnings("serial")
-public class UserMessageException extends Exception{
+public class UserMessageException extends Exception {
     /**
      * Information contained in user info message
      * Message = Message body

@@ -1,67 +1,35 @@
-package hearts.model;
-
-import hearts.util.*;
-import hearts.exception.*;
-
 import java.util.*;
 
-/**
- * Class that manages other relevant game classes such as Round, Set, Player, etc.
- * Keeps track of the current round and set number in the game, and also the cards in the current set
- * Accounts for the 4 players, whether hearts has been broken in each round and the index of the last player who won the set
- */
 public class Game {
 
     private Player[] listOfPlayers = new Player[4];
     private boolean isHeartsBroken = false;
     private int roundNum = 1;
     private int setNum = 1;
-    private boolean passedCards = false;
+    private boolean passedCards = (roundNum % 4 == 0);
     private int lastWinningPlayerIndex;
     private Set currentSet = null;
 
-    /**
-     * Constructs a game and its 4 Players
-     * @param numOfHumanPlayers number of human players playing the game
-     */
-    public Game(int numOfHumanPlayers) {
+    public Game(int numOfPlayers) {
         for (int i = 0; i < 4; i++) {
-            if (i < numOfHumanPlayers) {
+            if (i < numOfPlayers) {
                 listOfPlayers[i] = new HumanPlayer("PLAYER" + (i + 1));
                 continue;
             }
-            listOfPlayers[i] = new ComPlayer("COM" + (i + 1 - numOfHumanPlayers));
+            listOfPlayers[i] = new ComPlayer("COM" + (i + 1 - numOfPlayers));
         }
     }
 
-    /**
-     * Returns the current set being played in the Round
-     * @return the playing set
-     */
     public Set getCurrentSet(){
         return currentSet;
     }
 
-    /**
-     * Returns the list of players in the game.
-     * @return players list
-     */
-    public Player[] getListOfPlayers(){
-        return listOfPlayers;
-    }
-
-    /**
-     * Resets the last played card of each Player to null
-     */
     public void unsetPlayedCards(){
         for(Player p : listOfPlayers){
             p.setPlayedCard(null);
         }
     }
 
-    /**
-     * Initialises a round in the game and distributes 13 cards to each player
-     */
     public void initRound() {
         currentSet = new Set();
         setNum = 1;
@@ -75,47 +43,28 @@ public class Game {
         printAllHands();
     }
 
-    /**
-     *
-     * @param cardPlayed
-     * @throws IllegalMoveException
-     */
-    public void makePlayerMove(Card cardPlayed) throws IllegalMoveException {
-        HumanPlayer player = null;
-        for(Player p : listOfPlayers){
-            if(p instanceof HumanPlayer){
-                player = (HumanPlayer) p;
-            }
-        }
+    public void makePlayerMove(Card cardPlayed) throws IllegalMoveException{ // int startPlayerIndex) {
+        Player player = listOfPlayers[0]; //human player
         System.out.printf("%nSET %d, CARD #%d%n", setNum, currentSet.getNumOfCardsInSet() + 1);
         System.out.print("\t");
         System.out.printf("%s Hand > %s%n", player.getName(), player.getHand());
         System.out.printf("Current Set > %s%n", currentSet.getSetCards());
         System.out.printf("PLAYER1 picked %s%n", cardPlayed);
-        try{
-            RuleEngine.validateCardPlayed(player, cardPlayed, currentSet, isHeartsBroken);
-        }catch(IllegalMoveException e){
-            player.deselectCardsInHand(); // if illegal move was played deselect all cards before propagating error up
-            throw e;
-        }
+        GameRegulator.validateCardPlayed(player, cardPlayed, currentSet, isHeartsBroken);
         currentSet.addCardToSet(cardPlayed, 0);
         player.setPlayedCard(cardPlayed);
         if (cardPlayed.isPointCard()) isHeartsBroken = true;
         player.getHand().removeCard(cardPlayed);
     }
 
-    /**
-     *
-     * @throws UserMessageException
-     */
-    public void makeComputerMoves() throws UserMessageException {
-        if(setNum > 13) { // end of round
+    public void makeComputerMoves() throws UserMessageException{
+        if(setNum > 13){ // end of round
             return;
         }
         int startPlayerIndex = (currentSet.getPlayerNumLastPlayed() + 1) % 4;
         if(currentSet.getNumOfCardsInSet() == 0){
             if(setNum == 1){
-                startPlayerIndex = RuleEngine.getStartPlayerIndex(listOfPlayers); // two of clubs
+                startPlayerIndex = GameRegulator.getStartPlayerIndex(listOfPlayers); // two of clubs
             }else {
                 startPlayerIndex = lastWinningPlayerIndex; // winner of previous set
             }
@@ -126,18 +75,18 @@ public class Game {
                 return;
             }
             System.out.printf("%nSET %d, CARD #%d%n", setNum, currentSet.getNumOfCardsInSet() + 1);
-            ComPlayer comPlayer = (ComPlayer) listOfPlayers[i % 4];
-            Card cardPlayed = comPlayer.chooseCardToPlay(currentSet, isHeartsBroken);
+            Player player = listOfPlayers[i % 4];
+            Card cardPlayed = chooseCardToPlay(player, currentSet);
             currentSet.addCardToSet(cardPlayed, i % 4);
             if (cardPlayed.isPointCard()) isHeartsBroken = true;
-            comPlayer.getHand().removeCard(cardPlayed);
+            player.getHand().removeCard(cardPlayed);
         }
 
         int numCardsInSet = currentSet.getNumOfCardsInSet();
         if(numCardsInSet == 4){
-            int winningPlayerIndex = (currentSet.getWinningCardIndex() + currentSet.getPlayerNumLastPlayed() + 1) % 4;
+            int winningPlayerIndex = currentSet.getWinningPlayerIndex();
             Player winningPlayerOfSet = listOfPlayers[winningPlayerIndex];
-            System.out.printf("%nCards played this hearts.model.Set > %s%n", currentSet);
+            System.out.printf("%nCards played this Set > %s%n", currentSet);
             tallyPointsForSet(currentSet, winningPlayerOfSet);
             printRoundScoreBoard();
             lastWinningPlayerIndex = winningPlayerIndex;
@@ -190,14 +139,14 @@ public class Game {
     private void printAllHands() {
         for (Player p : listOfPlayers) {
             p.getHand().sortBySuit();
-            System.out.printf("%s Hand > %s%n", p.getName(), p.getHand());
+            System.out.printf("%s hand > %s%n", p.getName(), p.getHand());
         }
     }
 
     private void printOverallScoreBoard() {
         System.out.printf("[OVERALL SCOREBOARD]%n");
         for (Player p : listOfPlayers) {
-            System.out.printf("%s Score > %d%n", p.getName(), p.getTotalPoints());
+            System.out.printf("%s score > %d%n", p.getName(), p.getTotalPoints());
         }
         System.out.println();
     }
@@ -205,7 +154,7 @@ public class Game {
     private void printRoundScoreBoard() {
         System.out.printf("[ROUND %d SCOREBOARD]%n", roundNum);
         for (Player p : listOfPlayers) {
-            System.out.printf("%s Score > %d%n", p.getName(), p.getPointsFromCurrentRound());
+            System.out.printf("%s score > %d%n", p.getName(), p.getPointsFromCurrentRound());
         }
     }
 
@@ -222,7 +171,7 @@ public class Game {
     }
 
     public boolean hasPassedCards(){
-        return passedCards || (roundNum % 4 == 0);
+        return passedCards;
     }
 
     public void passCards(List<Card> cards) {
@@ -230,15 +179,13 @@ public class Game {
 
         if (passOrder == 0) {
             System.out.printf("No cards will be passed for Round %d%n%n", roundNum);
-            return;
         }
 
         // Ensure every player chooses cards to be removed first (so no card is passed twice)
         List<List<Card>> chosenCardsForEachPlayer = new ArrayList<>();
         for (Player player : listOfPlayers) {
             if(player instanceof ComPlayer){
-                ComPlayer comPlayer = (ComPlayer) player;
-                chosenCardsForEachPlayer.add(comPlayer.choose3CardsToPass());
+                chosenCardsForEachPlayer.add(player.choose3CardsToPass());
             }else{
                 chosenCardsForEachPlayer.add(cards); // human player inputs cards to pass
             }
@@ -273,6 +220,10 @@ public class Game {
     private void transferCards(Player passingPlayer, Player receivingPlayer, List<Card> cardsToPass) {
         passingPlayer.getHand().removeCards(cardsToPass);
         receivingPlayer.getHand().addCards(cardsToPass);
+    }
+
+    private Card chooseCardToPlay(Player player, Set set) {
+        return player.chooseCardToPlay(set, isHeartsBroken);
     }
 
     private void tallyPointsForSet(Set set, Player player) {
@@ -315,4 +266,9 @@ public class Game {
         }
         return winner;
     }
+
+    public Player[] getListOfPlayers(){
+        return listOfPlayers;
+    }
+
 }

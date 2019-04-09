@@ -10,11 +10,11 @@ import java.util.Comparator;
 public class CardSuitComparator implements Comparator<Card> {
 
     /**
-     * Compares 2 Card objects to see if first Card is less than, equal to,
-     * or greater than the second Card based on suit followed by rank.
+     * Compares 2 hearts.model.Card objects to see if first hearts.model.Card is less than, equal to,
+     * or greater than the second hearts.model.Card based on suit followed by rank.
      *
-     * @param card1 first Card object
-     * @param card2 second Card object
+     * @param card1 first hearts.model.Card object
+     * @param card2 second hearts.model.Card object
      * @return suitDiff integer if Cards are of different suit
      * else rankDiff integer if Cards are of same suit
      */

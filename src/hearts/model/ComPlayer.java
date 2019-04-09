@@ -3,20 +3,20 @@ package hearts.model;
 import java.util.List;
 
 /**
- * Sub-class of hearts.model.Player
- * Inherits all accessible methods and attributes of hearts.model.Player
- * Has 2 additional methods specific to hearts.model.ComPlayer
+ * Sub-class of Player
+ * Inherits all accessible methods and attributes of Player
+ * Has 2 additional methods specific to ComPlayer
  */
 public class ComPlayer extends Player {
 
     /**
-     * Constructs a hearts.model.ComPlayer with the given name
+     * Constructs a ComPlayer with the given name
      * @param name player name
      */
     public ComPlayer(String name) { super(name); }
 
     /**
-     * Select 3 largest cards to pass to another hearts.model.Player
+     * Select 3 largest cards to pass to another Player
      * @return a list of 3 cards to be pass
      */
     public List<Card> choose3CardsToPass() {
@@ -30,8 +30,8 @@ public class ComPlayer extends Player {
 
     /**
      * Select a card to play in the set
-     * If hearts.model.ComPlayer is first player in set, it picks the smallest card that adheres to game rules
-     * If hearts.model.ComPlayer is last player, pick the largest card.
+     * If ComPlayer is first player in set, it picks the smallest card that adheres to game rules
+     * If ComPlayer is last player, pick the largest card.
      * Otherwise, pick the largest rank card it owns of the same suit that does not exceed the winning card in set if possible
      * NOTE: if it is void of the suit led, pick the card of highest rank available that adheres to game rules
      * @param set current set in the game
@@ -43,12 +43,12 @@ public class ComPlayer extends Player {
         int numCardsOnHand = playerHand.getNumberOfCards();
         Card cardPlayed;
 
-        System.out.printf("%s hearts.model.Hand > %s%n", getName(), playerHand);
-        System.out.printf("Current hearts.model.Set contains > %s%n", set.getSetCards());
+        System.out.printf("%s Hand > %s%n", getName(), playerHand);
+        System.out.printf("Current Set contains > %s%n", set.getSetCards());
 
         int totalCardsInSet = set.getNumOfCardsInSet();
         Suit leadingSuit = set.getLeadingSuit();
-        boolean isFirstSet = numCardsOnHand == 13; //if hearts.model.ComPlayer has 13 cards in hand, current set is first set
+        boolean isFirstSet = numCardsOnHand == 13; //if ComPlayer has 13 cards in hand, current set is first set
 
         switch (totalCardsInSet) {
             case 0: // COM is first player
@@ -68,10 +68,10 @@ public class ComPlayer extends Player {
     }
 
     /**
-     * Private helper method that gets the next highest card to play if hearts.model.ComPlayer is not the first player in the set
-     * If hearts.model.ComPlayer is last player, return highest card of leadingSuit in hand, if available.
-     * Else (hearts.model.ComPlayer is second or third player)
-     * If hearts.model.ComPlayer has leading suit, return highest ranked card of that suit that does not exceed the winning card
+     * Private helper method that gets the next highest card to play if ComPlayer is not the first player in the set
+     * If ComPlayer is last player, return highest card of leadingSuit in hand, if available.
+     * Else (ComPlayer is second or third player)
+     * If ComPlayer has leading suit, return highest ranked card of that suit that does not exceed the winning card
      * where possible. If no leading suit then return highest ranked card available that adheres to game rules
      * @param leadingSuit suit of first card played in set
      * @param isFirstSet whether current set is the first set in the round
@@ -94,7 +94,7 @@ public class ComPlayer extends Player {
             }
         }
 
-        // hearts.model.ComPlayer is second or third player
+        // ComPlayer is second or third player
         // if have leading suit, pick largest rank card of that suit that does not exceed the winning card
         if(hand.hasSuit(leadingSuit)){
             Card nextHighestRankedCard = null;
@@ -124,8 +124,8 @@ public class ComPlayer extends Player {
     }
 
     /**
-     * Private helper method that gets the smallest card to play if hearts.model.ComPlayer is first player in set
-     * If hearts.model.ComPlayer has 2 Clubs in hand, return 2 Clubs
+     * Private helper method that gets the smallest card to play if ComPlayer is first player in set
+     * If ComPlayer has 2 Clubs in hand, return 2 Clubs
      * Else if hearts is broken, return card of smallest rank in hand
      * Else return card of smallest rank that is not a heart.
      * @param heartsBroken whether hearts has been broken in the round

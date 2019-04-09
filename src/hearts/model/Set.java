@@ -86,7 +86,7 @@ public class Set {
     }
 
     /**
-     * Returns the hearts.model.Card object that wins the set.
+     * Returns the Card object that wins the set.
      * @return null if there are no cards in the set
      * otherwise, return the winning card
      */

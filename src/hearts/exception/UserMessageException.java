@@ -1,5 +1,8 @@
 package hearts.exception;
 
+/**
+ * Exception Class that 
+ */
 public class UserMessageException extends Exception {
     /**
      * Information contained in user info message

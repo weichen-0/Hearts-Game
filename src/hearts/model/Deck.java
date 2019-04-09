@@ -9,15 +9,12 @@ import java.util.List;
  * Represents a deck of playing cards.  In order to have maximum flexibility,
  * this class does not implement a standard deck of playing cards; it only
  * provides the functionality of a deck of cards.  The client programmer must
- * instantiate a hearts.model.Deck object, then populate it with the set of playing cards
+ * instantiate a Deck object, then populate it with the set of playing cards
  * appropriate for the card game being implemented.  This allows for proper
  * implementation of card games such as pinochle (a 48-card deck containing
  * only aces, nines, tens, jacks, queens, and kings in all four suits, with
  * each card present twice in the deck) or casino-style blackjack (where six
  * standard decks are used for a game).
- *
- * @author John K. Estell
- * @version 1.0
  */
 public class Deck {
     private List<Card> deck = new ArrayList<Card>();

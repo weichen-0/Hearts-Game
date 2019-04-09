@@ -8,10 +8,6 @@ import java.util.Objects;
  * (e.g. hearts, spades), a rank value (e.g. ace, 7, king), and an image of
  * the front of the card.  A card object is immutable; once instantiated, the
  * values cannot change.
- *
- * @author John K. Estell
- * @version 1.0
- *
  */
 public class Card {
 
@@ -52,7 +48,7 @@ public class Card {
     /**
      * Returns the suit of the card.
      *
-     * @return a hearts.model.Suit constant representing the suit value of the card.
+     * @return a Suit constant representing the suit value of the card.
      */
     public Suit getSuit() {
         return suitValue;
@@ -61,7 +57,7 @@ public class Card {
     /**
      * Returns the rank of the card.
      *
-     * @return a hearts.model.Rank constant representing the rank value of the card.
+     * @return a Rank constant representing the rank value of the card.
      */
     public Rank getRank() {
         return rankValue;
@@ -93,9 +89,9 @@ public class Card {
     }
 
     /**
-     * Returns a hash code value for this hearts.model.Card.
+     * Returns a hash code value for this Card.
      *
-     * @return hash code value of this hearts.model.Card.
+     * @return hash code value of this Card.
      */
     @Override
     public int hashCode() {
@@ -103,9 +99,9 @@ public class Card {
     }
 
     /**
-     * Returns the point value for this hearts.model.Card.
+     * Returns the point value for this Card.
      *
-     * @return point value of this hearts.model.Card.
+     * @return point value of this Card.
      */
     public int getPoint() {
         return point;

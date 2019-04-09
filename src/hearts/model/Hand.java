@@ -12,9 +12,6 @@ import java.util.List;
  * Extensions of this class will provide the
  * definition of what constitutes a hand for that game and how hands are compared
  * to one another by overriding the <code>compareTo</code> method.
- *
- * @author John K. Estell
- * @version 1.0
  */
 public class Hand {
     private List<Card> hand = new ArrayList<>();

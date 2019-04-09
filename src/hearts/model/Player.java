@@ -4,7 +4,7 @@ import java.util.Objects;
 
 /**
  * Representation of Players in a Hearts game
- * hearts.model.Player name - provided in constructor parameter
+ * Player name - provided in constructor parameter
  * 4 other default instance variables:
  * playedCard = null
  * pointsFromCurrentRound, totalPoints = 0

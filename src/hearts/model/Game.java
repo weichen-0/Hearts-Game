@@ -60,7 +60,7 @@ public class Game {
     }
 
     /**
-     *
+     * Initialises a round in the game and distributes 13 cards to each player
      */
     public void initRound() {
         currentSet = new Set();
@@ -75,6 +75,11 @@ public class Game {
         printAllHands();
     }
 
+    /**
+     *
+     * @param cardPlayed
+     * @throws IllegalMoveException
+     */
     public void makePlayerMove(Card cardPlayed) throws IllegalMoveException {
         HumanPlayer player = null;
         for(Player p : listOfPlayers){
@@ -99,6 +104,10 @@ public class Game {
         player.getHand().removeCard(cardPlayed);
     }
 
+    /**
+     *
+     * @throws UserMessageException
+     */
     public void makeComputerMoves() throws UserMessageException {
         if(setNum > 13) { // end of round
             return;

@@ -19,6 +19,9 @@ public class Game {
             listOfPlayers[i] = new ComPlayer("COM" + (i + 1 - numOfPlayers));
         }
     }
+    public int getRoundNum() {
+        return roundNum;
+    }
 
     public Set getCurrentSet(){
         return currentSet;
@@ -58,7 +61,7 @@ public class Game {
     }
 
     public void makeComputerMoves() throws UserMessageException{
-        if(setNum > 13){ // end of round
+        if(setNum > 13) { // end of round
             return;
         }
         int startPlayerIndex = (currentSet.getPlayerNumLastPlayed() + 1) % 4;
@@ -104,7 +107,7 @@ public class Game {
                         case (0): message += "No passing of cards required for Round " + roundNum + "."; break;
                         case (1): message += "To start Round " + roundNum + ", select 3 cards to pass to the left."; break;
                         case (2): message += "To start Round " + roundNum + ", select 3 cards to pass to the right."; break;
-                        case (3): message += "To start Round " + roundNum + ", select 3 cards to pass to opposite player.";
+                        case (3): message += "To start Round " + roundNum + ", select 3 cards to pass to opposite player."; makeComputerMoves();
                     }
                     throw new UserMessageException(message, "End of Round");
                 }
@@ -179,6 +182,7 @@ public class Game {
 
         if (passOrder == 0) {
             System.out.printf("No cards will be passed for Round %d%n%n", roundNum);
+            return;
         }
 
         // Ensure every player chooses cards to be removed first (so no card is passed twice)

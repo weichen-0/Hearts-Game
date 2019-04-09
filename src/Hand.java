@@ -7,7 +7,6 @@
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 
@@ -219,7 +218,7 @@ public class Hand {
 
     public boolean hasSuit(Suit suit) {
         for (int i = 0; i < hand.size(); i++) {
-            if (hand.get(i).getSuit().isEquals(suit)) {
+            if (hand.get(i).getSuit().compareTo(suit) == 0) {
                 return true;
             }
         }

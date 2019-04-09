@@ -34,7 +34,7 @@ public class Set {
             Suit currentSuit = current.getSuit();
             Suit highestCardSuit = highestCard.getSuit();
 
-            if (highestCardSuit.isEquals(currentSuit) && highestCard.getRank().compareTo(current.getRank()) < 0) {
+            if (highestCardSuit.compareTo(currentSuit) == 0 && highestCard.getRank().compareTo(current.getRank()) < 0) {
                 highestCard = current;
                 index = i;
             }

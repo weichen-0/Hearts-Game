@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
 
@@ -21,7 +20,6 @@ public class Card {
     private boolean isSelected = false;
     private int point;
 
-
     /**
      * Creates a new playing card.
      *
@@ -33,35 +31,18 @@ public class Card {
         this.suitValue = suitValue;
         this.rankValue = rankValue;
 
-        if (suitValue.isEquals(Suit.SPADES) && rankValue.isEquals(Rank.QUEEN)) {
+        if (suitValue.compareTo(Suit.SPADES) == 0 && rankValue.compareTo(Rank.QUEEN) == 0) {
             this.point = 13;
-        } else if (suitValue.isEquals(Suit.HEARTS)) {
+        } else if (suitValue.compareTo(Suit.HEARTS) == 0) {
             this.point = 1;
         } else this.point = 0;
     }
 
-
-//    /**
-//     * Generates the filename associated with the card.  <code>getFilename</code> assumes that all of the standard card images
-//     * are stored in individual files using filenames in the form of:
-//     * <b>RS.gif</b> where <b>R</b> is a single character used to represent
-//     * the rank value of the card and <b>S</b> is a single character used to represent
-//     * the suit value of the card.
-//     * <p>The characters used for <b>R</b> are:
-//     * 'a' (ace), '2', '3', '4', '5', '6', '7', '8', '9',
-//     * 't' (10), 'j' (jack), 'q' (queen), and 'k' (king).
-//     * <p>The characters used for <b>S</b> are:
-//     * 'c' (clubs), 'd' (diamonds), 'h' (hearts), and 's' (spades).
-//     * <p>Two other cards are also available: "b.gif" (back of card) and "j.gif" (joker).
-//     *
-//     * @param suitValue the suit value of the card.
-//     * @param rankValue the rank value of the card.
-//     * @return a string containing the filename of the card.
-//     */
-//    public static String getFilename(Suit suitValue, Rank rankValue) {
-//        return rankValue.getName() + suitValue.getName() + ".gif";
-//    }
-
+    /**
+     * Returns the image of the card.
+     *
+     * @return a gif image representing the card.
+     */
     public Image getImage() {
         return cardImage;
     }
@@ -75,7 +56,6 @@ public class Card {
         return suitValue;
     }
 
-
     /**
      * Returns the rank of the card.
      *
@@ -85,84 +65,12 @@ public class Card {
         return rankValue;
     }
 
-
-//    /**
-//     * Returns the graphic image of the card.
-//     *
-//     * @return an icon containing the graphic image of the card.
-//     */
-//    public ImageIcon getCardImage() {
-//        return cardImage;
-//    }
-
-
     /**
      * Returns a description of this card.
      *
      * @return the name of the card.
      */
     public String toString() { return rankValue.toString() + " " + suitValue.toString(); }
-
-
-//    /**
-//     * Returns a description of the rank of this card.
-//     *
-//     * @return the rank value of the card as a string.
-//     */
-//    public String rankToString() {
-//        return rankValue.toString();
-//    }
-
-
-//    /**
-//     * Returns a description of the suit of this card.
-//     *
-//     * @return the suit value of the card as a string.
-//     */
-//    public String suitToString() {
-//        return suitValue.toString();
-//    }
-
-
-//    /**
-//     * Specifies that cards are to be sorted in rank-major order.  Cards are ordered
-//     * first by their rank value; cards of the same rank are then ordered by their
-//     * suit value.
-//     */
-//    public static void setRankMajorSort() {
-//        sortRankMajorOrder = true;
-//    }
-
-
-//    /**
-//     * Specifies that cards are to be sorted in suit-major order.  Cards are ordered
-//     * first by their suit value; cards of the same suit are then ordered by their
-//     * rank value.
-//     */
-//    public static void setSuitMajorSort() {
-//        sortRankMajorOrder = false;
-//    }
-
-
-//    /**
-//     * Compares two cards for the purposes of sorting.
-//     * Cards are ordered first by their suit value, then by their
-//     * rank value.
-//     *
-//     * @param otherCardObject the other card
-//     * @return a negative integer, zero, or a positive integer is this card is
-//     * less than, equal to, or greater than the referenced card.
-//     */
-//    public int compareTo(Object otherCardObject) {
-//        Card otherCard = (Card) otherCardObject;
-//        int suitDiff = suitValue.compareTo(otherCard.suitValue);
-//        int rankDiff = rankValue.compareTo(otherCard.rankValue);
-//
-//        if (suitDiff != 0)
-//            return suitDiff;
-//        else
-//            return rankDiff;
-//    }
 
     /**
      * Compares two cards to determine if they have the same value.
@@ -182,24 +90,48 @@ public class Card {
         return rankValue == card.rankValue && suitValue == card.suitValue;
     }
 
+    /**
+     * Returns a hash code value for this Card.
+     *
+     * @return hash code value of this Card.
+     */
     @Override
     public int hashCode() {
         return Objects.hash(suitValue, rankValue);
     }
 
+    /**
+     * Returns the point value for this Card.
+     *
+     * @return point value of this Card.
+     */
     public int getPoint() {
         return point;
     }
 
+    /**
+     * Checks whether card is a point card.
+     *
+     * @return <code>true</code> if the card has points
+     * <code>false</code> if it does not.
+     */
     public boolean isPointCard() { return point > 0; }
 
+    /**
+     * Checks whether card has been selected.
+     *
+     * @return <code>true</code> if the card is selected
+     * <code>false</code> if it is not.
+     */
     public boolean isSelected() {
         return isSelected;
     }
 
+    /**
+     * If card has been selected, unselect it.
+     * If card has not been selected, select it.
+     */
     public void toggleSelected() {
         isSelected = !isSelected;
     }
-
-
 }

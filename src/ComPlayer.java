@@ -53,7 +53,7 @@ public class ComPlayer extends Player {
             Card nextHighestCard = null;
             for (int i = hand.getNumberOfCards() - 1; i >= 0; i--) {
                 Card tempCard = hand.getCard(i);
-                if (!tempCard.getSuit().isEquals(leadingSuit)) continue;
+                if (tempCard.getSuit().compareTo(leadingSuit) != 0) continue;
                 if (tempCard == null || tempCard.getRank().compareTo(tempCard.getRank()) < 0) return tempCard;
                 nextHighestCard = tempCard;
             }
@@ -89,7 +89,7 @@ public class ComPlayer extends Player {
         if (heartsBroken) return cardsSortedByRank.get(0);
 
         for (Card card : cardsSortedByRank) {
-            if (!card.getSuit().isEquals(Suit.HEARTS)) {
+            if (card.getSuit().compareTo(Suit.HEARTS) != 0) {
                 return card;
             }
         }

@@ -11,6 +11,7 @@ public class IllegalMoveException extends Exception{
      */
     private String msg;
     private String title;
+
     /**
      * Constructor for IllegalMoveException
      * @param msg
@@ -21,11 +22,16 @@ public class IllegalMoveException extends Exception{
         this.title = title;
     }
 
+    /**
+     * Returns the detail message string.
+     * @return the detail message string of this IllegalMoveException.
+     */
     @Override
-    public String getMessage() {
-        return msg;
-    }
-    public String getTitle() {
-        return title;
-    }
+    public String getMessage() { return msg; }
+
+    /**
+     * Returns the title message string.
+     * @return the title message string of this IllegalMoveException.
+     */
+    public String getTitle() { return title; }
 }

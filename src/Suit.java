@@ -1,7 +1,3 @@
-// Suit.java - John K. Estell - 8 May 2003
-// last modified: 23 Febraury 2004
-// Implementation of the "suit" value for a playing card.
-
 import java.util.*;
 
 
@@ -10,7 +6,6 @@ import java.util.*;
  */
 public final class Suit implements Comparable {
     private String name;
-
     private String symbol;
 
     /**
@@ -48,7 +43,6 @@ public final class Suit implements Comparable {
         name = nameValue;
         symbol = symbolValue;
     }
-
 
     /**
      * Returns a description of this suit.
@@ -92,13 +86,6 @@ public final class Suit implements Comparable {
     public int compareTo(Object otherSuitObject) {
         Suit otherSuit = (Suit) otherSuitObject;
         return VALUES.indexOf(this) - VALUES.indexOf(otherSuit);
-    }
-
-    public boolean isEquals(Suit suit) {
-        if (this.symbol.equals(suit.getSymbol())) {
-            return true;
-        }
-        return false;
     }
 }
 

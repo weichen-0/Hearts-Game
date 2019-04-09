@@ -19,17 +19,17 @@ public class GameRegulator {
 
         if (isFirstSet) {
             // First card must be two clubs
-            if (setSize == 0 && (!suitPlayed.isEquals(Suit.CLUBS) || !rankPlayed.isEquals(Rank.TWO))){
+            if (setSize == 0 && (suitPlayed.compareTo(Suit.CLUBS) != 0 || rankPlayed.compareTo(Rank.TWO) != 0)){
                 String errorMsg = "You must start with Two of Clubs in the first set. Try again.";
                 System.out.println(errorMsg);
                 throw new IllegalMoveException(errorMsg, "Invalid Move");
             }
             // Cannot play point cards in the first set
-            if (suitPlayed.isEquals(Suit.SPADES) && cardPlayed.getRank().equals(Rank.QUEEN)) {
+            if (suitPlayed.compareTo(Suit.SPADES) == 0 && cardPlayed.getRank().equals(Rank.QUEEN)) {
                 String errorMsg = "You cannot play Queen of Spades in the first set. Try again.";
                 System.out.println(errorMsg);
                 throw new IllegalMoveException(errorMsg, "Invalid Move");
-            } else if (suitPlayed.isEquals(Suit.HEARTS)) {
+            } else if (suitPlayed.compareTo(Suit.HEARTS) == 0) {
                 String errorMsg = "You cannot play any Hearts card in the first set. Try again.";
                 System.out.println(errorMsg);
                 throw new IllegalMoveException(errorMsg, "Invalid Move");
@@ -40,22 +40,24 @@ public class GameRegulator {
         if(setSize > 0) {
             // Check if player chooses card that follows leading suit, if available.
             Suit firstSuit = set.getLeadingSuit();
-            if (!suitPlayed.isEquals(firstSuit)) {
+            if (suitPlayed.compareTo(firstSuit) != 0) {
                 if (playerHand.hasSuit(firstSuit)) {
                     String errorMsg = "You must play a card of the leading suit if available. Try again.";
                     System.out.println(errorMsg);
                     throw new IllegalMoveException(errorMsg, "Invalid Move");
-                } else if (suitPlayed.isEquals(Suit.HEARTS)) {
+                } else if (suitPlayed.compareTo(Suit.HEARTS) == 0) {
                     isHeartBroken = true;
                 }
             }
         }
 
         // Extra validation for Hearts cards
-        if (suitPlayed.isEquals(Suit.HEARTS) && !isHeartBroken) {
-            String errorMsg = "Heart suit has not been broken yet. Try again.";
-            System.out.println(errorMsg);
-            throw new IllegalMoveException(errorMsg, "Invalid Move");
+        if (playerHand.hasSuit(Suit.SPADES) || playerHand.hasSuit(Suit.CLUBS) || playerHand.hasSuit(Suit.DIAMONDS)) {
+            if (suitPlayed.compareTo(Suit.HEARTS) == 0 && !isHeartBroken) {
+                String errorMsg = "Heart suit has not been broken yet. Try again.";
+                System.out.println(errorMsg);
+                throw new IllegalMoveException(errorMsg, "Invalid Move");
+            }
         }
     }
 

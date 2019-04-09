@@ -1,8 +1,3 @@
-// Rank.java - John K. Estell - 8 May 2003
-// last modified: 16 Febraury 2004
-// Implementation of the "rank" value for a playing card.
-
-
 import java.util.*;
 
 
@@ -11,10 +6,7 @@ import java.util.*;
  *  Client has ability to set either the ace or the king to be the
  *  highest ranking card; default is king high.  Ranks are
  *  established in the following ascending order:
- *  <p>King high: ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, jack, queen, king.
  *  <p>Ace high: 2, 3, 4, 5, 6, 7, 8, 9, 10, jack, queen, king, ace.
- *  <p>Class can be extended for implementation of speciality decks
- *  containing a subset of the standard ranks, e.g. pinochle.
  */
 public class Rank implements Comparable {
    private String name;
@@ -72,10 +64,12 @@ public class Rank implements Comparable {
     * The rank king.
     */
    public final static Rank KING = new Rank( "King", "K" );
-    
-   
+
+    /**
+     * Established rank order with smallest index being the smallest rank and largest index being the largest rank
+     */
    public final static List<Rank> VALUES = Arrays.asList( new Rank[] { TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE } );
-   
+
    // Constructor - declared private as only the predefined values should
    // be used by the client.
    private Rank( String nameValue, String symbolValue ) {
@@ -108,8 +102,7 @@ public class Rank implements Comparable {
    public String getSymbol() {
       return symbol;
    }
-    
-    
+
   /** 
    *  Compares the ranks.  Result is dependent on the whether the ace
    *  or the king is considered to be the high rank.
@@ -125,12 +118,4 @@ public class Rank implements Comparable {
       Rank otherRank = (Rank) otherRankObject;
       return VALUES.indexOf( this ) - VALUES.indexOf( otherRank );
    }
-
-   public boolean isEquals(Rank rank) {
-       if (this.symbol.equals(rank.getSymbol())) {
-           return true;
-       }
-       return false;
-   }
-    
 }                                                               

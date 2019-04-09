@@ -7,6 +7,7 @@ public class UserMessageException extends Exception {
      */
     private String msg;
     private String title;
+
     /**
      * Constructor for UserMessageException
      * @param msg
@@ -17,10 +18,20 @@ public class UserMessageException extends Exception {
         this.title = title;
     }
 
+    /**
+     * Returns the detail message string.
+     * @return the detail message string of this UserMessageException.
+     */
     @Override
     public String getMessage() {
         return msg;
     }
+
+
+    /**
+     * Returns the title message string.
+     * @return the title message string of this UserMessageException.
+     */
     public String getTitle() {
         return title;
     }

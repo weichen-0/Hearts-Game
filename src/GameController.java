@@ -25,7 +25,7 @@ public class GameController {
     }
 
     public void executeMove(List<Card> cards) throws IllegalMoveException, UserMessageException{
-        if (!game.hasPassedCards()) {
+        if (!game.hasPassedCards() && game.getRoundNum() % 4 != 0) {
             passCards(cards);
             executeComputerMoves();
         } else {

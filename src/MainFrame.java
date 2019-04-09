@@ -146,19 +146,18 @@ public class MainFrame extends JFrame {
                 } finally {
                     try {
                         gameCtrl.executeComputerMoves();
-                        if (players[0].getHand().getCardList().isEmpty()) {
-                            if (gameCtrl.getHighestScore() < 100) {
-                                gameCtrl.startRound();
-                            } else {
-                                JOptionPane.showMessageDialog(null, "To start new game, select 3 cards to pass to the left.", "New Game", JOptionPane.INFORMATION_MESSAGE);
-                                players = gameCtrl.startGame();
-                            }
-                        }
                     } catch (UserMessageException e1) {
                         repaint();
                         JOptionPane.showMessageDialog(null, e1.getMessage(), e1.getTitle(), JOptionPane.INFORMATION_MESSAGE);
                     }
-
+                    if (players[0].getHand().getCardList().isEmpty()) {
+                        if (gameCtrl.getHighestScore() < 100) {
+                            gameCtrl.startRound();
+                        } else {
+                            JOptionPane.showMessageDialog(null, "To start new game, select 3 cards to pass to the left.", "New Game", JOptionPane.INFORMATION_MESSAGE);
+                            players = gameCtrl.startGame();
+                        }
+                    }
                     repaint();
                 }
             }

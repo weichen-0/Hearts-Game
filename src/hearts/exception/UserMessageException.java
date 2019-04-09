@@ -1,7 +1,7 @@
 package hearts.exception;
 
 /**
- * Exception Class that 
+ * Exception Class that
  */
 public class UserMessageException extends Exception {
     /**

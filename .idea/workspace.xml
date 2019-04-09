@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="728fde6e-6d31-46de-8be6-1a3fb0e3f090" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/ComPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/ComPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Hand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/HumanPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/Set.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Set.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/exception/UserMessageException.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/exception/UserMessageException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/model/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/Card.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/model/ComPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/ComPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/model/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/Deck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/model/Hand.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/Hand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/util/CardSuitComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/util/CardSuitComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/util/RuleEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/util/RuleEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hearts/exception/UserMessageException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/exception/UserMessageException.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,26 +28,26 @@
         <counts>
           <entry key="bat" value="64" />
           <entry key="dummy" value="31" />
-          <entry key="java" value="13404" />
+          <entry key="java" value="13434" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bat" value="64" />
-          <entry key="JAVA" value="13404" />
+          <entry key="JAVA" value="13434" />
           <entry key="PLAIN_TEXT" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="bat" value="2" />
+          <entry key="bat" value="3" />
           <entry key="gitattributes" value="1" />
           <entry key="java" value="111" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bat" value="2" />
+          <entry key="Bat" value="3" />
           <entry key="JAVA" value="111" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
@@ -88,76 +89,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hearts/exception/UserMessageException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hearts/GUI/CardPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="45">
+              <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#830#831#0" expanded="true" />
+                <element signature="e#856#857#0" expanded="true" />
+                <element signature="e#1033#1034#0" expanded="true" />
+                <element signature="e#1061#1062#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/hearts/model/Game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="78" column="7" lean-forward="true" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#8121#8122#0" expanded="true" />
-                <element signature="e#8178#8179#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hearts/model/ComPlayer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="20" selection-start-column="8" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hearts/model/Deck.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="20" selection-start-column="8" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hearts/model/Rank.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="20" selection-start-column="8" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hearts/model/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -242,7 +184,6 @@
         <option value="$PROJECT_DIR$/src/hearts/Model/Hand.java" />
         <option value="$PROJECT_DIR$/src/hearts/Model/Deck.java" />
         <option value="$PROJECT_DIR$/src/hearts/Model/Game.java" />
-        <option value="$PROJECT_DIR$/src/hearts/exception/UserMessageException.java" />
         <option value="$PROJECT_DIR$/src/hearts/controller/GameController.java" />
         <option value="$PROJECT_DIR$/src/hearts/GUI/CardPanel.java" />
         <option value="$PROJECT_DIR$/src/hearts/GUI/GameGUI.java" />
@@ -263,6 +204,7 @@
         <option value="$PROJECT_DIR$/src/hearts/model/Deck.java" />
         <option value="$PROJECT_DIR$/src/hearts/model/Card.java" />
         <option value="$PROJECT_DIR$/src/hearts/model/Game.java" />
+        <option value="$PROJECT_DIR$/src/hearts/exception/UserMessageException.java" />
       </list>
     </option>
   </component>
@@ -349,7 +291,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/weichen/Documents/GitHub/OOP-Project/src/hearts/model/Deck.java&#10;format&#9;PSI&#9;JAVA://java.text.Format" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554842880241" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554843057781" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -510,7 +452,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238524000" />
+    <option name="totallyTimeSpent" value="238835000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -522,21 +464,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1057" extended-state="6" />
-    <editor active="true" />
+    <frame x="1920" y="117" width="1440" height="877" extended-state="6" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.47239915" visible="true" weight="0.13099042" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.47239915" visible="true" weight="0.17596567" />
       <window_info id="Structure" order="6" sideWeight="0.5276008" side_tool="true" weight="0.13099042" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.26326963" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.2624672" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" visible="true" weight="0.1836518" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.22703412" />
       <window_info anchor="bottom" id="Run" order="5" weight="0.32908705" />
       <window_info anchor="bottom" id="Database Changes" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39808917" />
@@ -732,13 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compile.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="39" selection-start-column="39" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitattributes">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -830,13 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/model/ComPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" selection-start-column="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hearts/model/Card.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -844,13 +771,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/exception/UserMessageException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -866,12 +786,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hearts/model/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="78" column="7" lean-forward="true" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
+        <state relative-caret-position="386">
+          <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#8121#8122#0" expanded="true" />
             <element signature="e#8178#8179#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compile.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="39" selection-start-column="39" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/ComPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/exception/UserMessageException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+          <folding>
+            <element signature="e#830#831#0" expanded="true" />
+            <element signature="e#856#857#0" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
+            <element signature="e#1061#1062#0" expanded="true" />
           </folding>
         </state>
       </provider>

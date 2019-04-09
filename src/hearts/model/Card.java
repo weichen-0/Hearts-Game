@@ -29,7 +29,7 @@ public class Card {
      * @param rankValue the rank value of this card.
      */
     public Card(Suit suitValue, Rank rankValue) {
-        this.cardImage = Toolkit.getDefaultToolkit().getImage("images/" + rankValue.getName() + suitValue.getName() + ".gif");
+        this.cardImage = Toolkit.getDefaultToolkit().getImage("images/cards/" + rankValue.getSymbol() + suitValue.getSymbol() + ".gif");
         this.suitValue = suitValue;
         this.rankValue = rankValue;
 
@@ -72,7 +72,7 @@ public class Card {
      *
      * @return the name of the card.
      */
-    public String toString() { return rankValue.toString() + " " + suitValue.toString(); }
+    public String toString() { return rankValue.toString() + " of " + suitValue.toString(); }
 
     /**
      * Compares two cards to determine if they have the same value.

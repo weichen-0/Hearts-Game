@@ -7,34 +7,30 @@ import java.util.*;
  */
 public final class Suit implements Comparable {
     private String name;
-    private String symbol;
+    private Character symbol;
 
     /**
      * The suit clubs.
      */
-//    public final static Suit CLUBS = new Suit("Clubs", (char)2667);
-    public final static Suit CLUBS = new Suit("Clubs", "♣");
+    public final static Suit CLUBS = new Suit("Clubs", 'C');
 //    public final static Suit CLUBS = new Suit("Clubs", "♣️");
 
     /**♣
      * The suit diamonds.
      */
-//    public final static Suit DIAMONDS = new Suit("Diamonds", "\\u2662");
-    public final static Suit DIAMONDS = new Suit("Diamonds", "♦");
+    public final static Suit DIAMONDS = new Suit("Diamonds", 'D');
 //    public final static Suit DIAMONDS = new Suit("Diamonds", "♦️");
 
     /**
      * The suit hearts.
      */
-//    public final static Suit HEARTS = new Suit("Hearts", "\\u2661");
-    public final static Suit HEARTS = new Suit("Hearts", "❤");
+    public final static Suit HEARTS = new Suit("Hearts", 'H');
 //    public final static Suit HEARTS = new Suit("Hearts", "❤️");
 
     /**
      * The suit spades.
      */
-//    public final static Suit SPADES = new Suit("Spades", "\\u2664");
-    public final static Suit SPADES = new Suit("Spades", "♠");
+    public final static Suit SPADES = new Suit("Spades", 'S');
 //    public final static Suit SPADES = new Suit("Spades", "♠️");
 
     /**
@@ -44,14 +40,13 @@ public final class Suit implements Comparable {
 
     // Constructor - declared private as only the predefined values should
     // be used by the client.
-    private Suit(String nameValue, String symbolValue) {
+    private Suit(String nameValue, Character symbolValue) {
         name = nameValue;
         symbol = symbolValue;
     }
 
     /**
      * Returns a description of this suit.
-     *
      * @return the name of the suit.
      */
     public String getName() {
@@ -63,27 +58,24 @@ public final class Suit implements Comparable {
      * The symbol associated with this suit.  Returns the symbol, which
      * usually constitutes a single character, in the form of a string.
      * Symbol is used for the construction of the filenames of the card images.
-     *
      * @return string containing the symbol for the suit.
      */
-    public String getSymbol() {
+    public Character getSymbol() {
         return symbol;
     }
 
 
     /**
-     * Returns a description of this suit.
-     *
+     * Returns a description of this suit.=
      * @return the name of this suit.
      */
     public String toString() {
-        return symbol;
+        return name;
     }
 
 
     /**
      * Compares the suits.  Used for the purpose of sorting cards in a hand or deck.
-     *
      * @param otherSuitObject the other suit.
      * @return < 0 if this suit is lower than the other suit, 0 if the suits
      * are the same, or > 0 if this suit is higher than the other suit.

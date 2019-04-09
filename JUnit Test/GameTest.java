@@ -2,7 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-
+import java.util.*;
 public class GameTest {
     private Game testGame;
 
@@ -10,11 +10,6 @@ public class GameTest {
     public void Instantiate(){
         testGame = new Game(4);
         //testGame.startRound();
-    }
-    @Test
-    public void startRound(){
-        Player[] player = testGame.getListOfPlayers();
-        assertEquals(13, player[0].getHandSize()); //Test the distribution of cards
     }
 
     @Test
@@ -36,6 +31,43 @@ public class GameTest {
         player[3].addToTotalPoints(0);
         assertEquals(player[3].getName(), testGame.getWinner().getName());
     }
+
+    @Test
+    public void tallyPointsForRound(){
+        Player[] player = testGame.getListOfPlayers();
+        player[0].addToPointsFromCurrentRound(26);
+        testGame.tallyPointsForRound();
+        assertEquals(26, player[1].getTotalPoints()); //if shoot the moon the other player will add 26
+        assertEquals(0, player[1].getPointsFromCurrentRound()); //reset round score
+    }
+
+    @Test
+    public void passCards(){
+        Player[] player = testGame.getListOfPlayers();
+        Hand hand1 = player[0].getHand();
+        List<Card> hand1CardList = new ArrayList<>();
+        hand1CardList.add(new Card(Suit.HEARTS, Rank.ACE));
+        hand1CardList.add(new Card(Suit.HEARTS, Rank.TWO));
+        hand1CardList.add(new Card(Suit.HEARTS, Rank.THREE));
+        hand1CardList.add(new Card(Suit.HEARTS, Rank.FOUR));
+        hand1CardList.add(new Card(Suit.HEARTS, Rank.FIVE));
+        hand1CardList.add(new Card(Suit.HEARTS, Rank.SIX));
+        hand1CardList.add(new Card(Suit.HEARTS, Rank.SEVEN));
+        hand1CardList.add(new Card(Suit.HEARTS, Rank.EIGHT));
+        hand1CardList.add(new Card(Suit.HEARTS, Rank.NINE));
+        hand1CardList.add(new Card(Suit.HEARTS, Rank.TEN));
+        hand1CardList.add(new Card(Suit.HEARTS, Rank.JACK));
+        hand1CardList.add(new Card(Suit.HEARTS, Rank.QUEEN));
+        hand1CardList.add(new Card(Suit.HEARTS, Rank.KING));
+        hand1.addCards(hand1CardList);
+        List<Card> pass1round = new ArrayList<>();
+        pass1round.add(new Card(Suit.HEARTS, Rank.ACE));
+        pass1round.add(new Card(Suit.HEARTS, Rank.JACK));
+        pass1round.add(new Card(Suit.HEARTS, Rank.KING));
+        assertEquals(13, player[0].getHandSize()); //check after passing card did player receive back the same number of card
+
+    }
+
 
 
 

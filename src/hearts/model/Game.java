@@ -78,9 +78,9 @@ public class Game {
     /**
      * Checks if the card played by the HumanPlayer is a valid card
      * If card is valid, it is added to the current set and removed from player's hand
-     * Hearts will also be broken if the card is a point card
+     * Hearts wif card played is an invalid cardill also be broken if the card is a point card
      * @param cardPlayed card played by player
-     * @throws IllegalMoveException if card played is an invalid card
+     * @throws IllegalMoveException
      */
     public void makePlayerMove(Card cardPlayed) throws IllegalMoveException {
         HumanPlayer player = null;

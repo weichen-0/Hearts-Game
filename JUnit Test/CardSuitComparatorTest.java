@@ -1,3 +1,7 @@
+import hearts.model.Card;
+import hearts.model.Rank;
+import hearts.model.Suit;
+import hearts.util.CardSuitComparator;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

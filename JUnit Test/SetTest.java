@@ -2,47 +2,47 @@
 //import org.junit.Test;
 //
 //import static org.junit.Assert.*;
-//import java.util.*;
+//import java.hearts.util.*;
 //public class SetTest {
-//    private Set setTest;
+//    private hearts.model.Set setTest;
 //    @Before
 //    public void instantiateSet(){
-//        setTest = new Set();
+//        setTest = new hearts.model.Set();
 //    }
 //
 //    @Test
 //    public void getSetCards() {
-//        Card card2Spade = new Card(Suit.SPADES,Rank.TWO);
-//        Card card3Hearts = new Card(Suit.HEARTS, Rank.THREE);
+//        hearts.model.Card card2Spade = new hearts.model.Card(hearts.model.Suit.SPADES,hearts.model.Rank.TWO);
+//        hearts.model.Card card3Hearts = new hearts.model.Card(hearts.model.Suit.HEARTS, hearts.model.Rank.THREE);
 //        setTest.addCardToSet(card2Spade, 1);
 //        setTest.addCardToSet(card3Hearts, 2);
-//        List<Card> test = setTest.getSetCards();
+//        List<hearts.model.Card> test = setTest.getSetCards();
 //        assertEquals(2, test.size()); //Test if it is able to retrieve all the cards in the set
 //    }
 //
 //    @Test
 //    public void getLeadingSuit() {
-//        Card card2Spade = new Card(Suit.SPADES,Rank.TWO);
-//        Card card3Hearts = new Card(Suit.HEARTS, Rank.THREE);
+//        hearts.model.Card card2Spade = new hearts.model.Card(hearts.model.Suit.SPADES,hearts.model.Rank.TWO);
+//        hearts.model.Card card3Hearts = new hearts.model.Card(hearts.model.Suit.HEARTS, hearts.model.Rank.THREE);
 //        setTest.addCardToSet(card2Spade, 1);
 //        setTest.addCardToSet(card3Hearts, 2);
-//        assertEquals(Suit.SPADES, setTest.getLeadingSuit());
+//        assertEquals(hearts.model.Suit.SPADES, setTest.getLeadingSuit());
 //    }
 //
 //    @Test
 //    public void addCardToSet() {
 //        assertEquals(0, setTest.getNumOfCardsInSet()); //The initial set got 0 cards
-//        Card card2Spade = new Card(Suit.SPADES,Rank.TWO);
+//        hearts.model.Card card2Spade = new hearts.model.Card(hearts.model.Suit.SPADES,hearts.model.Rank.TWO);
 //        setTest.addCardToSet(card2Spade, 1);
 //        assertEquals(1, setTest.getNumOfCardsInSet()); //Test the function if the number of cards had been added successfully
 //    }
 //
 //    @Test
 //    public void getHighestCardIndex() {
-//        Card card2Spade = new Card(Suit.SPADES,Rank.TWO);
-//        Card card3Spade = new Card(Suit.SPADES, Rank.THREE);
-//        Card card4Spade= new Card(Suit.SPADES, Rank.FOUR);
-//        Card card5Spade = new Card(Suit.SPADES, Rank.FIVE);
+//        hearts.model.Card card2Spade = new hearts.model.Card(hearts.model.Suit.SPADES,hearts.model.Rank.TWO);
+//        hearts.model.Card card3Spade = new hearts.model.Card(hearts.model.Suit.SPADES, hearts.model.Rank.THREE);
+//        hearts.model.Card card4Spade= new hearts.model.Card(hearts.model.Suit.SPADES, hearts.model.Rank.FOUR);
+//        hearts.model.Card card5Spade = new hearts.model.Card(hearts.model.Suit.SPADES, hearts.model.Rank.FIVE);
 //        setTest.addCardToSet(card2Spade,1);
 //        setTest.addCardToSet(card3Spade,2);
 //        setTest.addCardToSet(card4Spade,3);
@@ -53,10 +53,10 @@
 //
 //    @Test
 //    public void getWinningCard() {
-//        Card card2Spade = new Card(Suit.SPADES,Rank.TWO);
-//        Card card3Spade = new Card(Suit.SPADES, Rank.THREE);
-//        Card card4Spade= new Card(Suit.SPADES, Rank.FOUR);
-//        Card card5Spade = new Card(Suit.SPADES, Rank.FIVE);
+//        hearts.model.Card card2Spade = new hearts.model.Card(hearts.model.Suit.SPADES,hearts.model.Rank.TWO);
+//        hearts.model.Card card3Spade = new hearts.model.Card(hearts.model.Suit.SPADES, hearts.model.Rank.THREE);
+//        hearts.model.Card card4Spade= new hearts.model.Card(hearts.model.Suit.SPADES, hearts.model.Rank.FOUR);
+//        hearts.model.Card card5Spade = new hearts.model.Card(hearts.model.Suit.SPADES, hearts.model.Rank.FIVE);
 //        setTest.addCardToSet(card2Spade,1);
 //        setTest.addCardToSet(card3Spade,2);
 //        setTest.addCardToSet(card4Spade,3);
@@ -67,10 +67,10 @@
 //
 //    @Test
 //    public void getWinningPlayerIndex(){
-//        Card card2Spade = new Card(Suit.SPADES,Rank.TWO);
-//        Card card3Spade = new Card(Suit.SPADES, Rank.THREE);
-//        Card card4Spade= new Card(Suit.SPADES, Rank.FOUR);
-//        Card card5Spade = new Card(Suit.SPADES, Rank.FIVE);
+//        hearts.model.Card card2Spade = new hearts.model.Card(hearts.model.Suit.SPADES,hearts.model.Rank.TWO);
+//        hearts.model.Card card3Spade = new hearts.model.Card(hearts.model.Suit.SPADES, hearts.model.Rank.THREE);
+//        hearts.model.Card card4Spade= new hearts.model.Card(hearts.model.Suit.SPADES, hearts.model.Rank.FOUR);
+//        hearts.model.Card card5Spade = new hearts.model.Card(hearts.model.Suit.SPADES, hearts.model.Rank.FIVE);
 //        setTest.addCardToSet(card2Spade,1);
 //        setTest.addCardToSet(card3Spade,2);
 //        setTest.addCardToSet(card4Spade,3);
@@ -81,10 +81,10 @@
 //
 //    @Test
 //    public void getTotalPointInSet(){
-//        Card card2Spade = new Card(Suit.SPADES,Rank.TWO);
-//        Card card3Spade = new Card(Suit.SPADES, Rank.THREE);
-//        Card card3Hearts= new Card(Suit.HEARTS, Rank.FOUR);
-//        Card card5Spade = new Card(Suit.SPADES, Rank.FIVE);
+//        hearts.model.Card card2Spade = new hearts.model.Card(hearts.model.Suit.SPADES,hearts.model.Rank.TWO);
+//        hearts.model.Card card3Spade = new hearts.model.Card(hearts.model.Suit.SPADES, hearts.model.Rank.THREE);
+//        hearts.model.Card card3Hearts= new hearts.model.Card(hearts.model.Suit.HEARTS, hearts.model.Rank.FOUR);
+//        hearts.model.Card card5Spade = new hearts.model.Card(hearts.model.Suit.SPADES, hearts.model.Rank.FIVE);
 //        setTest.addCardToSet(card2Spade,1);
 //        setTest.addCardToSet(card3Spade,2);
 //        setTest.addCardToSet(card3Hearts,3);
@@ -101,10 +101,10 @@
 //
 //    @Test
 //    public void getPlayerNumLastPlayed(){
-//        Card card2Spade = new Card(Suit.SPADES,Rank.TWO);
-//        Card card3Spade = new Card(Suit.SPADES, Rank.THREE);
-//        Card card3Hearts= new Card(Suit.HEARTS, Rank.FOUR);
-//        Card card5Spade = new Card(Suit.SPADES, Rank.FIVE);
+//        hearts.model.Card card2Spade = new hearts.model.Card(hearts.model.Suit.SPADES,hearts.model.Rank.TWO);
+//        hearts.model.Card card3Spade = new hearts.model.Card(hearts.model.Suit.SPADES, hearts.model.Rank.THREE);
+//        hearts.model.Card card3Hearts= new hearts.model.Card(hearts.model.Suit.HEARTS, hearts.model.Rank.FOUR);
+//        hearts.model.Card card5Spade = new hearts.model.Card(hearts.model.Suit.SPADES, hearts.model.Rank.FIVE);
 //        setTest.addCardToSet(card2Spade,1);
 //        setTest.addCardToSet(card5Spade,4);
 //        setTest.addCardToSet(card3Spade,2);

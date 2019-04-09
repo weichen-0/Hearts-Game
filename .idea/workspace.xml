@@ -5,20 +5,124 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="728fde6e-6d31-46de-8be6-1a3fb0e3f090" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/GameGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Project/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/IllegalMoveException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Project/IllegalMoveException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/MainFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/MainFrame$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/MainFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/Suit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Project/Suit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/UserMessageException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Project/UserMessageException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IllegalMoveException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IllegalMoveException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Suit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Suit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserMessageException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserMessageException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUnit Test/CardRankComparatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JUnit Test/CardRankComparatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUnit Test/CardSuitComparatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JUnit Test/CardSuitComparatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUnit Test/CardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JUnit Test/CardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUnit Test/ComPlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JUnit Test/ComPlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUnit Test/DeckTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JUnit Test/DeckTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUnit Test/GameRegulatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JUnit Test/RuleEngineTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUnit Test/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JUnit Test/GameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUnit Test/HandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JUnit Test/HandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUnit Test/SetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JUnit Test/SetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Card.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Deck.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Hand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Rank.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Suit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compile.bat" beforeDir="false" afterPath="$PROJECT_DIR$/compile.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/AceClubs.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/AceDiamonds.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/AceHearts.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/AceSpades.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/COPYING" beforeDir="false" afterPath="$PROJECT_DIR$/images/cards/COPYING" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/EightClubs.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/EightDiamonds.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/EightHearts.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/EightSpades.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/FiveClubs.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/FiveDiamonds.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/FiveHearts.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/FiveSpades.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/FourClubs.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/FourDiamonds.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/FourHearts.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/FourSpades.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/JackClubs.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/JackDiamonds.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/JackHearts.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/JackSpades.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/KingClubs.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/KingDiamonds.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/KingHearts.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/KingSpades.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/NineClubs.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/NineDiamonds.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/NineHearts.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/NineSpades.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/QueenClubs.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/QueenDiamonds.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/QueenHearts.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/QueenSpades.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/SevenClubs.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/SevenDiamonds.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/SevenHearts.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/SevenSpades.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/SixClubs.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/SixDiamonds.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/SixHearts.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/SixSpades.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/TenClubs.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/TenDiamonds.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/TenHearts.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/TenSpades.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/ThreeClubs.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/ThreeDiamonds.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/ThreeHearts.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/ThreeSpades.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/TwoClubs.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/TwoDiamonds.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/TwoHearts.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/TwoSpades.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cards/blank.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/Card.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/CardPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/CardPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/CardRankComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/CardSuitComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/ComPlayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/Deck.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/GameApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/GameController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/GameGUI$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/GameGUI$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/GameGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/GameRegulator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/Hand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/HumanPlayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/IllegalMoveException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/Rank.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/Set.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/Suit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project/UserMessageException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/OOP-Project/CardRankComparatorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/OOP-Project/CardSuitComparatorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/OOP-Project/CardTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/OOP-Project/DeckTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/OOP-Project/GameRegulatorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/OOP-Project/GameTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/OOP-Project/HandTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/GUI/CardPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardRankComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/util/CardRankComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardSuitComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/util/CardSuitComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ComPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/ComPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/GUI/GameGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameRegulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/util/RuleEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Hand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/HumanPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IllegalMoveException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/exception/IllegalMoveException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Rank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Set.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Set.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Suit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Suit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserMessageException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/exception/UserMessageException.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,24 +135,28 @@
     <session id="1875386227">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="20" />
-          <entry key="java" value="10636" />
+          <entry key="bat" value="64" />
+          <entry key="dummy" value="31" />
+          <entry key="java" value="11079" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="10636" />
-          <entry key="PLAIN_TEXT" value="20" />
+          <entry key="Bat" value="64" />
+          <entry key="JAVA" value="11079" />
+          <entry key="PLAIN_TEXT" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="47" />
+          <entry key="bat" value="2" />
+          <entry key="java" value="85" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="47" />
+          <entry key="Bat" value="2" />
+          <entry key="JAVA" value="85" />
         </counts>
       </usages-collector>
     </session>
@@ -56,34 +164,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GameRegulator.java">
+        <entry file="file://$PROJECT_DIR$/src/hearts/util/RuleEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="40" column="50" lean-forward="true" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="111" column="45" lean-forward="true" selection-start-line="111" selection-start-column="45" selection-end-line="111" selection-end-column="45" />
-              <folding>
-                <element signature="e#672#673#0" expanded="true" />
-                <element signature="e#703#704#0" expanded="true" />
-                <element signature="e#6758#6759#0" expanded="true" />
-                <element signature="e#6815#6816#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/GameGUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="13" lean-forward="true" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+            <state relative-caret-position="225">
+              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,14 +176,73 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GameController.java">
+        <entry file="file://$PROJECT_DIR$/compile.bat">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="47" column="13" lean-forward="true" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+            <state>
+              <caret column="81" selection-end-column="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JUnit Test/RuleEngineTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
               <folding>
-                <element signature="e#1036#1037#0" expanded="true" />
-                <element signature="e#1104#1105#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JUnit Test/GameTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hearts/model/Suit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="63" lean-forward="true" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/run.bat">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="35" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hearts/model/Set.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1108">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hearts/model/Rank.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="422">
+              <caret line="112" column="71" selection-start-line="112" selection-start-column="71" selection-end-line="112" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -116,7 +259,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>unset</find>
       <find>startRound</find>
       <find>distribute</find>
       <find>ass</find>
@@ -143,9 +285,10 @@
       <find>desktop</find>
       <find>command</find>
       <find>playButton</find>
-      <find>illegalMove</find>
       <find>No pass</find>
       <find>northPanel</find>
+      <find>illegalMove</find>
+      <find>hearts.model.Suit</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,17 +297,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Test.java" />
-        <option value="$PROJECT_DIR$/compile.bat" />
-        <option value="$PROJECT_DIR$/src/GUI.java" />
-        <option value="$PROJECT_DIR$/src/Game.form" />
-        <option value="$PROJECT_DIR$/JUnit Test/PlayerTest.java" />
-        <option value="$PROJECT_DIR$/src/Round.java" />
-        <option value="$PROJECT_DIR$/src/Deck.java" />
         <option value="$PROJECT_DIR$/src/CardPanel.java" />
         <option value="$PROJECT_DIR$/src/GameApp.java" />
         <option value="$PROJECT_DIR$/JUnit Test/DeckTest.java" />
-        <option value="$PROJECT_DIR$/JUnit Test/GameTest.java" />
         <option value="$PROJECT_DIR$/JUnit Test/HandTest.java" />
         <option value="$PROJECT_DIR$/JUnit Test/HumanPlayerTest.java" />
         <option value="$PROJECT_DIR$/JUnit Test/CardRankComparatorTest.java" />
@@ -191,6 +326,28 @@
         <option value="$PROJECT_DIR$/src/Suit.java" />
         <option value="$PROJECT_DIR$/src/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/GameGUI.java" />
+        <option value="$PROJECT_DIR$/src/GUI/GameGUI.java" />
+        <option value="$PROJECT_DIR$/src/Model/HumanPlayer.java" />
+        <option value="$PROJECT_DIR$/src/Util/RuleEngine.java" />
+        <option value="$PROJECT_DIR$/src/hearts/Util/RuleEngine.java" />
+        <option value="$PROJECT_DIR$/src/hearts/Model/Hand.java" />
+        <option value="$PROJECT_DIR$/src/hearts/Model/Deck.java" />
+        <option value="$PROJECT_DIR$/src/hearts/Model/Game.java" />
+        <option value="$PROJECT_DIR$/src/hearts/exception/UserMessageException.java" />
+        <option value="$PROJECT_DIR$/src/hearts/controller/GameController.java" />
+        <option value="$PROJECT_DIR$/src/hearts/model/Game.java" />
+        <option value="$PROJECT_DIR$/src/hearts/GUI/CardPanel.java" />
+        <option value="$PROJECT_DIR$/src/hearts/GUI/GameGUI.java" />
+        <option value="$PROJECT_DIR$/src/hearts/model/HumanPlayer.java" />
+        <option value="$PROJECT_DIR$/src/hearts/util/CardRankComparator.java" />
+        <option value="$PROJECT_DIR$/src/hearts/util/CardSuitComparator.java" />
+        <option value="$PROJECT_DIR$/src/hearts/model/Card.java" />
+        <option value="$PROJECT_DIR$/JUnit Test/GameTest.java" />
+        <option value="$PROJECT_DIR$/JUnit Test/RuleEngineTest.java" />
+        <option value="$PROJECT_DIR$/src/hearts/model/Rank.java" />
+        <option value="$PROJECT_DIR$/compile.bat" />
+        <option value="$PROJECT_DIR$/src/hearts/model/Suit.java" />
+        <option value="$PROJECT_DIR$/run.bat" />
       </list>
     </option>
   </component>
@@ -202,8 +359,8 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="877" />
+    <option name="width" value="1920" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -229,6 +386,19 @@
             </path>
             <path>
               <item name="OOP-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OOP-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="hearts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OOP-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OOP-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="hearts" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OOP-Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -242,7 +412,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/weichen/Documents/GitHub/OOP-Project/src/Player.java&#10;format&#9;PSI&#9;JAVA://java.text.Format" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554833725220" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554837550529" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -277,10 +447,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GameGUI">
+  <component name="RunManager" selected="Batch.compile">
     <configuration name="GameGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GameGUI" />
+      <option name="MAIN_CLASS_NAME" value="hearts.GUI.GameGUI" />
       <module name="OOP-Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="compile" type="BatchConfigurationType" factoryName="Batch" temporary="true">
+      <module name="OOP-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="compile.bat" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -293,20 +474,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameControllerTest.startRound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RuleEngineTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP-Project" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GameControllerTest" />
-      <option name="METHOD_NAME" value="startRound" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GameRegulatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OOP-Project" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GameRegulatorTest" />
+      <option name="MAIN_CLASS_NAME" value="RuleEngineTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -320,19 +491,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.GameControllerTest.startRound" />
       <item itemvalue="JUnit.GameControllerTest" />
-      <item itemvalue="JUnit.GameRegulatorTest" />
+      <item itemvalue="JUnit.RuleEngineTest" />
       <item itemvalue="JUnit.SetTest" />
       <item itemvalue="Application.GameGUI" />
+      <item itemvalue="Batch.compile" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Batch.compile" />
         <item itemvalue="Application.GameGUI" />
         <item itemvalue="JUnit.SetTest" />
-        <item itemvalue="JUnit.GameRegulatorTest" />
+        <item itemvalue="JUnit.RuleEngineTest" />
         <item itemvalue="JUnit.GameControllerTest" />
-        <item itemvalue="JUnit.GameControllerTest.startRound" />
       </list>
     </recent_temporary>
   </component>
@@ -401,7 +572,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229727000" />
+    <option name="totallyTimeSpent" value="233388000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -414,17 +585,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1057" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.47239915" visible="true" weight="0.13099042" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.47239915" visible="true" weight="0.13099042" />
       <window_info id="Structure" order="6" sideWeight="0.5276008" side_tool="true" weight="0.13099042" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.26377952" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.26326963" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.1836518" />
@@ -433,7 +603,7 @@
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39808917" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" weight="0.328084" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.3280255" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.25477707" />
       <window_info anchor="bottom" id="Dependency Viewer" order="13" weight="0.32908705" />
@@ -492,13 +662,6 @@
     <entry file="file://$PROJECT_DIR$/.gitattributes">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/compile.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="49" selection-start-column="49" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.form" />
     <entry file="file://$PROJECT_DIR$/src/GUI.java" />
     <entry file="file://$PROJECT_DIR$/src/Test.java" />
@@ -518,37 +681,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JUnit Test/GameTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="66" column="125" selection-start-line="66" selection-start-column="125" selection-end-line="66" selection-end-column="125" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JUnit Test/HumanPlayerTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/CardPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Deck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1886">
-          <caret line="107" column="1" lean-forward="true" selection-start-line="107" selection-start-column="1" selection-end-line="107" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JUnit Test/PlayerTest.java" />
     <entry file="file://$PROJECT_DIR$/JUnit Test/CardSuitComparatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -581,16 +714,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JUnit Test/GameControllerTest.java" />
     <entry file="file://$PROJECT_DIR$/JUnit Test/RoundTest.java" />
-    <entry file="file://$PROJECT_DIR$/JUnit Test/GameRegulatorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="140" selection-start-line="20" selection-start-column="140" selection-end-line="20" selection-end-column="140" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JUnit Test/CardTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
@@ -608,138 +731,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JUnit Test/ComPlayerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="35" lean-forward="true" selection-start-column="2" selection-end-line="48" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HumanPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding>
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameRegulator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="40" column="50" lean-forward="true" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ComPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="99" column="59" selection-start-line="99" selection-start-column="59" selection-end-line="99" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CardSuitComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CardRankComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Card.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserMessageException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="75" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Suit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-731">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Set.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-795">
-          <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360">
-          <caret line="55" column="7" lean-forward="true" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="47" column="13" lean-forward="true" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
-          <folding>
-            <element signature="e#1036#1037#0" expanded="true" />
-            <element signature="e#1104#1105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/IllegalMoveException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="111" column="45" lean-forward="true" selection-start-line="111" selection-start-column="45" selection-end-line="111" selection-end-column="45" />
-          <folding>
-            <element signature="e#672#673#0" expanded="true" />
-            <element signature="e#703#704#0" expanded="true" />
-            <element signature="e#6758#6759#0" expanded="true" />
-            <element signature="e#6815#6816#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -750,13 +745,192 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameGUI.java">
+    <entry file="file://$PROJECT_DIR$/src/hearts/controller/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="13" lean-forward="true" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+        <state relative-caret-position="-200">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/exception/IllegalMoveException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/exception/UserMessageException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/GUI/GameGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/GUI/CardPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/ComPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1385">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Deck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-410">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3290">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Hand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1145">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/HumanPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/util/CardRankComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="50" lean-forward="true" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/util/CardSuitComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1392#1393#0" expanded="true" />
+            <element signature="e#1424#1425#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Set.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1108">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Rank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="112" column="71" selection-start-line="112" selection-start-column="71" selection-end-line="112" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JUnit Test/RuleEngineTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JUnit Test/GameTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compile.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="81" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/util/RuleEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Suit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="63" lean-forward="true" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="35" selection-end-column="35" />
         </state>
       </provider>
     </entry>

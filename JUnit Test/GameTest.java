@@ -1,8 +1,10 @@
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import java.util.*;
+
+import hearts.model.*;
+
 public class GameTest {
     private Game testGame;
 
@@ -65,7 +67,6 @@ public class GameTest {
         pass1round.add(new Card(Suit.HEARTS, Rank.JACK));
         pass1round.add(new Card(Suit.HEARTS, Rank.KING));
         assertEquals(13, player[0].getHandSize()); //check after passing card did player receive back the same number of card
-
     }
 
 

@@ -1,3 +1,7 @@
+import hearts.model.Card;
+import hearts.model.Deck;
+import hearts.model.Rank;
+import hearts.model.Suit;
 import org.junit.Before;
 import org.junit.Test;
 

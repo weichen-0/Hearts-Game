@@ -1,6 +1,8 @@
+import hearts.model.Card;
+import hearts.model.Deck;
+import hearts.model.Rank;
+import hearts.model.Suit;
 import org.junit.Test;
-
-import javax.swing.*;
 
 import static org.junit.Assert.*;
 
@@ -14,7 +16,7 @@ public class CardTest {
 
     @Test
     public void getRank() {
-        Card twoOfSpade = new Card(Suit.SPADES,Rank.TWO);
+        Card twoOfSpade = new Card(Suit.SPADES, Rank.TWO);
         assertEquals(Rank.TWO, twoOfSpade.getRank());
     }
 

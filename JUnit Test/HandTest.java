@@ -1,3 +1,4 @@
+import hearts.model.*;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.*;
@@ -14,7 +15,7 @@ public class HandTest {
 
     @Test
     public void addCard() {
-        assertEquals(0, handTest.getNumberOfCards()); //Hand start off with 0 card test the Add method, (1 card at a go)
+        assertEquals(0, handTest.getNumberOfCards()); //hearts.model.Hand start off with 0 card test the Add method, (1 card at a go)
         Card cardAHearts = new Card(Suit.HEARTS, Rank.ACE);
         handTest.addCard(cardAHearts);
         assertEquals(1, handTest.getNumberOfCards());
@@ -22,7 +23,7 @@ public class HandTest {
 
     @Test
     public void addCards() {
-        assertEquals(0, handTest.getNumberOfCards()); //Hand start off with 0 card test the Add method, (>1 card at a go)
+        assertEquals(0, handTest.getNumberOfCards()); //hearts.model.Hand start off with 0 card test the Add method, (>1 card at a go)
         List<Card> list = new Deck().getDeck();
         handTest.addCards(list);
         assertEquals(52, handTest.getNumberOfCards());
@@ -48,7 +49,7 @@ public class HandTest {
 
     @Test
     public void removeCards() {
-        assertEquals(0, handTest.getNumberOfCards()); //Method will remove a list of cards from the Hand
+        assertEquals(0, handTest.getNumberOfCards()); //Method will remove a list of cards from the hearts.model.Hand
         List<Card> list = new Deck().getDeck();
         handTest.addCards(list);
         assertEquals(52, handTest.getNumberOfCards());
@@ -70,7 +71,7 @@ public class HandTest {
         cardsToRemove.add(new Card(Suit.SPADES, Rank.TWO));
         handTest.addCards(cardsToRemove);
 
-//        for (Card c: handTest.getCardList()) {
+//        for (hearts.model.Card c: handTest.getCardList()) {
         for (int i = 0; i < handTest.getCardList().size(); i++) {
             System.out.println("index : " + i + " -> " + handTest.getCard(i));
         }

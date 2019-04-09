@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 public class CardSuitComparatorTest {
     @Test
-    public void compare(){
+    public void compareSuit(){
         CardSuitComparator c = new CardSuitComparator();
 
         Card card5Hearts = new Card(Suit.HEARTS, Rank.FIVE);

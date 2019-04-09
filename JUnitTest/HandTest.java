@@ -13,7 +13,7 @@ public class HandTest {
     }
 
     @Test
-    public void addCard() {
+    public void handAddCard() {
         assertEquals(0, handTest.getNumberOfCards()); //Hand start off with 0 card test the Add method, (1 card at a go)
         Card cardAHearts = new Card(Suit.HEARTS, Rank.ACE);
         handTest.addCard(cardAHearts);

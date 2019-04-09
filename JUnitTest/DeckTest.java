@@ -20,7 +20,7 @@ public class DeckTest {
     }
 
     @Test
-    public void addCard(){
+    public void deckAddCard(){
         List<Card> list = new ArrayList<>();
         list = decktest.getDeck();
         assertEquals(52, decktest.getSizeOfDeck());

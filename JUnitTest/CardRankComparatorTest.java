@@ -3,7 +3,7 @@ import static org.junit.Assert.*;
 
 public class CardRankComparatorTest {
     @Test
-    public void compare(){
+    public void compareRank(){
         CardRankComparator c = new CardRankComparator();
         Card card2Hearts = new Card(Suit.HEARTS, Rank.TWO);
         Card card4Hearts = new Card(Suit.HEARTS, Rank.FOUR);

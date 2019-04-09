@@ -13,6 +13,9 @@ public final class Suit implements Comparable {
 
     private String symbol;
 
+    public static void main(String[] args) {
+        System.out.println(Suit.CLUBS);
+    }
     /**
      * The suit clubs.
      */

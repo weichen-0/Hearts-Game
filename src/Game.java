@@ -47,7 +47,7 @@ public class Game {
         Player player = listOfPlayers[0]; //human player
         System.out.printf("%nSET %d, CARD #%d%n", setNum, currentSet.getNumOfCardsInSet() + 1);
         System.out.print("\t");
-        printAlignedOptions(player.getHand().getNumberOfCards());
+//        printAlignedOptions(player.getHand().getNumberOfCards());
         System.out.printf("%s Hand > %s%n", player.getName(), player.getHand());
         System.out.printf("Current Set contains > %s%n", currentSet.getSetCards());
         System.out.printf("PLAYER1 picked %s%n", cardPlayed);
@@ -133,7 +133,7 @@ public class Game {
 
     private void printAllHands() {
         for (Player p : listOfPlayers) {
-            printAlignedOptions(p.getHandSize());
+//            printAlignedOptions(p.getHandSize());
             p.getHand().sortBySuit();
             if (p instanceof HumanPlayer) {
                 System.out.printf("YOUR hand > %s%n", p.getHand());
@@ -142,26 +142,23 @@ public class Game {
         }
     }
 
-    private void printAlignedOptions(int numOfCards) {
-        String output = "\t\t";
-
-        for (int i = 1; i <= numOfCards; i++) {
-            if (i > 10) {
-                output += "\t[" + i + "]";
-                continue;
-            }
-            output += "\t\t[" + i + "]";
-        }
-        System.out.println(output);
-    }
+//    private void printAlignedOptions(int numOfCards) {
+//        String output = "\t\t";
+//
+//        for (int i = 1; i <= numOfCards; i++) {
+//            if (i > 10) {
+//                output += "\t[" + i + "]";
+//                continue;
+//            }
+//            output += "\t\t[" + i + "]";
+//        }
+//        System.out.println(output);
+//    }
 
     private void printOverallScoreBoard() {
         System.out.printf("[OVERALL SCOREBOARD]%n");
         for (Player p : listOfPlayers) {
-            if (p instanceof HumanPlayer) {
-                System.out.printf("YOUR score > %d%n", p.getTotalPoints());
-            } else
-                System.out.printf("%s score > %d%n", p.getName(), p.getTotalPoints());
+            System.out.printf("%s score > %d%n", p.getName(), p.getTotalPoints());
         }
         System.out.println();
     }
@@ -169,10 +166,7 @@ public class Game {
     private void printRoundScoreBoard() {
         System.out.printf("[ROUND %d SCOREBOARD]%n", roundNum);
         for (Player p : listOfPlayers) {
-            if (p instanceof HumanPlayer) {
-                System.out.printf("YOUR score > %d%n", p.getPointsFromCurrentRound());
-            } else
-                System.out.printf("%s score > %d%n", p.getName(), p.getPointsFromCurrentRound());
+            System.out.printf("%s score > %d%n", p.getName(), p.getPointsFromCurrentRound());
         }
     }
 
@@ -242,7 +236,7 @@ public class Game {
 
     private Card chooseCardToPlay(Player player, Set set) {
         int numCardsOnHand = player.getHand().getNumberOfCards();
-        printAlignedOptions(numCardsOnHand);
+//        printAlignedOptions(numCardsOnHand);
         return player.chooseCardToPlay(set, isHeartsBroken);
     }
 

@@ -1,15 +1,10 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-
-import java.awt.FlowLayout;
-import java.util.ArrayList;
-import java.util.List;
-import java.awt.Dimension;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 @SuppressWarnings("serial")
 public class MainFrame extends JFrame {
@@ -17,12 +12,13 @@ public class MainFrame extends JFrame {
     private GameController gameCtrl;
     private Player[] players;
     @SuppressWarnings("unused")
-    private JPanel contentPane,e,w,s,n,slist;
-    private JLabel emsg,wmsg,nmsg,smsg;
-    private JPanel eput,sput,wput,nput;
+    private JPanel contentPane, e, w, s, n, slist;
+    private JLabel emsg, wmsg, nmsg, smsg;
+    private JPanel eput, sput, wput, nput;
     private JPanel command;
     private JButton Go;
     private JPanel spanel;
+
     /**
      * Launch the application.
      */
@@ -102,7 +98,9 @@ public class MainFrame extends JFrame {
         e.add(emsg, BorderLayout.EAST);
 
         JPanel desktop = new JPanel();
+//        desktop.setBackground(new Color(0, 100, 0));
         contentPane.add(desktop, BorderLayout.CENTER);
+//        contentPane.setBackground(new Color(0, 100, 0));
         desktop.setLayout(new BorderLayout(0, 0));
 
         spanel = new JPanel();
@@ -125,7 +123,7 @@ public class MainFrame extends JFrame {
         repaint();
         Go = new JButton("OK");
         command.add(Go);
-        Go.addActionListener(new ActionListener(){
+        Go.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 List<Card> cardsInHand = players[0].getHand().getCardList();

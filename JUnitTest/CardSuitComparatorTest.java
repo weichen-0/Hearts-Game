@@ -16,7 +16,6 @@ public class CardSuitComparatorTest {
         Card card4Hearts = new Card(Suit.HEARTS, Rank.FOUR);
         int result = c.compare(card2Hearts, card4Hearts);
         assertEquals(-2, result); //Test if same suit the difference rank
-
     }
 
 }

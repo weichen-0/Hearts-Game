@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
 
@@ -8,8 +7,6 @@ import java.util.Objects;
  * the front of the card.  A card object is immutable; once instantiated, the
  * values cannot change.
  *
- * @author John K. Estell
- * @version 1.0
  *
  */
 public class Card {

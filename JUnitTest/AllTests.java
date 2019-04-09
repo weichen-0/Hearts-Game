@@ -1,8 +1,7 @@
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
-public class CardRankComparatorTest {
+public class AllTests {
     @Test
     public void compare(){
         CardRankComparator c = new CardRankComparator();
@@ -16,6 +15,5 @@ public class CardRankComparatorTest {
         int result1 = c.compare(card5Hearts, card5Spade);
         assertEquals(-1, result1); //Test if same rank the different suit
     }
-
 
 }

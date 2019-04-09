@@ -1,1 +1,1 @@
-javac -encoding ISO-8859-1 -d classes -sourcepath src src/hearts/GUI/GameGUI.java
+javac -d classes -sourcepath src src/hearts/GUI/GameGUI.java

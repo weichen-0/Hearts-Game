@@ -123,7 +123,7 @@ public class MainFrame extends JFrame {
         JOptionPane.showMessageDialog(null, "Welcome to Hearts! To start Round 1, select 3 cards to pass to the left.", "Action Required",
                 JOptionPane.INFORMATION_MESSAGE);
         repaint();
-        Go = new JButton("OK");
+        Go = new JButton("Play!");
         command.add(Go);
         Go.addActionListener(new ActionListener(){
             @Override
@@ -137,7 +137,7 @@ public class MainFrame extends JFrame {
                 }
 
                 try {
-                    gameCtrl.executeMove(plist);
+                    gameCtrl.executeMove(plist); // execute player's play
                 } catch (IllegalMoveException e1) {
                     JOptionPane.showMessageDialog(null, e1.getMessage(), e1.getTitle(), JOptionPane.ERROR_MESSAGE);
                 } catch (UserMessageException e1) {
@@ -145,15 +145,14 @@ public class MainFrame extends JFrame {
                     JOptionPane.showMessageDialog(null, e1.getMessage(), e1.getTitle(), JOptionPane.INFORMATION_MESSAGE);
                 } finally {
                     try {
-                        gameCtrl.executeComputerMoves();
+                        gameCtrl.executeComputerMoves(); // execute computer moves after player has played
                     } catch (UserMessageException e1) {
                         repaint();
                         JOptionPane.showMessageDialog(null, e1.getMessage(), e1.getTitle(), JOptionPane.INFORMATION_MESSAGE);
                     }
-                    if (players[0].getHand().getCardList().isEmpty()) {
-                        if (gameCtrl.getHighestScore() < 100) {
-                            gameCtrl.startRound();
-                        } else {
+                    if (gameCtrl.hasRoundEnded()) {
+                        boolean gameOngoing = gameCtrl.startNextRound();
+                        if (!gameOngoing) { // game has ended because at least 1 player has at least 100 points
                             JOptionPane.showMessageDialog(null, "To start new game, select 3 cards to pass to the left.", "New Game", JOptionPane.INFORMATION_MESSAGE);
                             players = gameCtrl.startGame();
                         }

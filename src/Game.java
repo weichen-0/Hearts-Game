@@ -46,14 +46,24 @@ public class Game {
         printAllHands();
     }
 
-    public void makePlayerMove(Card cardPlayed) throws IllegalMoveException{ // int startPlayerIndex) {
-        Player player = listOfPlayers[0]; //human player
+    public void makePlayerMove(Card cardPlayed) throws IllegalMoveException{
+        HumanPlayer player = null;
+        for(Player p : listOfPlayers){
+            if(p instanceof HumanPlayer){
+                player = (HumanPlayer) p;
+            }
+        }
         System.out.printf("%nSET %d, CARD #%d%n", setNum, currentSet.getNumOfCardsInSet() + 1);
         System.out.print("\t");
         System.out.printf("%s Hand > %s%n", player.getName(), player.getHand());
         System.out.printf("Current Set > %s%n", currentSet.getSetCards());
         System.out.printf("PLAYER1 picked %s%n", cardPlayed);
-        GameRegulator.validateCardPlayed(player, cardPlayed, currentSet, isHeartsBroken);
+        try{
+            GameRegulator.validateCardPlayed(player, cardPlayed, currentSet, isHeartsBroken);
+        }catch(IllegalMoveException e){
+            player.deselectCardsInHand(); // if illegal move was played deselect all cards before propagating error up
+            throw e;
+        }
         currentSet.addCardToSet(cardPlayed, 0);
         player.setPlayedCard(cardPlayed);
         if (cardPlayed.isPointCard()) isHeartsBroken = true;
@@ -107,7 +117,7 @@ public class Game {
                         case (0): message += "No passing of cards required for Round " + roundNum + "."; break;
                         case (1): message += "To start Round " + roundNum + ", select 3 cards to pass to the left."; break;
                         case (2): message += "To start Round " + roundNum + ", select 3 cards to pass to the right."; break;
-                        case (3): message += "To start Round " + roundNum + ", select 3 cards to pass to opposite player."; makeComputerMoves();
+                        case (3): message += "To start Round " + roundNum + ", select 3 cards to pass to opposite player.";
                     }
                     throw new UserMessageException(message, "End of Round");
                 }
@@ -174,7 +184,7 @@ public class Game {
     }
 
     public boolean hasPassedCards(){
-        return passedCards;
+        return passedCards || (roundNum % 4 == 0);
     }
 
     public void passCards(List<Card> cards) {

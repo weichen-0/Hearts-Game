@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * Sub-class of Player
  * Inherits all accessible methods and attributes of Player
@@ -13,4 +15,10 @@ public class HumanPlayer extends Player {
         super(name);
     }
 
+    public void deselectCardsInHand(){
+        List<Card> cards = getHand().getCardList();
+        for(Card c : cards){
+            if(c.isSelected()) c.toggleSelected();
+        }
+    }
 }

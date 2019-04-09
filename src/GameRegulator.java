@@ -5,10 +5,9 @@ public class GameRegulator {
 
         // Check if player truly has card that it wants to play
         Hand playerHand = player.getHand();
-//        if (!playerHand.containsCard(cardPlayed)) {
-//            System.out.println("Selected card does not exist in your hand. Try again.");
-//            return false;
-//        }
+        if (!playerHand.hasSuit(Suit.SPADES) && !playerHand.hasSuit(Suit.CLUBS) && !playerHand.hasSuit(Suit.DIAMONDS)) {
+            return; // player only has hearts cards; can only play hearts.
+        }
 
         // Check if point cards are being played for first set
         // If player has 13 cards, this is the first set.
@@ -52,12 +51,10 @@ public class GameRegulator {
         }
 
         // Extra validation for Hearts cards
-        if (playerHand.hasSuit(Suit.SPADES) || playerHand.hasSuit(Suit.CLUBS) || playerHand.hasSuit(Suit.DIAMONDS)) {
-            if (suitPlayed.compareTo(Suit.HEARTS) == 0 && !isHeartBroken) {
-                String errorMsg = "Heart suit has not been broken yet. Try again.";
-                System.out.println(errorMsg);
-                throw new IllegalMoveException(errorMsg, "Invalid Move");
-            }
+        if (suitPlayed.compareTo(Suit.HEARTS) == 0 && !isHeartBroken) {
+            String errorMsg = "Heart suit has not been broken yet. Try again.";
+            System.out.println(errorMsg);
+            throw new IllegalMoveException(errorMsg, "Invalid Move");
         }
     }
 

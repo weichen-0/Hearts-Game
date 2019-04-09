@@ -3,33 +3,45 @@ import java.util.List;
 public class GameController {
 
     Game game;
-    Player humanPlayer;
+    HumanPlayer humanPlayer;
 
     public Player[] startGame() {
         System.out.println("====================================   WELCOME TO THE GAME OF HEARTS   ====================================");
         game = new Game(1);
+        startNextRound();
         Player[] players = game.getListOfPlayers();
-        humanPlayer = players[0];
-        startRound();
+        humanPlayer = (HumanPlayer) players[0];
         return players;
     }
 
-    public void startRound() {
+    public boolean startNextRound() {
         if (game.getHighestScore() < 100) {
             game.initRound();
             game.unsetPlayedCards();
-            return;
+            try{
+                executeComputerMoves(); // maximum 3 of 4 players (bots) will play cards
+            }catch(UserMessageException e){ // will not occur since round has not ended
+                System.out.println(e.getMessage());
+            }
+            return true;
         }
+        // Game ends
         System.out.printf("Game has ended. %s wins with the lowest score! ", game.getWinner().getName());
         System.out.println("====================================   THANK YOU FOR PLAYING HEARTS   ====================================");
+        return false;
+    }
+
+    public boolean hasRoundEnded() {
+        return humanPlayer.getHand().getCardList().isEmpty();
     }
 
     public void executeMove(List<Card> cards) throws IllegalMoveException, UserMessageException{
-        if (!game.hasPassedCards() && game.getRoundNum() % 4 != 0) {
+        if (!game.hasPassedCards()) {
             passCards(cards);
             executeComputerMoves();
         } else {
             if (cards.size() > 1) {
+                humanPlayer.deselectCardsInHand();
                 throw new IllegalMoveException("Pick only 1 card.", "Invalid Selection");
             } else if (cards.size() == 0) {
                 throw new IllegalMoveException("You must play a card.", "Invalid Selection");
@@ -39,12 +51,8 @@ public class GameController {
         }
     }
 
-    public int getHighestScore() {
-        return game.getHighestScore();
-    }
-
     public void executeComputerMoves() throws UserMessageException{
-        if (!game.hasPassedCards() ) {
+        if (!game.hasPassedCards()) {
             return;
         }
         if(game.getCurrentSet().getNumOfCardsInSet() == 0){
@@ -55,6 +63,7 @@ public class GameController {
 
     public void passCards(List<Card> cards) throws IllegalMoveException, UserMessageException{
         if(cards.size() != 3){
+            humanPlayer.deselectCardsInHand();
             throw new IllegalMoveException("You must pick 3 cards!", "Invalid Selection");
         }
         game.passCards(cards);

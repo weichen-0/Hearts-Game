@@ -13,7 +13,7 @@ import java.util.Objects;
  */
 public class Card {
 
-    // instance variables for the card
+    // instance variables for card
     private Suit suitValue;
     private Rank rankValue;
     private Image cardImage;

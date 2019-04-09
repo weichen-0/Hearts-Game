@@ -87,7 +87,7 @@ public class Game {
 
         int numCardsInSet = currentSet.getNumOfCardsInSet();
         if(numCardsInSet == 4){
-            int winningPlayerIndex = currentSet.getWinningPlayerIndex();
+            int winningPlayerIndex = (currentSet.getWinningCardIndex() + currentSet.getPlayerNumLastPlayed() + 1) % 4;
             Player winningPlayerOfSet = listOfPlayers[winningPlayerIndex];
             System.out.printf("%nCards played this Set > %s%n", currentSet);
             tallyPointsForSet(currentSet, winningPlayerOfSet);

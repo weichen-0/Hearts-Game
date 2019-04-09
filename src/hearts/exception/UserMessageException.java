@@ -1,7 +1,7 @@
 package hearts.exception;
 
 /**
- * Exception Class that
+ * Checked exception class that is thrown to display a message for the user
  */
 public class UserMessageException extends Exception {
     /**

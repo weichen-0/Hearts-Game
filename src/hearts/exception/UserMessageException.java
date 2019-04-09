@@ -1,7 +1,8 @@
 package hearts.exception;
 
 /**
- * Checked exception class that is thrown to display a popup message for the user
+ * Checked exception class that is thrown to display a popup message for the user.
+ * A message dialogue will appear to inform the user of the message.
  */
 public class UserMessageException extends Exception {
     /**

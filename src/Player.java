@@ -1,12 +1,14 @@
 import java.util.List;
 import java.util.Objects;
 
-
+/**
+ * Representation of Players in a Hearts game
+ *
+ */
 public abstract class Player {
 
     private String name;
     private Card playedCard;
-
     private int pointsFromCurrentRound = 0;
     private int totalPoints = 0;
     private Hand hand = new Hand();

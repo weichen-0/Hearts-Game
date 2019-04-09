@@ -35,7 +35,6 @@ public class Set {
      * otherwise, return the first card played in the set
      */
     public Suit getLeadingSuit() {
-        //TODO: raise exception if there isn't at least 1 card in set
         if (cards.size() == 0) {
             return null;
         }

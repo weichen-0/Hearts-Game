@@ -76,7 +76,6 @@ public class RuleEngine {
         }
     }
 
-
     /**
      * Returns the index of the starting player (with the 2 of Clubs in hand) at the start of every round
      *

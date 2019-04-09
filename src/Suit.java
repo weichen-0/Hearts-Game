@@ -1,6 +1,5 @@
 import java.util.*;
 
-
 /**
  * Specification of the suit values for a standard deck of cards.
  */

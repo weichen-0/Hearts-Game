@@ -2,7 +2,6 @@
  * Thrown when player makes an illegal move.
  * A message dialogue will appear to inform the user of their illegal move.
  */
-@SuppressWarnings("serial")
 public class IllegalMoveException extends Exception{
     /**
      * Information contained in error message
@@ -14,8 +13,8 @@ public class IllegalMoveException extends Exception{
 
     /**
      * Constructor for IllegalMoveException
-     * @param msg
-     * @param title
+     * @param msg message string for Exception (shown in user popup window)
+     * @param title title string for Exception (shown in user popup window)
      */
     public IllegalMoveException(String msg, String title) {
         this.msg = msg;

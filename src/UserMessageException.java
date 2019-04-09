@@ -1,4 +1,3 @@
-@SuppressWarnings("serial")
 public class UserMessageException extends Exception {
     /**
      * Information contained in user info message
@@ -10,8 +9,8 @@ public class UserMessageException extends Exception {
 
     /**
      * Constructor for UserMessageException
-     * @param msg
-     * @param title
+     * @param msg message string for Exception (shown in user popup window)
+     * @param title title string for Exception (shown in user popup window)
      */
     public UserMessageException(String msg, String title) {
         this.msg = msg;

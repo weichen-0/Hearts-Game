@@ -1,7 +1,7 @@
 package hearts.exception;
 
 /**
- * Checked exception class that is thrown to display a message for the user
+ * Checked exception class that is thrown to display a popup message for the user
  */
 public class UserMessageException extends Exception {
     /**
@@ -13,9 +13,9 @@ public class UserMessageException extends Exception {
     private String title;
 
     /**
-     * Constructor for hearts.exception.UserMessageException
-     * @param msg message string for hearts.exception (shown in user popup window)
-     * @param title title string for hearts.exception (shown in user popup window)
+     * Constructor for UserMessageException
+     * @param msg message string for exception (shown in popup window)
+     * @param title title string for exception (shown in popup window)
      */
     public UserMessageException(String msg, String title) {
         this.msg = msg;
@@ -24,19 +24,15 @@ public class UserMessageException extends Exception {
 
     /**
      * Returns the detail message string.
-     * @return the detail message string of this hearts.exception.UserMessageException.
+     * @return the detail message string of this UserMessageException.
      */
     @Override
-    public String getMessage() {
-        return msg;
-    }
+    public String getMessage() { return msg; }
 
 
     /**
      * Returns the title message string.
-     * @return the title message string of this hearts.exception.UserMessageException.
+     * @return the title message string of this UserMessageException.
      */
-    public String getTitle() {
-        return title;
-    }
+    public String getTitle() { return title; }
 }

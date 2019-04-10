@@ -15,8 +15,8 @@ public class GameController {
     HumanPlayer humanPlayer;
 
     /**
-     * Starts the game and
-     * @return
+     * Starts the game and initialises a list of 4 players
+     * @return a list of 4 players
      */
     public Player[] startGame() {
         System.out.println("====================================   WELCOME TO THE GAME OF HEARTS   ====================================");
@@ -28,8 +28,8 @@ public class GameController {
     }
 
     /**
-     *
-     * @return
+     * Private helper function that starts a round in game
+     * @return <code>true</code> if game has not ended, otherwise return <code>false</code>
      */
     private boolean startNextRound() {
         if (game.getHighestScore() < 100) {
@@ -48,6 +48,10 @@ public class GameController {
         return false;
     }
 
+    /**
+     * Checks if it is the end of the round based on number of cards left in player's hand
+     * @return <code>true</code> if it is the end of the round, otherwise return <code>false</code>
+     */
     public boolean hasRoundEnded() {
         return humanPlayer.getHand().getCardList().isEmpty();
     }
@@ -68,7 +72,11 @@ public class GameController {
         }
     }
 
-    public void executeComputerMoves() throws UserMessageException {
+    /**
+     *
+     * @throws UserMessageException
+     */
+    private void executeComputerMoves() throws UserMessageException {
         if (!game.hasPassedCards()) {
             return;
         }
@@ -84,7 +92,7 @@ public class GameController {
      * @throws IllegalMoveException
      * @throws UserMessageException
      */
-    public void passCards(List<Card> cards) throws IllegalMoveException, UserMessageException {
+    private void passCards(List<Card> cards) throws IllegalMoveException, UserMessageException {
         if(cards.size() != 3){
             humanPlayer.deselectCardsInHand();
             throw new IllegalMoveException("You must pick 3 cards!", "Invalid Selection");

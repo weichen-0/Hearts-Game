@@ -5,11 +5,7 @@ package hearts.exception;
  * A message dialogue will appear to inform the user of the message.
  */
 public class UserMessageException extends Exception {
-    /**
-     * Information contained in user info message
-     * Message = Message body
-     * Title = Title of dialogue box
-     */
+
     private String msg;
     private String title;
 

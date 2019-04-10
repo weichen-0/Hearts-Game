@@ -6,8 +6,8 @@ import hearts.exception.*;
 import java.util.List;
 
 /**
- * Class that directs the entire flow of the Hearts game
- * Default constructor is used
+ * Class that directs the entire flow of the Hearts game.
+ * Default constructor is used.
  */
 public class GameController {
 
@@ -15,8 +15,8 @@ public class GameController {
     HumanPlayer humanPlayer;
 
     /**
-     * Starts a new game and initialises a list of 4 players
-     * @return a list of 4 players
+     * Starts a new game and initialises a list of 4 players.
+     * @return a list of 4 players.
      */
     public Player[] startGame() {
         System.out.println("====================================   WELCOME TO THE GAME OF HEARTS   ====================================");
@@ -28,8 +28,8 @@ public class GameController {
     }
 
     /**
-     * Starts a new round in game
-     * @return <code>true</code> if game has not ended, otherwise return <code>false</code>
+     * Starts a new round in game.
+     * @return <code>true</code> if game has not ended, otherwise <code>false</code>.
      */
     public boolean startNextRound() {
         if (game.getHighestScore() < 100) {
@@ -49,18 +49,18 @@ public class GameController {
     }
 
     /**
-     * Checks if it is the end of the round based on number of cards left in player's hand
-     * @return <code>true</code> if it is the end of the round, otherwise return <code>false</code>
+     * Checks if it is the end of the round based on number of cards left in player's hand.
+     * @return <code>true</code> if it is the end of the round, otherwise <code>false</code>.
      */
     public boolean hasRoundEnded() {
         return humanPlayer.getHand().getCardList().isEmpty();
     }
 
     /**
-     * Starts passing of cards amongst players if cards have not been passed this round, else starts a new round in game
-     * @param cards cards selected by HumanPlayer
-     * @throws IllegalMoveException if HumanPlayer selects 0 or more than 1 cards to play
-     * @throws UserMessageException if the set/round ends
+     * Starts passing of cards amongst players if cards have not been passed this round, else starts a new round in game.
+     * @param cards cards selected by HumanPlayer.
+     * @throws IllegalMoveException if HumanPlayer selects 0 or more than 1 cards to play.
+     * @throws UserMessageException if the set/round ends.
      */
     public void executeMove(List<Card> cards) throws IllegalMoveException, UserMessageException {
         if (!game.hasPassedCards()) {
@@ -79,9 +79,9 @@ public class GameController {
     }
 
     /**
-     * Starts a new set for each ComPlayer to play a card in sequence until a HumanPlayer's turn is reached or the set/round ends
-     * This only occurs if cards have been passed amongst players
-     * @throws UserMessageException if the set/round ends
+     * Starts a new set for each ComPlayer to play a card in sequence until a HumanPlayer's turn is reached or the set/round ends.
+     * This only occurs if cards have been passed amongst players.
+     * @throws UserMessageException if the set/round ends.
      */
     public void executeComputerMoves() throws UserMessageException {
         if (!game.hasPassedCards()) {
@@ -94,9 +94,9 @@ public class GameController {
     }
 
     /**
-     * Private helper function that starts the passing of cards amongst players at the start of each round
-     * @param cards list of cards to be passed
-     * @throws IllegalMoveException if HumanPlayer picks more than or less than 3 cards to pass
+     * Private helper function that starts the passing of cards amongst players at the start of each round.
+     * @param cards list of cards to be passed.
+     * @throws IllegalMoveException if HumanPlayer picks more than or less than 3 cards to pass.
      */
     private void passCards(List<Card> cards) throws IllegalMoveException {
         if(cards.size() != 3){

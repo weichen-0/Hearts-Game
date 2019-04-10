@@ -2,18 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="728fde6e-6d31-46de-8be6-1a3fb0e3f090" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/AllTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/GUI/CardPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/GUI/CardPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/GUI/CardPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/GUI/CardPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/GUI/GameGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/GUI/GameGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/GUI/GameGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/GUI/GameGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/GUI/GameGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/GUI/GameGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/controller/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/controller/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/exception/IllegalMoveException.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/exception/IllegalMoveException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/exception/UserMessageException.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/exception/UserMessageException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/model/ComPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/ComPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/model/HumanPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/HumanPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/model/Set.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/Set.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/model/Suit.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/Suit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/util/CardRankComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/util/CardRankComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/util/CardSuitComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/util/CardSuitComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hearts/util/RuleEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/util/RuleEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hearts/GUI/CardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/gui/CardPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hearts/GUI/GameGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/gui/GameGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hearts/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hearts/exception/IllegalMoveException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/exception/IllegalMoveException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hearts/exception/UserMessageException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/exception/UserMessageException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hearts/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hearts/model/ComPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/ComPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Hand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/HumanPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/Rank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Rank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/Set.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Set.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/Suit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Suit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/util/CardRankComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/util/CardRankComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/util/CardSuitComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/util/CardSuitComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/util/RuleEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/util/RuleEngine.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,13 +43,13 @@
         <counts>
           <entry key="bat" value="64" />
           <entry key="dummy" value="31" />
-          <entry key="java" value="20667" />
+          <entry key="java" value="20714" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bat" value="64" />
-          <entry key="JAVA" value="20667" />
+          <entry key="JAVA" value="20714" />
           <entry key="PLAIN_TEXT" value="31" />
         </counts>
       </usages-collector>
@@ -42,13 +57,13 @@
         <counts>
           <entry key="bat" value="3" />
           <entry key="gitattributes" value="1" />
-          <entry key="java" value="153" />
+          <entry key="java" value="160" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Bat" value="3" />
-          <entry key="JAVA" value="153" />
+          <entry key="JAVA" value="160" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -56,104 +71,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hearts/model/Suit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="71" column="1" lean-forward="true" selection-start-line="71" selection-start-column="1" selection-end-line="75" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hearts/model/Set.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hearts/model/Rank.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-268">
-              <caret line="69" column="115" selection-start-line="69" selection-start-column="115" selection-end-line="69" selection-end-column="115" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hearts/model/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hearts/model/HumanPlayer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="20" column="67" selection-start-line="20" selection-start-column="67" selection-end-line="20" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hearts/model/Hand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="135" column="43" selection-start-line="135" selection-start-column="43" selection-end-line="135" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hearts/model/Game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="783">
-              <caret line="353" column="44" selection-start-line="353" selection-start-column="44" selection-end-line="353" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/hearts/model/ComPlayer.java">
+        <entry file="file://$PROJECT_DIR$/src/hearts/gui/GameGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-405">
-              <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hearts/GUI/GameGUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2415">
-              <caret line="161" column="61" selection-start-line="161" selection-start-column="61" selection-end-line="161" selection-end-column="61" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hearts/controller/GameController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="100" column="19" selection-start-line="100" selection-start-column="19" selection-end-line="100" selection-end-column="19" />
+            <state relative-caret-position="2826">
+              <caret line="200" column="19" selection-start-line="200" selection-start-column="19" selection-end-line="200" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -211,7 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/JUnit Test/GameControllerTest.java" />
         <option value="$PROJECT_DIR$/JUnit Test/GameRegulatorTest.java" />
         <option value="$PROJECT_DIR$/JUnit Test/CardTest.java" />
         <option value="$PROJECT_DIR$/src/Rank.java" />
@@ -245,11 +166,6 @@
         <option value="$PROJECT_DIR$/run.bat" />
         <option value="$PROJECT_DIR$/compile.bat" />
         <option value="$PROJECT_DIR$/src/hearts/model/Deck.java" />
-        <option value="$PROJECT_DIR$/src/hearts/model/Card.java" />
-        <option value="$PROJECT_DIR$/src/hearts/GUI/GameGUI.java" />
-        <option value="$PROJECT_DIR$/src/hearts/exception/IllegalMoveException.java" />
-        <option value="$PROJECT_DIR$/src/hearts/exception/UserMessageException.java" />
-        <option value="$PROJECT_DIR$/src/hearts/GUI/CardPanel.java" />
         <option value="$PROJECT_DIR$/src/hearts/util/RuleEngine.java" />
         <option value="$PROJECT_DIR$/src/hearts/util/CardSuitComparator.java" />
         <option value="$PROJECT_DIR$/src/hearts/util/CardRankComparator.java" />
@@ -260,8 +176,14 @@
         <option value="$PROJECT_DIR$/src/hearts/model/HumanPlayer.java" />
         <option value="$PROJECT_DIR$/src/hearts/model/Hand.java" />
         <option value="$PROJECT_DIR$/src/hearts/model/Game.java" />
-        <option value="$PROJECT_DIR$/src/hearts/controller/GameController.java" />
         <option value="$PROJECT_DIR$/src/hearts/model/ComPlayer.java" />
+        <option value="$PROJECT_DIR$/src/hearts/model/Card.java" />
+        <option value="$PROJECT_DIR$/src/hearts/GUI/GameGUI.java" />
+        <option value="$PROJECT_DIR$/src/hearts/GUI/CardPanel.java" />
+        <option value="$PROJECT_DIR$/src/hearts/exception/UserMessageException.java" />
+        <option value="$PROJECT_DIR$/src/hearts/exception/IllegalMoveException.java" />
+        <option value="$PROJECT_DIR$/src/hearts/controller/GameController.java" />
+        <option value="$PROJECT_DIR$/src/hearts/gui/GameGUI.java" />
       </list>
     </option>
   </component>
@@ -271,10 +193,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1920" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="2232" />
     <option name="y" value="117" />
-    <option name="width" value="1440" />
+    <option name="width" value="960" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -329,7 +251,7 @@
               <item name="OOP-Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="hearts" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OOP-Project" type="b2602c69:ProjectViewProjectNode" />
@@ -360,7 +282,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/weichen/Documents/GitHub/OOP-Project/src/hearts/model/Deck.java&#10;format&#9;PSI&#9;JAVA://java.text.Format" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554858687039" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554860177133" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -398,7 +320,7 @@
   </component>
   <component name="RunManager" selected="Batch.compile">
     <configuration name="GameGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="hearts.GUI.GameGUI" />
+      <option name="MAIN_CLASS_NAME" value="hearts.gui.GameGUI" />
       <module name="OOP-Project" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -521,7 +443,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253717000" />
+    <option name="totallyTimeSpent" value="255233000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -533,7 +455,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="117" width="1440" height="877" extended-state="6" />
+    <frame x="2232" y="117" width="960" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
@@ -541,13 +463,13 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.47239915" visible="true" weight="0.17596567" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.47239915" visible="true" weight="0.26797387" />
       <window_info id="Structure" order="6" sideWeight="0.5276008" side_tool="true" weight="0.13099042" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.2624672" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.2624672" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" visible="true" weight="0.22703412" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.22703412" />
       <window_info anchor="bottom" id="Run" order="5" weight="0.328084" />
       <window_info anchor="bottom" id="Database Changes" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39808917" />
@@ -729,44 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/model/Card.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-247">
-          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/exception/IllegalMoveException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/exception/UserMessageException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/GUI/CardPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="77" column="35" lean-forward="true" selection-start-line="77" selection-start-column="35" selection-end-line="77" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1617#1618#0" expanded="true" />
-            <element signature="e#1644#1645#0" expanded="true" />
-            <element signature="e#1800#1801#0" expanded="true" />
-            <element signature="e#1832#1833#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hearts/util/RuleEngine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -804,67 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/model/Set.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/model/Rank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-268">
-          <caret line="69" column="115" selection-start-line="69" selection-start-column="115" selection-end-line="69" selection-end-column="115" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/model/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/model/HumanPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="67" selection-start-line="20" selection-start-column="67" selection-end-line="20" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/model/Hand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="135" column="43" selection-start-line="135" selection-start-column="43" selection-end-line="135" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/GUI/GameGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2415">
-          <caret line="161" column="61" selection-start-line="161" selection-start-column="61" selection-end-line="161" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/controller/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="100" column="19" selection-start-line="100" selection-start-column="19" selection-end-line="100" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hearts/model/Deck.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="77">
@@ -872,6 +695,23 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="93" column="24" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/ComPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -885,10 +725,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hearts/model/ComPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Hand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-405">
-          <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+        <state relative-caret-position="302">
+          <caret line="135" column="43" selection-start-line="135" selection-start-column="43" selection-end-line="135" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/HumanPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="67" selection-start-line="20" selection-start-column="67" selection-end-line="20" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Rank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-268">
+          <caret line="69" column="115" selection-start-line="69" selection-start-column="115" selection-end-line="69" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/model/Set.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/controller/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/exception/IllegalMoveException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="71" selection-start-line="14" selection-start-column="71" selection-end-line="14" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/exception/UserMessageException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/gui/CardPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="74" column="77" selection-start-line="74" selection-start-column="77" selection-end-line="74" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hearts/gui/GameGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2826">
+          <caret line="200" column="19" selection-start-line="200" selection-start-column="19" selection-end-line="200" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -75,7 +75,7 @@ public class Card {
      * This is not the same as the use of <code>equals</code> which compares
      * two objects for equality.
      *
-     * @param cardObject the other card
+     * @param cardObject the other card.
      * @return <code>true</code> if the two cards have the same rank and suit
      * values, <code>false</code> if they do not.
      */
@@ -110,7 +110,7 @@ public class Card {
     /**
      * Checks whether card is a point card.
      *
-     * @return <code>true</code> if the card has points
+     * @return <code>true</code> if the card has points.
      * <code>false</code> if it does not.
      */
     public boolean isPointCard() { return point > 0; }
@@ -118,7 +118,7 @@ public class Card {
     /**
      * Checks whether card has been selected.
      *
-     * @return <code>true</code> if the card is selected
+     * @return <code>true</code> if the card is selected.
      * <code>false</code> if it is not.
      */
     public boolean isSelected() {

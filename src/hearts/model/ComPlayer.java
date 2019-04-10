@@ -3,21 +3,21 @@ package hearts.model;
 import java.util.List;
 
 /**
- * Sub-class of Player
- * Inherits all accessible methods and attributes of Player
- * Has 2 additional methods specific to ComPlayer
+ * Sub-class of Player.
+ * Inherits all accessible methods and attributes of Player.
+ * Has 2 additional methods specific to ComPlayer.
  */
 public class ComPlayer extends Player {
 
     /**
-     * Constructs a ComPlayer with the given name
-     * @param name player name
+     * Constructs a ComPlayer with the given name.
+     * @param name player name.
      */
     public ComPlayer(String name) { super(name); }
 
     /**
-     * Select 3 largest cards to pass to another Player
-     * @return a list of 3 cards to be pass
+     * Select 3 largest cards to pass to another Player.
+     * @return a list of 3 cards to be pass.
      */
     public List<Card> choose3CardsToPass() {
         Hand playerHand = getHand();
@@ -29,14 +29,14 @@ public class ComPlayer extends Player {
     }
 
     /**
-     * Select a card to play in the set
-     * If ComPlayer is first player in set, it picks the smallest card that adheres to game rules
+     * Select a card to play in the set.
+     * If ComPlayer is first player in set, it picks the smallest card that adheres to game rules.
      * If ComPlayer is last player, pick the largest card.
-     * Otherwise, pick the largest rank card it owns of the same suit that does not exceed the winning card in set if possible
-     * NOTE: if it is void of the suit led, pick the card of highest rank available that adheres to game rules
-     * @param set current set in the game
-     * @param isHeartsBroken whether hearts has been broken in the round
-     * @return card to be played
+     * Otherwise, pick the largest rank card it owns of the same suit that does not exceed the winning card in set if possible.
+     * NOTE: if it is void of the suit led, pick the card of highest rank available that adheres to game rules.
+     * @param set current set in the game.
+     * @param isHeartsBroken whether hearts has been broken in the round.
+     * @return card to be played.
      */
     public Card chooseCardToPlay(Set set, boolean isHeartsBroken) {
         Hand playerHand = getHand();
@@ -68,14 +68,13 @@ public class ComPlayer extends Player {
     }
 
     /**
-     * Private helper method that gets the next highest card to play if ComPlayer is not the first player in the set
+     * Private helper method that gets the next highest card to play if ComPlayer is not the first player in the set.
      * If ComPlayer is last player, return highest card of leadingSuit in hand if available,
-     * else (ComPlayer is second or third player)
-     * If ComPlayer has leading suit, return highest ranked card of that suit that does not exceed the winning card
-     * where possible. If no leading suit then return highest ranked card available that adheres to game rules
-     * @param leadingSuit suit of first card played in set
-     * @param isFirstSet whether current set is the first set in the round
-     * @return card to be played
+     * else if ComPlayer has leading suit, return highest ranked card of that suit that does not exceed the winning card where possible.
+     * If no leading suit then return highest ranked card available that adheres to game rules.
+     * @param leadingSuit suit of first card played in set.
+     * @param isFirstSet whether current set is the first set in the round.
+     * @return card to be played.
      */
     private Card getNextHighestCard(Suit leadingSuit, Card winningCard, boolean isFirstSet) {
         // this method only gets called by chooseCardToPlayer in Round class
@@ -124,12 +123,12 @@ public class ComPlayer extends Player {
     }
 
     /**
-     * Private helper method that gets the smallest card to play if ComPlayer is first player in set
-     * If ComPlayer has 2 Clubs in hand, return 2 Clubs
-     * Else if hearts is broken, return card of smallest rank in hand
+     * Private helper method that gets the smallest card to play if ComPlayer is first player in set.
+     * If ComPlayer has 2 Clubs in hand, return 2 Clubs.
+     * Else if hearts is broken, return card of smallest rank in hand.
      * Else return card of smallest rank that is not a heart.
-     * @param heartsBroken whether hearts has been broken in the round
-     * @return card to be played
+     * @param heartsBroken whether hearts has been broken in the round.
+     * @return card to be played.
      */
     private Card getSmallestComCard(boolean heartsBroken) {
         // assume method only gets called by chooseCardToPlayer in Round class

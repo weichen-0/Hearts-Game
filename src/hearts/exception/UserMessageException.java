@@ -10,9 +10,9 @@ public class UserMessageException extends Exception {
     private String title;
 
     /**
-     * Constructor for UserMessageException
-     * @param msg message string for exception (shown in popup window)
-     * @param title title string for exception (shown in popup window)
+     * Constructor for UserMessageException.
+     * @param msg message string for exception (shown in popup window).
+     * @param title title string for exception (shown in popup window).
      */
     public UserMessageException(String msg, String title) {
         this.msg = msg;
@@ -21,7 +21,7 @@ public class UserMessageException extends Exception {
 
     /**
      * Returns the detail message string.
-     * @return the detail message string of this UserMessageException.
+     * @return the detail message string.
      */
     @Override
     public String getMessage() { return msg; }
@@ -29,7 +29,7 @@ public class UserMessageException extends Exception {
 
     /**
      * Returns the title message string.
-     * @return the title message string of this UserMessageException.
+     * @return the title message string.
      */
     public String getTitle() { return title; }
 }

@@ -2,7 +2,7 @@ import java.util.*;
 
 import hearts.controller.*;
 import hearts.exception.*;
-import hearts.GUI.*;
+import hearts.gui.*;
 import hearts.model.*;
 import hearts.util.*;
 

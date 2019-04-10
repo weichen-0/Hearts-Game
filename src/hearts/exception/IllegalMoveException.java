@@ -10,9 +10,9 @@ public class IllegalMoveException extends Exception{
     private String title;
 
     /**
-     * Constructor for IllegalMoveException
-     * @param msg message string for exception (shown in popup window)
-     * @param title title string for exception (shown in popup window)
+     * Constructor for IllegalMoveException.
+     * @param msg message string for exception (shown in popup window).
+     * @param title title string for exception (shown in popup window).
      */
     public IllegalMoveException(String msg, String title) {
         this.msg = msg;

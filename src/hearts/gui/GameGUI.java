@@ -1,4 +1,4 @@
-package hearts.GUI;
+package hearts.gui;
 
 import hearts.model.*;
 import hearts.controller.*;
@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- * Class that runs the Hearts game GUI application with java swing
+ * Class that runs the Hearts game GUI application with java swing.
  */
 public class GameGUI extends JFrame {
 
@@ -172,7 +172,7 @@ public class GameGUI extends JFrame {
     }
 
     /**
-     * Reloads the GUI application display screen based on cards played by each player and the remaining cards in HumanPlayer's hand
+     * Reloads the GUI application display screen based on cards played by each player and the remaining cards in HumanPlayer's hand.
      */
     @Override
     public void repaint() {

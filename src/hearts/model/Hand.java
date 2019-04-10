@@ -72,7 +72,7 @@ public class Hand {
 
     /**
      * Removes a list of cards from the current hand.
-     * @param cardList the list of cards to be removed
+     * @param cardList the list of cards to be removed.
      */
     public void removeCards(List<Card> cardList) {
         for (Card card : cardList) {
@@ -115,7 +115,7 @@ public class Hand {
     /**
      * Determines whether or not the hand contains the specified card.
      * @param card the card being searched for in the hand.
-     * @return <code>true</code> if the card is present in the hand, else <code>false</code>
+     * @return <code>true</code> if the card is present in the hand, else <code>false</code>.
      */
     public boolean containsCard(Card card) {
         return hand.contains(card);
@@ -130,10 +130,10 @@ public class Hand {
     }
 
     /**
-     * Checks if the hand has any cards of the given suit
-     * @param suit the suit being searched for in the hand
+     * Checks if the hand has any cards of the given suit.
+     * @param suit the suit being searched for in the hand.
      * @return <code>true</code> if any card with the given suit is present in the hand,
-     * otherwise return <code>false</code>
+     * otherwise return <code>false</code>.
      */
     public boolean hasSuit(Suit suit) {
         for (int i = 0; i < hand.size(); i++) {

@@ -36,7 +36,7 @@ public class ComPlayer extends Player {
      * NOTE: if it is void of the suit led, pick the card of highest rank available that adheres to game rules
      * @param set current set in the game
      * @param isHeartsBroken whether hearts has been broken in the round
-     * @return
+     * @return card to be played
      */
     public Card chooseCardToPlay(Set set, boolean isHeartsBroken) {
         Hand playerHand = getHand();
@@ -69,8 +69,8 @@ public class ComPlayer extends Player {
 
     /**
      * Private helper method that gets the next highest card to play if ComPlayer is not the first player in the set
-     * If ComPlayer is last player, return highest card of leadingSuit in hand, if available.
-     * Else (ComPlayer is second or third player)
+     * If ComPlayer is last player, return highest card of leadingSuit in hand if available,
+     * else (ComPlayer is second or third player)
      * If ComPlayer has leading suit, return highest ranked card of that suit that does not exceed the winning card
      * where possible. If no leading suit then return highest ranked card available that adheres to game rules
      * @param leadingSuit suit of first card played in set

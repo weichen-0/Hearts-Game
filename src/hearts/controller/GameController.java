@@ -94,7 +94,7 @@ public class GameController {
     }
 
     /**
-     * Starts the passing of cards amongst players at the start of each round
+     * Private helper function that starts the passing of cards amongst players at the start of each round
      * @param cards list of cards to be passed
      * @throws IllegalMoveException if HumanPlayer picks more than or less than 3 cards to pass
      */

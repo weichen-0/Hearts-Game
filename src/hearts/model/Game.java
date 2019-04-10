@@ -7,8 +7,8 @@ import java.util.*;
 
 /**
  * Class that manages other relevant game classes such as Round, Set, Player, etc.
- * Keeps track of the current round and set number in the game, and also the cards in the current set
- * Accounts for the 4 players, whether hearts has been broken in each round and the index of the last player who won the set
+ * Keeps track of the current round and set number in the game, and also the cards in the current set.
+ * Accounts for the 4 players, whether hearts has been broken in each round and the index of the last player who won the set.
  */
 public class Game {
 
@@ -21,8 +21,8 @@ public class Game {
     private Set currentSet = null;
 
     /**
-     * Constructs a game and its 4 Players
-     * @param numOfHumanPlayers number of human players playing the game
+     * Constructs a game and its 4 Players.
+     * @param numOfHumanPlayers number of human players playing the game.
      */
     public Game(int numOfHumanPlayers) {
         for (int i = 0; i < 4; i++) {
@@ -35,8 +35,8 @@ public class Game {
     }
 
     /**
-     * Returns the current set being played in the Round
-     * @return the playing set
+     * Returns the current set being played in the Round.
+     * @return the playing set.
      */
     public Set getCurrentSet(){
         return currentSet;
@@ -44,14 +44,14 @@ public class Game {
 
     /**
      * Returns the list of players in the game.
-     * @return players list
+     * @return players list.
      */
     public Player[] getListOfPlayers(){
         return listOfPlayers;
     }
 
     /**
-     * Resets the last played card of each Player to null
+     * Resets the last played card of each Player to null.
      */
     public void unsetPlayedCards(){
         for(Player p : listOfPlayers){
@@ -60,7 +60,7 @@ public class Game {
     }
 
     /**
-     * Initialises a round in the game and distributes 13 cards to each player
+     * Initialises a round in the game and distributes 13 cards to each player.
      */
     public void initRound() {
         currentSet = new Set();
@@ -76,11 +76,11 @@ public class Game {
     }
 
     /**
-     * Checks if the card played by the HumanPlayer is a valid card
-     * If card is valid, it is added to the current set and removed from player's hand
-     * Hearts will also be broken if the card is a point card
-     * @param cardPlayed card played by player
-     * @throws IllegalMoveException if card played is an invalid card
+     * Checks if the card played by the HumanPlayer is a valid card.
+     * If card is valid, it is added to the current set and removed from player's hand.
+     * Hearts will also be broken if the card is a point card.
+     * @param cardPlayed card played by player.
+     * @throws IllegalMoveException if card played is an invalid card.
      */
     public void makePlayerMove(Card cardPlayed) throws IllegalMoveException {
         HumanPlayer player = null;
@@ -107,11 +107,11 @@ public class Game {
     }
 
     /**
-     * Gets each ComPlayer to play a card in sequence until a HumanPlayer's turn is reached or the set/round ends
-     * Each card played by the respective ComPlayer will be added into the set and removed from player's hand
-     * Hearts will  be broken if the card is a point card
-     * If the set/round ends, the points earned by each ComPlayer and HumanPlayer will be tabulated accordingly
-     * @throws UserMessageException if the set/round ends
+     * Gets each ComPlayer to play a card in sequence until a HumanPlayer's turn is reached or the set/round ends.
+     * Each card played by the respective ComPlayer will be added into the set and removed from player's hand.
+     * Hearts will  be broken if the card is a point card.
+     * If the set/round ends, the points earned by each ComPlayer and HumanPlayer will be tabulated accordingly.
+     * @throws UserMessageException if the set/round ends.
      */
     public void makeComputerMoves() throws UserMessageException {
         if(setNum > 13) { // end of round
@@ -176,8 +176,8 @@ public class Game {
     }
 
     /**
-     * Private helper function that distributes 13 cards to each player
-     * This is done by iterating through a full deck and randomly giving each card to a player
+     * Private helper function that distributes 13 cards to each player.
+     * This is done by iterating through a full deck and randomly giving each card to a player.
      */
     private void distributeCard() {
         Deck d = new Deck();
@@ -197,7 +197,7 @@ public class Game {
     }
 
     /**
-     * Private helper function that prints out the cards in each player's hands onto console for tracking purposes
+     * Private helper function that prints out the cards in each player's hands onto console for tracking purposes.
      */
     private void printAllHands() {
         for (Player p : listOfPlayers) {
@@ -207,7 +207,7 @@ public class Game {
     }
 
     /**
-     * Private helper function that prints out the total points of each player onto console for tracking purposes
+     * Private helper function that prints out the total points of each player onto console for tracking purposes.
      */
     private void printOverallScoreBoard() {
         System.out.printf("[OVERALL SCOREBOARD]%n");
@@ -218,7 +218,7 @@ public class Game {
     }
 
     /**
-     * Private helper function that prints out the round points of each player onto console for tracking purposes
+     * Private helper function that prints out the round points of each player onto console for tracking purposes.
      */
     private void printRoundScoreBoard() {
         System.out.printf("[ROUND %d SCOREBOARD]%n", roundNum);
@@ -228,8 +228,8 @@ public class Game {
     }
 
     /**
-     * Returns the score of the player with the highest total points
-     * @return the highest total points scored amongst the 4 players
+     * Returns the score of the player with the highest total points.
+     * @return the highest total points scored amongst the 4 players.
      */
     public int getHighestScore() {
         int highestScore = 0;
@@ -244,17 +244,17 @@ public class Game {
     }
 
     /**
-     * Checks if cards have been passed that round and if passing is required for that round
-     * @return <code>true</code> if cards have been passed or if no passing is required
-     * otherwise, return <code>false</code>
+     * Checks if cards have been passed that round and if passing is required for that round.
+     * @return <code>true</code> if cards have been passed or if no passing is required.
+     * otherwise, return <code>false</code>.
      */
     public boolean hasPassedCards(){ return passedCards || (roundNum % 4 == 0); }
 
     /**
-     * Facilitates the passing of cards between players at the start of each round
-     * If passing is required, 3 cards will be chosen by each player which is then passed to the respective recipient player
-     * Passing rotation is: left, right, across the table and no passing
-     * @param cards the 3 passing cards that have been selected by HumanPlayer
+     * Facilitates the passing of cards between players at the start of each round.
+     * If passing is required, 3 cards will be chosen by each player which is then passed to the respective recipient player.
+     * Passing rotation is: left, right, across the table and no passing.
+     * @param cards the 3 passing cards that have been selected by HumanPlayer.
      */
     public void passCards(List<Card> cards) {
         int passOrder = roundNum % 4;
@@ -302,10 +302,10 @@ public class Game {
     }
 
     /**
-     * Private helper function that transfers a list of 3 cards from the passing player to the recipient player
-     * @param passingPlayer player passing the cards
-     * @param receivingPlayer player receiving the cards
-     * @param cardsToPass cards to be passed
+     * Private helper function that transfers a list of 3 cards from the passing player to the recipient player.
+     * @param passingPlayer player passing the cards.
+     * @param receivingPlayer player receiving the cards.
+     * @param cardsToPass cards to be passed.
      */
     private void transferCards(Player passingPlayer, Player receivingPlayer, List<Card> cardsToPass) {
         passingPlayer.getHand().removeCards(cardsToPass);
@@ -313,9 +313,9 @@ public class Game {
     }
 
     /**
-     * Adds the total points in the set to the player's current round points
-     * @param set current playing set
-     * @param player player who won the set
+     * Adds the total points in the set to the player's current round points.
+     * @param set current playing set.
+     * @param player player who won the set.
      */
     private void tallyPointsForSet(Set set, Player player) {
         int pointsInSet = set.getTotalPointsInSet();
@@ -324,8 +324,8 @@ public class Game {
     }
 
     /**
-     * Adds each player's round points to their respective total points
-     * If a player successfully shoots the moon (26 points in a round), player's total points remains constant while all other players add 26 points to their total points
+     * Adds each player's round points to their respective total points.
+     * If a player successfully shoots the moon (26 points in a round), player's total points remains constant while all other players add 26 points to their total points.
      */
     public void tallyPointsForRound() {
         System.out.printf("========== End of Round %d ==========%n%n", roundNum);
@@ -351,7 +351,7 @@ public class Game {
 
     /**
      * Returns the winning player who has the lowest total score when the game ends.
-     * @return the player who wins the game
+     * @return the player who wins the game.
      */
     public Player getWinner() {
         int lowestScore = Integer.MAX_VALUE;

@@ -22,8 +22,8 @@ public class Set {
     public List<Card> getSetCards() { return cards; }
 
     /**
-     * Returns the index of the player who last played a card
-     * @return the index of last player
+     * Returns the index of the player who last played a card.
+     * @return the index of last player.
      */
     public int getPlayerNumLastPlayed() {
         return playerNumLastPlayed;
@@ -31,8 +31,7 @@ public class Set {
 
     /**
      * Returns the first card played in the set.
-     * @return null if there are no cards in the set
-     * otherwise, return the first card played in the set
+     * @return null if there are no cards in the set, otherwise return the first card played in the set.
      */
     public Suit getLeadingSuit() {
         //TODO: raise exception if there isn't at least 1 card in set
@@ -52,8 +51,8 @@ public class Set {
 
     /**
      * Adds a card played into the set.
-     * @param cardPlayed the card played
-     * @param playerNum the index of the player who played the card
+     * @param cardPlayed the card played.
+     * @param playerNum the index of the player who played the card.
      */
     public void addCardToSet(Card cardPlayed, int playerNum) {
         playerNumLastPlayed = playerNum;
@@ -62,8 +61,7 @@ public class Set {
 
     /**
      * Returns the index of the card that wins the set.
-     * @return -1 if there are no cards in the set
-     * otherwise, return the index of the winning card
+     * @return -1 if there are no cards in the set, otherwise return the index of the winning card.
      */
     public int getWinningCardIndex() {
         if (getNumOfCardsInSet() == 0) {
@@ -87,8 +85,7 @@ public class Set {
 
     /**
      * Returns the Card object that wins the set.
-     * @return null if there are no cards in the set
-     * otherwise, return the winning card
+     * @return null if there are no cards in the set, otherwise return the winning card.
      */
     public Card getWinningCard() {
         int index = getWinningCardIndex();
@@ -99,8 +96,8 @@ public class Set {
     }
 
     /**
-     * Returns the total points of cards in the set
-     * @return the total points of cards in the set
+     * Returns the total points of cards in the set.
+     * @return the total points of cards in the set.
      */
     public int getTotalPointsInSet() {
         int setPoint = 0;
@@ -111,15 +108,15 @@ public class Set {
     }
 
     /**
-     * String representation of all cards in the set and the respective card points
-     * @return string representation of a set
+     * String representation of all cards in the set and the respective card points.
+     * @return string representation of a set.
      */
     public String toString() {
         String output = "[";
         for (Card card : cards) {
-            output += String.format("%s:%d ", card, card.getPoint());
+            output += String.format("%s=%d, ", card, card.getPoint());
         }
-        output += "]";
+        output = output.substring(0, output.length() - 2) + "]";
         return output;
     }
 }

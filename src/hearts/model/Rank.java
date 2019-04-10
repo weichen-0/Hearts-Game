@@ -67,7 +67,7 @@ public class Rank implements Comparable {
    public final static Rank KING = new Rank( "King", "K" );
 
     /**
-     * Established rank order with smallest index being the smallest rank and largest index being the largest rank
+     * Established rank order with smallest index being the smallest rank and largest index being the largest rank.
      */
    public final static List<Rank> VALUES = Arrays.asList( new Rank[] { TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE } );
 

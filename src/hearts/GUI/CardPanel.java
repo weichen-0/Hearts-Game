@@ -8,12 +8,20 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JPanel;
 
+/**
+ * Class that represents the card on the GUI application display
+ */
 public class CardPanel extends JPanel{
     public static final double D_WIDTH =73, D_HEIGHT = 96; // card dimensions
     private boolean canSelect;
     private Card card;
     private Image image = Toolkit.getDefaultToolkit().getImage("images/cards/blank.gif");;
 
+    /**
+     * Constructs a CardPanel
+     * @param card the card to be represented
+     * @param canSelect whether the card in the panel is selectable
+     */
     public CardPanel(Card card, boolean canSelect) {
         this.card = card;
         this.canSelect = canSelect;
@@ -45,12 +53,27 @@ public class CardPanel extends JPanel{
             }
         });
     }
+
+    /**
+     * Gets the card that is being represented
+     * @return card being represented
+     */
     public Card getCard() {
         return card;
     }
+
+    /**
+     * Sets the card that is going to be represented
+     * @param card card to be represented
+     */
     public void setCard(Card card) {
         this.card = card;
     }
+
+    /**
+     * Displays the card to be represented within the card panel
+     * @param g the graphics context that will be used to draw on components
+     */
     @Override
     public void paint(Graphics g) {
         g.drawImage(image,0, 0, getWidth(),getHeight(), this);

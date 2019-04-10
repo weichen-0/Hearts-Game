@@ -15,7 +15,7 @@ public class GameController {
     HumanPlayer humanPlayer;
 
     /**
-     * Starts the game and initialises a list of 4 players
+     * Starts a new game and initialises a list of 4 players
      * @return a list of 4 players
      */
     public Player[] startGame() {
@@ -28,10 +28,10 @@ public class GameController {
     }
 
     /**
-     * Private helper function that starts a round in game
+     * Starts a new round in game
      * @return <code>true</code> if game has not ended, otherwise return <code>false</code>
      */
-    private boolean startNextRound() {
+    public boolean startNextRound() {
         if (game.getHighestScore() < 100) {
             game.initRound();
             game.unsetPlayedCards();
@@ -56,6 +56,12 @@ public class GameController {
         return humanPlayer.getHand().getCardList().isEmpty();
     }
 
+    /**
+     * Starts passing of cards amongst players if cards have not been passed this round, else starts a new round in game
+     * @param cards cards selected by HumanPlayer
+     * @throws IllegalMoveException if HumanPlayer selects 0 or more than 1 cards to play
+     * @throws UserMessageException if the set/round ends
+     */
     public void executeMove(List<Card> cards) throws IllegalMoveException, UserMessageException {
         if (!game.hasPassedCards()) {
             passCards(cards);
@@ -73,10 +79,11 @@ public class GameController {
     }
 
     /**
-     *
-     * @throws UserMessageException
+     * Starts a new set for each ComPlayer to play a card in sequence until a HumanPlayer's turn is reached or the set/round ends
+     * This only occurs if cards have been passed amongst players
+     * @throws UserMessageException if the set/round ends
      */
-    private void executeComputerMoves() throws UserMessageException {
+    public void executeComputerMoves() throws UserMessageException {
         if (!game.hasPassedCards()) {
             return;
         }
@@ -87,12 +94,11 @@ public class GameController {
     }
 
     /**
-     *
-     * @param cards
-     * @throws IllegalMoveException
-     * @throws UserMessageException
+     * Starts the passing of cards amongst players at the start of each round
+     * @param cards list of cards to be passed
+     * @throws IllegalMoveException if HumanPlayer picks more than or less than 3 cards to pass
      */
-    private void passCards(List<Card> cards) throws IllegalMoveException, UserMessageException {
+    private void passCards(List<Card> cards) throws IllegalMoveException {
         if(cards.size() != 3){
             humanPlayer.deselectCardsInHand();
             throw new IllegalMoveException("You must pick 3 cards!", "Invalid Selection");

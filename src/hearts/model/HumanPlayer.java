@@ -17,6 +17,9 @@ public class HumanPlayer extends Player {
         super(name);
     }
 
+    /**
+     * Deselect all the previously selected cards in player's hand
+     */
     public void deselectCardsInHand(){
         List<Card> cards = getHand().getCardList();
         for(Card c : cards){

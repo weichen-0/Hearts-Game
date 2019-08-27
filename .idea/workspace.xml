@@ -2,33 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="728fde6e-6d31-46de-8be6-1a3fb0e3f090" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/AllTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/GUI/CardPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/GUI/CardPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/GUI/CardPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/GUI/CardPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/GUI/GameGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/GUI/GameGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/GUI/GameGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/GUI/GameGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/GUI/GameGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/GUI/GameGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/controller/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/controller/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/exception/IllegalMoveException.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/exception/IllegalMoveException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/exception/UserMessageException.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/exception/UserMessageException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/model/ComPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/ComPlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/model/HumanPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/HumanPlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/model/Set.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/Set.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/model/Suit.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/model/Suit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/util/CardRankComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/util/CardRankComparator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/util/CardSuitComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/util/CardSuitComparator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hearts/util/RuleEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hearts/util/RuleEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/GUI/CardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/gui/CardPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/GUI/GameGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/gui/GameGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/exception/IllegalMoveException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/exception/IllegalMoveException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/exception/UserMessageException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/exception/UserMessageException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hearts/model/ComPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hearts/model/ComPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compileJUnit.bat" beforeDir="false" afterPath="$PROJECT_DIR$/compileJUnit.bat" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,49 +15,41 @@
     <session id="1875386227">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="bat" value="64" />
+          <entry key="bat" value="104" />
           <entry key="dummy" value="31" />
           <entry key="java" value="20714" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bat" value="64" />
+          <entry key="Bat" value="104" />
           <entry key="JAVA" value="20714" />
           <entry key="PLAIN_TEXT" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="bat" value="3" />
+          <entry key="bat" value="5" />
           <entry key="gitattributes" value="1" />
-          <entry key="java" value="160" />
+          <entry key="java" value="161" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bat" value="3" />
-          <entry key="JAVA" value="160" />
+          <entry key="Bat" value="5" />
+          <entry key="JAVA" value="161" />
           <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/hearts/gui/GameGUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2826">
-              <caret line="200" column="19" selection-start-line="200" selection-start-column="19" selection-end-line="200" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -133,7 +99,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/JUnit Test/GameRegulatorTest.java" />
         <option value="$PROJECT_DIR$/JUnit Test/CardTest.java" />
         <option value="$PROJECT_DIR$/src/Rank.java" />
         <option value="$PROJECT_DIR$/src/CardRankComparator.java" />
@@ -184,6 +149,7 @@
         <option value="$PROJECT_DIR$/src/hearts/exception/IllegalMoveException.java" />
         <option value="$PROJECT_DIR$/src/hearts/controller/GameController.java" />
         <option value="$PROJECT_DIR$/src/hearts/gui/GameGUI.java" />
+        <option value="$PROJECT_DIR$/compileJUnit.bat" />
       </list>
     </option>
   </component>
@@ -193,10 +159,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="2232" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1920" />
     <option name="y" value="117" />
-    <option name="width" value="960" />
+    <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -220,6 +186,16 @@
               <item name="OOP-Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="OOP-Project" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OOP-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OOP-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="JUnit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OOP-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OOP-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="JUnitTest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OOP-Project" type="b2602c69:ProjectViewProjectNode" />
@@ -282,7 +258,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/weichen/Documents/GitHub/OOP-Project/src/hearts/model/Deck.java&#10;format&#9;PSI&#9;JAVA://java.text.Format" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554860177133" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554869256227" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -443,7 +419,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255233000" />
+    <option name="totallyTimeSpent" value="256470000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -455,7 +431,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2232" y="117" width="960" height="877" extended-state="0" />
+    <frame x="1920" y="117" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
@@ -463,7 +439,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.47239915" visible="true" weight="0.26797387" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.47239915" visible="true" weight="0.17596567" />
       <window_info id="Structure" order="6" sideWeight="0.5276008" side_tool="true" weight="0.13099042" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.2624672" />
@@ -797,10 +773,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/JUnit/compileJUnit.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JUnit/AllTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compileJUnit.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="101" selection-start-column="101" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/hearts/gui/GameGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2826">
-          <caret line="200" column="19" selection-start-line="200" selection-start-column="19" selection-end-line="200" selection-end-column="19" />
+        <state relative-caret-position="-1998">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

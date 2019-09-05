@@ -1,0 +1,1 @@
+javac -d JUnitTest/classes -cp lib/junit-platform-console-standalone-1.4.0.jar;.;src JUnitTest/tests/AllTests.java
